@@ -7,40 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BBEC89702713639B00D60BBD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC896F2713639B00D60BBD /* ViewController.swift */; };
 		BBEC89782713639C00D60BBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBEC89762713639C00D60BBD /* LaunchScreen.storyboard */; };
 		BBEC8981271363E900D60BBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBEC897F271363E900D60BBD /* Main.storyboard */; };
-		BBEC89882713645500D60BBD /* DrinkWaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC89832713645500D60BBD /* DrinkWaterViewController.swift */; };
-		BBEC89892713645500D60BBD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC89842713645500D60BBD /* ProfileViewController.swift */; };
-		BBEC898A2713645500D60BBD /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC89852713645500D60BBD /* MainNavigationController.swift */; };
-		BBEC898B2713645500D60BBD /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC89872713645500D60BBD /* UserViewModel.swift */; };
-		BBEC89902713645C00D60BBD /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC898D2713645C00D60BBD /* UIView.swift */; };
-		BBEC89912713645C00D60BBD /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC898E2713645C00D60BBD /* UIColor.swift */; };
-		BBEC89922713645C00D60BBD /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC898F2713645C00D60BBD /* UIImage.swift */; };
-		BBEC89942713646A00D60BBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBEC89932713646A00D60BBD /* Assets.xcassets */; };
-		BBEC89972713647400D60BBD /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC89962713647400D60BBD /* UserInfo.swift */; };
-		BBEC899B2713648300D60BBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC89992713648300D60BBD /* AppDelegate.swift */; };
-		BBEC899C2713648300D60BBD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC899A2713648300D60BBD /* SceneDelegate.swift */; };
 		BBEC89A0271364C700D60BBD /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = BBEC899F271364C700D60BBD /* TextFieldEffects */; };
+		BBEC89A22713674F00D60BBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBEC89A12713674F00D60BBD /* Assets.xcassets */; };
+		BBEC89A72713675C00D60BBD /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC89A42713675C00D60BBD /* UIView.swift */; };
+		BBEC89A82713675C00D60BBD /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC89A52713675C00D60BBD /* UIColor.swift */; };
+		BBEC89A92713675C00D60BBD /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC89A62713675C00D60BBD /* UIImage.swift */; };
+		BBEC89AC2713676500D60BBD /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC89AB2713676500D60BBD /* UserInfo.swift */; };
+		BBEC89B02713676A00D60BBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC89AE2713676A00D60BBD /* AppDelegate.swift */; };
+		BBEC89B12713676A00D60BBD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC89AF2713676A00D60BBD /* SceneDelegate.swift */; };
+		BBEC89B62713677900D60BBD /* DrinkWaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC89B32713677900D60BBD /* DrinkWaterViewController.swift */; };
+		BBEC89B72713677900D60BBD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC89B42713677900D60BBD /* ProfileViewController.swift */; };
+		BBEC89B82713677900D60BBD /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC89B52713677900D60BBD /* MainNavigationController.swift */; };
+		BBEC89BB2713679F00D60BBD /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC89BA2713679F00D60BBD /* UserViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BBEC89682713639B00D60BBD /* DrinkWater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkWater.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BBEC896F2713639B00D60BBD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BBEC89772713639C00D60BBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BBEC89792713639C00D60BBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBEC8980271363E900D60BBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BBEC89832713645500D60BBD /* DrinkWaterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkWaterViewController.swift; sourceTree = "<group>"; };
-		BBEC89842713645500D60BBD /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		BBEC89852713645500D60BBD /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
-		BBEC89872713645500D60BBD /* UserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
-		BBEC898D2713645C00D60BBD /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
-		BBEC898E2713645C00D60BBD /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		BBEC898F2713645C00D60BBD /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
-		BBEC89932713646A00D60BBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../DrinkingWater/DrinkingWater/Assets.xcassets; sourceTree = "<group>"; };
-		BBEC89962713647400D60BBD /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
-		BBEC89992713648300D60BBD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BBEC899A2713648300D60BBD /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		BBEC89A12713674F00D60BBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BBEC89A42713675C00D60BBD /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		BBEC89A52713675C00D60BBD /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		BBEC89A62713675C00D60BBD /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		BBEC89AB2713676500D60BBD /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		BBEC89AE2713676A00D60BBD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BBEC89AF2713676A00D60BBD /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		BBEC89B32713677900D60BBD /* DrinkWaterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkWaterViewController.swift; sourceTree = "<group>"; };
+		BBEC89B42713677900D60BBD /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		BBEC89B52713677900D60BBD /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		BBEC89BA2713679F00D60BBD /* UserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,67 +72,16 @@
 		BBEC896A2713639B00D60BBD /* DrinkWater */ = {
 			isa = PBXGroup;
 			children = (
+				BBEC89B92713679F00D60BBD /* ViewModel */,
+				BBEC89B22713677900D60BBD /* ViewController */,
+				BBEC89AD2713676A00D60BBD /* Supporting Files */,
+				BBEC89AA2713676500D60BBD /* Model */,
 				BBEC899D2713648B00D60BBD /* View */,
-				BBEC89982713648300D60BBD /* Supporting Files */,
-				BBEC89952713647400D60BBD /* Model */,
-				BBEC89822713645500D60BBD /* ViewController */,
-				BBEC89862713645500D60BBD /* ViewModel */,
-				BBEC898C2713645C00D60BBD /* Extension */,
-				BBEC89932713646A00D60BBD /* Assets.xcassets */,
-				BBEC896F2713639B00D60BBD /* ViewController.swift */,
+				BBEC89A32713675C00D60BBD /* Extension */,
+				BBEC89A12713674F00D60BBD /* Assets.xcassets */,
 				BBEC89792713639C00D60BBD /* Info.plist */,
 			);
 			path = DrinkWater;
-			sourceTree = "<group>";
-		};
-		BBEC89822713645500D60BBD /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				BBEC89832713645500D60BBD /* DrinkWaterViewController.swift */,
-				BBEC89842713645500D60BBD /* ProfileViewController.swift */,
-				BBEC89852713645500D60BBD /* MainNavigationController.swift */,
-			);
-			name = ViewController;
-			path = ../../DrinkingWater/DrinkingWater/ViewController;
-			sourceTree = "<group>";
-		};
-		BBEC89862713645500D60BBD /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				BBEC89872713645500D60BBD /* UserViewModel.swift */,
-			);
-			name = ViewModel;
-			path = ../../DrinkingWater/DrinkingWater/ViewModel;
-			sourceTree = "<group>";
-		};
-		BBEC898C2713645C00D60BBD /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				BBEC898D2713645C00D60BBD /* UIView.swift */,
-				BBEC898E2713645C00D60BBD /* UIColor.swift */,
-				BBEC898F2713645C00D60BBD /* UIImage.swift */,
-			);
-			name = Extension;
-			path = ../../DrinkingWater/DrinkingWater/Extension;
-			sourceTree = "<group>";
-		};
-		BBEC89952713647400D60BBD /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				BBEC89962713647400D60BBD /* UserInfo.swift */,
-			);
-			name = Model;
-			path = ../../DrinkingWater/DrinkingWater/Model;
-			sourceTree = "<group>";
-		};
-		BBEC89982713648300D60BBD /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				BBEC89992713648300D60BBD /* AppDelegate.swift */,
-				BBEC899A2713648300D60BBD /* SceneDelegate.swift */,
-			);
-			name = "Supporting Files";
-			path = "../../DrinkingWater/DrinkingWater/Supporting Files";
 			sourceTree = "<group>";
 		};
 		BBEC899D2713648B00D60BBD /* View */ = {
@@ -144,6 +91,51 @@
 				BBEC89762713639C00D60BBD /* LaunchScreen.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		BBEC89A32713675C00D60BBD /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				BBEC89A42713675C00D60BBD /* UIView.swift */,
+				BBEC89A52713675C00D60BBD /* UIColor.swift */,
+				BBEC89A62713675C00D60BBD /* UIImage.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		BBEC89AA2713676500D60BBD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BBEC89AB2713676500D60BBD /* UserInfo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BBEC89AD2713676A00D60BBD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BBEC89AE2713676A00D60BBD /* AppDelegate.swift */,
+				BBEC89AF2713676A00D60BBD /* SceneDelegate.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BBEC89B22713677900D60BBD /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BBEC89B32713677900D60BBD /* DrinkWaterViewController.swift */,
+				BBEC89B42713677900D60BBD /* ProfileViewController.swift */,
+				BBEC89B52713677900D60BBD /* MainNavigationController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		BBEC89B92713679F00D60BBD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BBEC89BA2713679F00D60BBD /* UserViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,7 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBEC8981271363E900D60BBD /* Main.storyboard in Resources */,
-				BBEC89942713646A00D60BBD /* Assets.xcassets in Resources */,
+				BBEC89A22713674F00D60BBD /* Assets.xcassets in Resources */,
 				BBEC89782713639C00D60BBD /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,17 +215,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBEC89902713645C00D60BBD /* UIView.swift in Sources */,
-				BBEC89922713645C00D60BBD /* UIImage.swift in Sources */,
-				BBEC898A2713645500D60BBD /* MainNavigationController.swift in Sources */,
-				BBEC89702713639B00D60BBD /* ViewController.swift in Sources */,
-				BBEC89912713645C00D60BBD /* UIColor.swift in Sources */,
-				BBEC89892713645500D60BBD /* ProfileViewController.swift in Sources */,
-				BBEC898B2713645500D60BBD /* UserViewModel.swift in Sources */,
-				BBEC899C2713648300D60BBD /* SceneDelegate.swift in Sources */,
-				BBEC89972713647400D60BBD /* UserInfo.swift in Sources */,
-				BBEC899B2713648300D60BBD /* AppDelegate.swift in Sources */,
-				BBEC89882713645500D60BBD /* DrinkWaterViewController.swift in Sources */,
+				BBEC89B82713677900D60BBD /* MainNavigationController.swift in Sources */,
+				BBEC89B02713676A00D60BBD /* AppDelegate.swift in Sources */,
+				BBEC89B12713676A00D60BBD /* SceneDelegate.swift in Sources */,
+				BBEC89BB2713679F00D60BBD /* UserViewModel.swift in Sources */,
+				BBEC89A72713675C00D60BBD /* UIView.swift in Sources */,
+				BBEC89B62713677900D60BBD /* DrinkWaterViewController.swift in Sources */,
+				BBEC89A92713675C00D60BBD /* UIImage.swift in Sources */,
+				BBEC89A82713675C00D60BBD /* UIColor.swift in Sources */,
+				BBEC89B72713677900D60BBD /* ProfileViewController.swift in Sources */,
+				BBEC89AC2713676500D60BBD /* UserInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
