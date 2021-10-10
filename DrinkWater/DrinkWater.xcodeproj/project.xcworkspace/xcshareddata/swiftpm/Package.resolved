@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "TextFieldEffects",
+        "repositoryURL": "https://github.com/raulriera/TextFieldEffects",
+        "state": {
+          "branch": "master",
+          "revision": "6bcda6335403c228b02b04ed8ba5225460762edb",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
