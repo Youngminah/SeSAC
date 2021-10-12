@@ -6,7 +6,7 @@
 //
 import UIKit
 
-class UserViewModel {
+final class UserViewModel {
     private var userInfo: UserInfo?
     
     init() {
@@ -50,7 +50,6 @@ class UserViewModel {
         return percentGoal >= 100 ? .systemIndigo : .white
     }
     
-    
     func initialUserInfo(nickName: String, height: Int, weight: Int) {
         userInfo = UserInfo(nickName: nickName, height: height, weight: weight)
         UserDefaults.standard.set(try? PropertyListEncoder().encode(userInfo), forKey:"userInfo")
@@ -70,5 +69,4 @@ class UserViewModel {
         guard let _ = userInfo else { return true }
         return false
     }
-    
 }
