@@ -17,13 +17,13 @@ enum InputError: Error {
 }
 
 class ProfileViewController: UIViewController {
-    @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var containerBottom: NSLayoutConstraint!
-    @IBOutlet weak var plantImageView: UIImageView!
-    @IBOutlet weak var nickNameTextField: HoshiTextField!
-    @IBOutlet weak var heightTextField: HoshiTextField!
-    @IBOutlet weak var weightTextField: HoshiTextField!
-    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet private weak var containerView: UIView!
+    @IBOutlet private weak var containerBottom: NSLayoutConstraint!
+    @IBOutlet private weak var plantImageView: UIImageView!
+    @IBOutlet private weak var nickNameTextField: HoshiTextField!
+    @IBOutlet private weak var heightTextField: HoshiTextField!
+    @IBOutlet private weak var weightTextField: HoshiTextField!
+    @IBOutlet private weak var stackView: UIStackView!
     
     var image = UIImage()
     private var nickName = String()
@@ -115,9 +115,7 @@ extension ProfileViewController {
         let alert: UIAlertController
         alert = UIAlertController(title: "저장되었습니다.", message: .none, preferredStyle: .alert)
         alert.addAction(ok)
-        self.present(alert, animated: true) {
-            
-        }
+        self.present(alert, animated: true) 
     }
 }
 

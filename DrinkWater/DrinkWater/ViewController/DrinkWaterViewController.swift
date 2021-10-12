@@ -17,20 +17,20 @@ protocol UserInfoDelegate: AnyObject {
 }
 
 class DrinkWaterViewController: UIViewController {
-    @IBOutlet weak var refreshBarButton: UIBarButtonItem!
-    @IBOutlet weak var profileBarButton: UIBarButtonItem!
-    @IBOutlet weak var infoPhraseLabel: UILabel!
-    @IBOutlet weak var infoIntakeLabel: UILabel!
-    @IBOutlet weak var infoGoalLabel: UILabel!
-    @IBOutlet weak var infoStackView: UIStackView!
-    @IBOutlet weak var plantImageView: UIImageView!
-    @IBOutlet weak var recommendIntakeLabel: UILabel!
-    @IBOutlet weak var drinkWaterButton: UIButton!
-    @IBOutlet weak var inputStackView: UIStackView!
-    @IBOutlet weak var mlTextField: UITextField!
-    @IBOutlet weak var mlLabel: UILabel!
-    @IBOutlet weak var noUserNotiLabel: UILabel!
-    @IBOutlet weak var plantImageViewCenter: NSLayoutConstraint!
+    @IBOutlet private weak var refreshBarButton: UIBarButtonItem!
+    @IBOutlet private weak var profileBarButton: UIBarButtonItem!
+    @IBOutlet private weak var infoPhraseLabel: UILabel!
+    @IBOutlet private weak var infoIntakeLabel: UILabel!
+    @IBOutlet private weak var infoGoalLabel: UILabel!
+    @IBOutlet private weak var infoStackView: UIStackView!
+    @IBOutlet private weak var plantImageView: UIImageView!
+    @IBOutlet private weak var recommendIntakeLabel: UILabel!
+    @IBOutlet private weak var drinkWaterButton: UIButton!
+    @IBOutlet private weak var inputStackView: UIStackView!
+    @IBOutlet private weak var mlTextField: UITextField!
+    @IBOutlet private weak var mlLabel: UILabel!
+    @IBOutlet private weak var noUserNotiLabel: UILabel!
+    @IBOutlet private weak var plantImageViewCenter: NSLayoutConstraint!
     
     private let userViewModel = UserViewModel()
     
