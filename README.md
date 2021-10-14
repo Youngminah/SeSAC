@@ -60,4 +60,4 @@ https://user-images.githubusercontent.com/42762236/136702716-5224904e-430a-4e8e-
 </br>
 
 ## 이슈 정리 
-- [NSLayoutConstraint CustomView관련 이슈](https://github.com/Youngminah/SeSSAC/issues/1)
+- [NSLayoutConstraint CustomView 관련 이슈](https://github.com/Youngminah/SeSSAC/issues/1)
