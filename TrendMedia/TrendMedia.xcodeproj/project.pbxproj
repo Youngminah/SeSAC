@@ -9,23 +9,27 @@
 /* Begin PBXBuildFile section */
 		BB197AF0271E71C0002397DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB197AEF271E71C0002397DD /* AppDelegate.swift */; };
 		BB197AF2271E71C0002397DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB197AF1271E71C0002397DD /* SceneDelegate.swift */; };
-		BB197AF4271E71C0002397DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB197AF3271E71C0002397DD /* ViewController.swift */; };
+		BB197AF4271E71C0002397DD /* MediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB197AF3271E71C0002397DD /* MediaViewController.swift */; };
 		BB197AF9271E71C2002397DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB197AF8271E71C2002397DD /* Assets.xcassets */; };
 		BB197AFC271E71C2002397DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB197AFA271E71C2002397DD /* LaunchScreen.storyboard */; };
 		BB197B05271E7299002397DD /* YMLogoAlert in Frameworks */ = {isa = PBXBuildFile; productRef = BB197B04271E7299002397DD /* YMLogoAlert */; };
 		BB197B08271E72CC002397DD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BB197B07271E72CC002397DD /* SnapKit */; };
 		BB197B0A271E7463002397DD /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB197B09271E7463002397DD /* NavigationController.swift */; };
+		BB197B0D271E8C20002397DD /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB197B0C271E8C20002397DD /* UIView.swift */; };
+		BB197B10271E8CF5002397DD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB197B0F271E8CF5002397DD /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BB197AEC271E71C0002397DD /* TrendMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrendMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB197AEF271E71C0002397DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB197AF1271E71C0002397DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BB197AF3271E71C0002397DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BB197AF3271E71C0002397DD /* MediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaViewController.swift; sourceTree = "<group>"; };
 		BB197AF8271E71C2002397DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB197AFB271E71C2002397DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB197AFD271E71C2002397DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB197B09271E7463002397DD /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		BB197B0C271E8C20002397DD /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		BB197B0F271E8CF5002397DD /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,15 +64,57 @@
 		BB197AEE271E71C0002397DD /* TrendMedia */ = {
 			isa = PBXGroup;
 			children = (
+				BB197B0E271E8C25002397DD /* Extension */,
+				BB197B11271E8D4E002397DD /* View */,
+				BB197B12271E8D6C002397DD /* ViewController */,
+				BB197B13271E8D79002397DD /* Model */,
+				BB197B14271E8D83002397DD /* ViewModel */,
 				BB197AEF271E71C0002397DD /* AppDelegate.swift */,
 				BB197AF1271E71C0002397DD /* SceneDelegate.swift */,
-				BB197AF3271E71C0002397DD /* ViewController.swift */,
-				BB197B09271E7463002397DD /* NavigationController.swift */,
 				BB197AF8271E71C2002397DD /* Assets.xcassets */,
 				BB197AFA271E71C2002397DD /* LaunchScreen.storyboard */,
 				BB197AFD271E71C2002397DD /* Info.plist */,
 			);
 			path = TrendMedia;
+			sourceTree = "<group>";
+		};
+		BB197B0E271E8C25002397DD /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				BB197B0C271E8C20002397DD /* UIView.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		BB197B11271E8D4E002397DD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BB197B12271E8D6C002397DD /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BB197AF3271E71C0002397DD /* MediaViewController.swift */,
+				BB197B09271E7463002397DD /* NavigationController.swift */,
+				BB197B0F271E8CF5002397DD /* SearchViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		BB197B13271E8D79002397DD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BB197B14271E8D83002397DD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,7 +195,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB197AF4271E71C0002397DD /* ViewController.swift in Sources */,
+				BB197B10271E8CF5002397DD /* SearchViewController.swift in Sources */,
+				BB197B0D271E8C20002397DD /* UIView.swift in Sources */,
+				BB197AF4271E71C0002397DD /* MediaViewController.swift in Sources */,
 				BB197B0A271E7463002397DD /* NavigationController.swift in Sources */,
 				BB197AF0271E71C0002397DD /* AppDelegate.swift in Sources */,
 				BB197AF2271E71C0002397DD /* SceneDelegate.swift in Sources */,
