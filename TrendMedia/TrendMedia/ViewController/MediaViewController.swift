@@ -120,14 +120,12 @@ class MediaViewController: UIViewController {
             make.right.equalTo(view.safeAreaInsets.right)
             make.height.equalTo(view.bounds.height / 5)
         }
-        
         categoryStackView.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
             make.bottom.equalToSuperview().offset(-5)
             make.height.equalToSuperview().multipliedBy(0.7)
         }
-        
         tableView.snp.makeConstraints { make in
             make.top.equalTo(headerView.snp.bottom)
             make.left.equalTo(view.safeAreaInsets.left)

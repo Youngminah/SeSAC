@@ -7,9 +7,15 @@
 
 import UIKit
 
+enum TableSection: CaseIterable {
+    case summary
+    case actors
+}
+
 class ActorViewController: UIViewController {
     
     var mediaInfo: TvShow?
+    private var tableViewRowHeight: CGFloat = 100
     
     private let tableView: UITableView = {
         let tableView = UITableView()
@@ -98,6 +104,7 @@ class ActorViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(ActorCell.self, forCellReuseIdentifier: ActorCell.identifier)
+        tableView.register(SummaryCell.self, forCellReuseIdentifier: SummaryCell.identifier)
         tableView.tableHeaderView = tableHeaderView
     }
 }
@@ -105,18 +112,50 @@ class ActorViewController: UIViewController {
 extension ActorViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        switch TableSection.allCases[section] {
+        case .summary:
+            return 1
+        case .actors:
+            return 20
+        }
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return TableSection.allCases.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ActorCell.identifier, for: indexPath) as? ActorCell else {
-            return UITableViewCell()
+        switch TableSection.allCases[indexPath.section] {
+        case .summary:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: SummaryCell.identifier, for: indexPath) as? SummaryCell else {
+                return UITableViewCell()
+            }
+            cell.detailToggleButton.tag = indexPath.section
+            cell.detailToggleButton.addTarget(self, action: #selector(detailSummaryButtonTap(_ :)), for: .touchUpInside)
+            return cell
+        case .actors:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: ActorCell.identifier, for: indexPath) as? ActorCell else {
+                return UITableViewCell()
+            }
+            return cell
         }
-        return cell
+    }
+    
+    @objc private func detailSummaryButtonTap(_ sender: UIButton){
+        sender.isSelected ? (tableViewRowHeight = 100) : (tableViewRowHeight = UITableView.automaticDimension) 
+        sender.isSelected = !sender.isSelected
+        self.tableView.beginUpdates()
+        tableView.reloadRows(at: [IndexPath(row: 1, section: 0)], with: .none)
+        self.tableView.endUpdates()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        switch TableSection.allCases[indexPath.section] {
+        case .summary:
+            return tableViewRowHeight
+        case .actors:
+            return 80
+        }
     }
 }
 
