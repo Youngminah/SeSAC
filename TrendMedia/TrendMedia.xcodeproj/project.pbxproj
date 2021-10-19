@@ -14,6 +14,7 @@
 		BB197AFC271E71C2002397DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB197AFA271E71C2002397DD /* LaunchScreen.storyboard */; };
 		BB197B05271E7299002397DD /* YMLogoAlert in Frameworks */ = {isa = PBXBuildFile; productRef = BB197B04271E7299002397DD /* YMLogoAlert */; };
 		BB197B08271E72CC002397DD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BB197B07271E72CC002397DD /* SnapKit */; };
+		BB197B0A271E7463002397DD /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB197B09271E7463002397DD /* NavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		BB197AF8271E71C2002397DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB197AFB271E71C2002397DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB197AFD271E71C2002397DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB197B09271E7463002397DD /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				BB197AEF271E71C0002397DD /* AppDelegate.swift */,
 				BB197AF1271E71C0002397DD /* SceneDelegate.swift */,
 				BB197AF3271E71C0002397DD /* ViewController.swift */,
+				BB197B09271E7463002397DD /* NavigationController.swift */,
 				BB197AF8271E71C2002397DD /* Assets.xcassets */,
 				BB197AFA271E71C2002397DD /* LaunchScreen.storyboard */,
 				BB197AFD271E71C2002397DD /* Info.plist */,
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB197AF4271E71C0002397DD /* ViewController.swift in Sources */,
+				BB197B0A271E7463002397DD /* NavigationController.swift in Sources */,
 				BB197AF0271E71C0002397DD /* AppDelegate.swift in Sources */,
 				BB197AF2271E71C0002397DD /* SceneDelegate.swift in Sources */,
 			);
