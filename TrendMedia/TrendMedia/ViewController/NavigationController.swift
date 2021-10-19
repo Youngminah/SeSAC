@@ -13,10 +13,9 @@ class NavigationController: UINavigationController {
         super.viewDidLoad()
         setConfiguration()
     }
-    private func setConfiguration(){
+    
+    private func setConfiguration() {
         self.navigationBar.scrollEdgeAppearance = UINavigationBarAppearance()
         self.navigationBar.scrollEdgeAppearance?.backgroundColor = .white
-        
     }
-
 }

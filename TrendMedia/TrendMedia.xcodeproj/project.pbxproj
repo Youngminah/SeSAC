@@ -101,8 +101,8 @@
 		BB197B12271E8D6C002397DD /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				BB197AF3271E71C0002397DD /* MediaViewController.swift */,
 				BB197B09271E7463002397DD /* NavigationController.swift */,
+				BB197AF3271E71C0002397DD /* MediaViewController.swift */,
 				BB197B0F271E8CF5002397DD /* SearchViewController.swift */,
 				BB197B15271E8F06002397DD /* ActorViewController.swift */,
 			);

@@ -36,7 +36,9 @@ class MediaViewController: UIViewController {
     }
     
     @objc private func searchBarButtonTap() {
-        print("서치바")
+        let vc = SearchViewController()
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
     }
     
     private func setView() {
@@ -111,6 +113,12 @@ extension MediaViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 500
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.navigationItem.backButtonTitle = "뒤로" //백버튼 설정은 이전화면에서 설정
+        let vc = ActorViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

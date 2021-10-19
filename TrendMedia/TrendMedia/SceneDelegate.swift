@@ -15,9 +15,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
-        let mainViewController = MediaViewController() // 자신의 시작 ViewController
+        let mediaViewController = MediaViewController() // 자신의 시작 ViewController
         let navigationController = NavigationController()
-        navigationController.pushViewController(mainViewController, animated: false)
+        navigationController.pushViewController(mediaViewController, animated: false)
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
         self.window = window
