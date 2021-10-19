@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 class MediaCell: UITableViewCell {
     
@@ -36,7 +37,6 @@ class MediaCell: UITableViewCell {
     
     private let posterImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "squid_game")
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 10
         imageView.contentMode = .scaleAspectFill
@@ -75,7 +75,7 @@ class MediaCell: UITableViewCell {
         label.textColor = .white
         label.backgroundColor = .systemTeal
         label.textAlignment = .center
-        label.font = .systemFont(ofSize: 13, weight: .regular)
+        label.font = .systemFont(ofSize: 13, weight: .medium)
         
         let stackView = UIStackView(arrangedSubviews: [label, rateLabel])
         stackView.axis = .horizontal
@@ -94,6 +94,21 @@ class MediaCell: UITableViewCell {
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func updateUI( media: TvShow) {
+        setImageView(urlString: media.backdropImage)
+        enTitleLabel.text =  media.title
+        krTitleLabel.text =  media.title
+        genreLabel.text = media.genre
+        dateLabel.text = media.releaseDate
+        rateLabel.text = "\(media.rate)"
+    }
+    
+    private func setImageView(urlString: String){
+        let url = URL(string: urlString)
+        posterImageView.kf.indicatorType = .activity
+        posterImageView.kf.setImage(with: url, placeholder: UIImage(named: "덤블도어")) //이미지 없을시 이미지 넣기
     }
     
     private func setConstraint() {

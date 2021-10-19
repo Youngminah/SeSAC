@@ -8,5 +8,13 @@
 import Foundation
 
 final class MediaViewModel {
-    let tvShowList: [TvShow] = DataManager.tvShow
+    private let tvShowList: [TvShow] = DataManager.tvShow
+    
+    func getTvShow(at index: Int) -> TvShow {
+        return tvShowList[index]
+    }
+    
+    func tvShowListCount() -> Int {
+        return tvShowList.count
+    }
 }

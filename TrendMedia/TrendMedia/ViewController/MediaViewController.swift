@@ -9,7 +9,9 @@ import UIKit
 import SnapKit
 
 class MediaViewController: UIViewController {
-
+    
+    
+    private let viewModel = MediaViewModel()
     private let headerView = UIView()
     
     private let categoryStackView: UIStackView = {
@@ -101,13 +103,14 @@ class MediaViewController: UIViewController {
 extension MediaViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return viewModel.tvShowListCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MediaCell.identifier, for: indexPath) as? MediaCell else {
             return UITableViewCell()
         }
+        cell.updateUI(media: viewModel.getTvShow(at: indexPath.row))
         return cell
     }
     
@@ -118,6 +121,7 @@ extension MediaViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.navigationItem.backButtonTitle = "뒤로" //백버튼 설정은 이전화면에서 설정
         let vc = ActorViewController()
+        vc.mediaInfo = viewModel.getTvShow(at: indexPath.row)
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
