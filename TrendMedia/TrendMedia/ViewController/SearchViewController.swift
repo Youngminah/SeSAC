@@ -23,8 +23,9 @@ class SearchViewController: UIViewController {
         searchBar.clipsToBounds = true
         searchBar.layer.cornerRadius = 10
         searchBar.tintColor = .white
-        searchBar.barTintColor = .gray
-        searchBar.searchTextField.backgroundColor = .gray
+        searchBar.barTintColor = UIColor(red: 50/255, green: 50/255, blue: 50/255, alpha: 0.5)
+        searchBar.searchTextField.backgroundColor = .clear
+        searchBar.searchTextField.textColor = .white
         return searchBar
     }()
     
