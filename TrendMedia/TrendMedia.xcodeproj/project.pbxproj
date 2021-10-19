@@ -19,6 +19,9 @@
 		BB197B10271E8CF5002397DD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB197B0F271E8CF5002397DD /* SearchViewController.swift */; };
 		BB197B16271E8F06002397DD /* ActorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB197B15271E8F06002397DD /* ActorViewController.swift */; };
 		BB197B18271E901F002397DD /* MediaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB197B17271E901F002397DD /* MediaCell.swift */; };
+		BB197B1A271EB3B5002397DD /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB197B19271EB3B5002397DD /* SearchCell.swift */; };
+		BB197B1C271EB3C0002397DD /* ActorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB197B1B271EB3C0002397DD /* ActorCell.swift */; };
+		BB197B1E271EBAA9002397DD /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB197B1D271EBAA9002397DD /* UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		BB197B0F271E8CF5002397DD /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		BB197B15271E8F06002397DD /* ActorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorViewController.swift; sourceTree = "<group>"; };
 		BB197B17271E901F002397DD /* MediaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCell.swift; sourceTree = "<group>"; };
+		BB197B19271EB3B5002397DD /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		BB197B1B271EB3C0002397DD /* ActorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorCell.swift; sourceTree = "<group>"; };
+		BB197B1D271EBAA9002397DD /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				BB197B0C271E8C20002397DD /* UIView.swift */,
+				BB197B1D271EBAA9002397DD /* UIColor.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -94,6 +101,8 @@
 			isa = PBXGroup;
 			children = (
 				BB197B17271E901F002397DD /* MediaCell.swift */,
+				BB197B19271EB3B5002397DD /* SearchCell.swift */,
+				BB197B1B271EB3C0002397DD /* ActorCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -204,8 +213,11 @@
 				BB197B10271E8CF5002397DD /* SearchViewController.swift in Sources */,
 				BB197B0D271E8C20002397DD /* UIView.swift in Sources */,
 				BB197B18271E901F002397DD /* MediaCell.swift in Sources */,
+				BB197B1C271EB3C0002397DD /* ActorCell.swift in Sources */,
 				BB197AF4271E71C0002397DD /* MediaViewController.swift in Sources */,
+				BB197B1A271EB3B5002397DD /* SearchCell.swift in Sources */,
 				BB197B0A271E7463002397DD /* NavigationController.swift in Sources */,
+				BB197B1E271EBAA9002397DD /* UIColor.swift in Sources */,
 				BB197B16271E8F06002397DD /* ActorViewController.swift in Sources */,
 				BB197AF0271E71C0002397DD /* AppDelegate.swift in Sources */,
 				BB197AF2271E71C0002397DD /* SceneDelegate.swift in Sources */,
