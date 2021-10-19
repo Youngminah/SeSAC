@@ -59,6 +59,33 @@ class MediaCell: UITableViewCell {
         return label
     }()
     
+    private let rateLabel: UILabel = {
+        let label = UILabel()
+        label.text = "3.2"
+        label.textColor = .black
+        label.backgroundColor = .white
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: 13, weight: .regular)
+        return label
+    }()
+    
+    lazy var stackView: UIStackView = {
+        let label = UILabel()
+        label.text = "예상"
+        label.textColor = .black
+        label.backgroundColor = .orange
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: 13, weight: .regular)
+        
+        let stackView = UIStackView(arrangedSubviews: [label, rateLabel])
+        stackView.axis = .horizontal
+        stackView.spacing = 0
+        stackView.distribution = .fillProportionally
+        stackView.clipsToBounds = true
+        stackView.layer.cornerRadius = 8
+        return stackView
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectionStyle = .none
@@ -76,6 +103,7 @@ class MediaCell: UITableViewCell {
         mediaView.addSubview(posterImageView)
         mediaView.addSubview(krTitleLabel)
         mediaView.addSubview(dateLabel)
+        contentView.addSubview(stackView)
         
         
         genreLabel.snp.makeConstraints { make in
@@ -107,7 +135,7 @@ class MediaCell: UITableViewCell {
         }
         
         krTitleLabel.snp.makeConstraints { make in
-            make.top.equalTo(posterImageView.snp.bottom).offset(10)
+            make.top.equalTo(posterImageView.snp.bottom).offset(16)
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
             make.height.equalTo(25)
@@ -118,6 +146,13 @@ class MediaCell: UITableViewCell {
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
             make.height.equalTo(20)
+        }
+        
+        stackView.snp.makeConstraints { make in
+            make.leading.equalTo(mediaView.snp.leading).offset(20)
+            make.bottom.equalTo(posterImageView.snp.bottom).offset(-20)
+            make.height.equalTo(30)
+            make.width.equalTo(60)
         }
     }
 }
