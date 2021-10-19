@@ -39,9 +39,7 @@ class MediaViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        setNavigationBar()
-        addView()
+        setView()
     }
     
     @objc private func menuBarButtonTap() {
@@ -52,23 +50,40 @@ class MediaViewController: UIViewController {
         print("서치바")
     }
     
+    private func setView() {
+        view.backgroundColor = .white
+        setNavigationBar()
+        addView()
+        setConstraints()
+        setTableView()
+    }
+    
     private func setNavigationBar() {
         self.title = "TREND MEDIA"
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.dash"), style: .plain, target: self, action: #selector(menuBarButtonTap))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(searchBarButtonTap))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.dash"),
+                                                                style: .plain,
+                                                                target: self,
+                                                                action: #selector(menuBarButtonTap))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search,
+                                                                 target: self,
+                                                                 action: #selector(searchBarButtonTap))
         self.navigationItem.leftBarButtonItem?.tintColor = .black
         self.navigationItem.rightBarButtonItem?.tintColor = .black
+    }
+    
+    private func setTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(MediaCell.self, forCellReuseIdentifier: MediaCell.identifier)
     }
     
     private func addView() {
         view.addSubview(headerView)
         headerView.addSubview(categoryStackView)
         view.addSubview(tableView)
-        setConstraints()
     }
     
     private func setConstraints() {
-        
         headerView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
             make.left.equalTo(view.safeAreaInsets.left)
@@ -89,6 +104,17 @@ class MediaViewController: UIViewController {
             make.right.equalTo(view.safeAreaInsets.right)
             make.bottom.equalTo(view.safeAreaInsets.bottom)
         }
+    }
+}
+
+extension MediaViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MediaCell.identifier, for: indexPath) as? MediaCell else { return UITableViewCell() }
+        return cell
     }
 }
 
