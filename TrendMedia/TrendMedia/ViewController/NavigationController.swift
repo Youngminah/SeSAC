@@ -11,11 +11,5 @@ class NavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setConfiguration()
-    }
-    
-    private func setConfiguration() {
-        self.navigationBar.scrollEdgeAppearance = UINavigationBarAppearance()
-        self.navigationBar.scrollEdgeAppearance?.backgroundColor = .white
     }
 }
