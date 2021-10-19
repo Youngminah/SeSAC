@@ -10,22 +10,11 @@ import SnapKit
 
 class MediaViewController: UIViewController {
 
-    private let headerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .white
-        return view
-    }()
+    private let headerView = UIView()
     
     private let categoryStackView: UIStackView = {
         let view = UIStackView()
-        view.layer.cornerRadius = 5
-        view.layer.borderWidth = 2
-        view.layer.borderColor = UIColor.white.cgColor
-        view.layer.masksToBounds = false
-        view.layer.shadowColor = UIColor.black.cgColor
-        view.layer.shadowOffset = CGSize(width: 0, height: 0)
-        view.layer.shadowOpacity = 0.3
-        view.layer.shadowRadius = 5.0
+        view.setCornerShadow()
         view.backgroundColor = .white
         view.axis = .horizontal
         return view
@@ -33,7 +22,7 @@ class MediaViewController: UIViewController {
     
     private let tableView: UITableView = {
         let tableView = UITableView()
-        tableView.backgroundColor = .systemGreen
+        tableView.showsVerticalScrollIndicator = false
         return tableView
     }()
     
@@ -108,13 +97,20 @@ class MediaViewController: UIViewController {
 }
 
 extension MediaViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: MediaCell.identifier, for: indexPath) as? MediaCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MediaCell.identifier, for: indexPath) as? MediaCell else {
+            return UITableViewCell()
+        }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 500
     }
 }
 
