@@ -26,6 +26,7 @@
 		BB197B23271ECE3D002397DD /* TvShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB197B22271ECE3D002397DD /* TvShow.swift */; };
 		BB197B25271ECE77002397DD /* MediaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB197B24271ECE77002397DD /* MediaViewModel.swift */; };
 		BB197B27271EE46C002397DD /* MyMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB197B26271EE46C002397DD /* MyMediaViewController.swift */; };
+		BB197B2A271EE63A002397DD /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB197B29271EE63A002397DD /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		BB197B22271ECE3D002397DD /* TvShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvShow.swift; sourceTree = "<group>"; };
 		BB197B24271ECE77002397DD /* MediaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaViewModel.swift; sourceTree = "<group>"; };
 		BB197B26271EE46C002397DD /* MyMediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMediaViewController.swift; sourceTree = "<group>"; };
+		BB197B29271EE63A002397DD /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 		BB197AEE271E71C0002397DD /* TrendMedia */ = {
 			isa = PBXGroup;
 			children = (
+				BB197B28271EE617002397DD /* Manager */,
 				BB197B0E271E8C25002397DD /* Extension */,
 				BB197B11271E8D4E002397DD /* View */,
 				BB197B12271E8D6C002397DD /* ViewController */,
@@ -141,6 +144,14 @@
 				BB197B24271ECE77002397DD /* MediaViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BB197B28271EE617002397DD /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				BB197B29271EE63A002397DD /* DataManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB197B25271ECE77002397DD /* MediaViewModel.swift in Sources */,
+				BB197B2A271EE63A002397DD /* DataManager.swift in Sources */,
 				BB197B10271E8CF5002397DD /* SearchViewController.swift in Sources */,
 				BB197B0D271E8C20002397DD /* UIView.swift in Sources */,
 				BB197B18271E901F002397DD /* MediaCell.swift in Sources */,
