@@ -72,8 +72,8 @@ class MediaCell: UITableViewCell {
     lazy var stackView: UIStackView = {
         let label = UILabel()
         label.text = "예상"
-        label.textColor = .black
-        label.backgroundColor = .orange
+        label.textColor = .white
+        label.backgroundColor = .systemTeal
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 13, weight: .regular)
         
