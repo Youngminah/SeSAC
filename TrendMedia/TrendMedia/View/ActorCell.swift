@@ -71,6 +71,5 @@ class ActorCell: UITableViewCell {
             make.right.equalTo(contentView.safeAreaInsets.right).offset(-16)
             make.centerY.equalTo(contentView.snp.centerY)
         }
-        
     }
 }
