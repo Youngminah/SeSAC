@@ -34,7 +34,9 @@ class MediaViewController: UIViewController {
     }
     
     @objc private func menuBarButtonTap() {
-        print("메뉴바")
+        self.navigationItem.backButtonTitle = "뒤로" //백버튼 설정은 이전화면에서 설정
+        let vc = MyMediaViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc private func searchBarButtonTap() {

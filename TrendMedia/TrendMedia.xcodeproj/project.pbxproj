@@ -25,6 +25,7 @@
 		BB197B21271ECB0D002397DD /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BB197B20271ECB0D002397DD /* Kingfisher */; };
 		BB197B23271ECE3D002397DD /* TvShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB197B22271ECE3D002397DD /* TvShow.swift */; };
 		BB197B25271ECE77002397DD /* MediaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB197B24271ECE77002397DD /* MediaViewModel.swift */; };
+		BB197B27271EE46C002397DD /* MyMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB197B26271EE46C002397DD /* MyMediaViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		BB197B1D271EBAA9002397DD /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		BB197B22271ECE3D002397DD /* TvShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvShow.swift; sourceTree = "<group>"; };
 		BB197B24271ECE77002397DD /* MediaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaViewModel.swift; sourceTree = "<group>"; };
+		BB197B26271EE46C002397DD /* MyMediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMediaViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				BB197AF3271E71C0002397DD /* MediaViewController.swift */,
 				BB197B0F271E8CF5002397DD /* SearchViewController.swift */,
 				BB197B15271E8F06002397DD /* ActorViewController.swift */,
+				BB197B26271EE46C002397DD /* MyMediaViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				BB197B1C271EB3C0002397DD /* ActorCell.swift in Sources */,
 				BB197AF4271E71C0002397DD /* MediaViewController.swift in Sources */,
 				BB197B1A271EB3B5002397DD /* SearchCell.swift in Sources */,
+				BB197B27271EE46C002397DD /* MyMediaViewController.swift in Sources */,
 				BB197B23271ECE3D002397DD /* TvShow.swift in Sources */,
 				BB197B0A271E7463002397DD /* NavigationController.swift in Sources */,
 				BB197B1E271EBAA9002397DD /* UIColor.swift in Sources */,
