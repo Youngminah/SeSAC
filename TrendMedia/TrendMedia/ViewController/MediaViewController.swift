@@ -14,8 +14,43 @@ class MediaViewController: UIViewController {
     private let viewModel = MediaViewModel()
     private let headerView = UIView()
     
-    private let categoryStackView: UIStackView = {
-        let view = UIStackView()
+    private let videoButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "film"), for: .normal)
+        button.tintColor = .green
+        button.contentVerticalAlignment = .fill
+        button.contentHorizontalAlignment = .fill
+        button.imageView?.contentMode = .scaleAspectFit
+        button.imageEdgeInsets = UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30)
+        return button
+    }()
+    
+    private let tvButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "tv"), for: .normal)
+        button.contentVerticalAlignment = .fill
+        button.contentHorizontalAlignment = .fill
+        button.imageView?.contentMode = .scaleAspectFit
+        button.imageEdgeInsets = UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30)
+        button.tintColor = .orange
+        return button
+
+    }()
+    
+    private let bookButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "book.closed"), for: .normal)
+        button.contentVerticalAlignment = .fill
+        button.contentHorizontalAlignment = .fill
+        button.imageView?.contentMode = .scaleAspectFit
+        button.imageEdgeInsets = UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30)
+        button.tintColor = .systemPink
+        return button
+    }()
+    
+    private lazy var categoryStackView: UIStackView = {
+        let view = UIStackView(arrangedSubviews: [videoButton, tvButton, bookButton])
+        view.distribution = .fillEqually
         view.setCornerShadow()
         view.backgroundColor = .white
         view.axis = .horizontal
