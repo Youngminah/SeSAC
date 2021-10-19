@@ -27,6 +27,7 @@
 		BB197B25271ECE77002397DD /* MediaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB197B24271ECE77002397DD /* MediaViewModel.swift */; };
 		BB197B27271EE46C002397DD /* MyMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB197B26271EE46C002397DD /* MyMediaViewController.swift */; };
 		BB197B2A271EE63A002397DD /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB197B29271EE63A002397DD /* DataManager.swift */; };
+		BB197B2E271EE6E3002397DD /* MyMediaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB197B2D271EE6E3002397DD /* MyMediaCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		BB197B24271ECE77002397DD /* MediaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaViewModel.swift; sourceTree = "<group>"; };
 		BB197B26271EE46C002397DD /* MyMediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMediaViewController.swift; sourceTree = "<group>"; };
 		BB197B29271EE63A002397DD /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		BB197B2D271EE6E3002397DD /* MyMediaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMediaCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,9 +113,8 @@
 		BB197B11271E8D4E002397DD /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BB197B17271E901F002397DD /* MediaCell.swift */,
-				BB197B19271EB3B5002397DD /* SearchCell.swift */,
-				BB197B1B271EB3C0002397DD /* ActorCell.swift */,
+				BB197B2C271EE6CD002397DD /* CollectionViewCell */,
+				BB197B2B271EE6BE002397DD /* TableViewCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -152,6 +153,24 @@
 				BB197B29271EE63A002397DD /* DataManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		BB197B2B271EE6BE002397DD /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				BB197B1B271EB3C0002397DD /* ActorCell.swift */,
+				BB197B19271EB3B5002397DD /* SearchCell.swift */,
+				BB197B17271E901F002397DD /* MediaCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		BB197B2C271EE6CD002397DD /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				BB197B2D271EE6E3002397DD /* MyMediaCell.swift */,
+			);
+			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +255,7 @@
 			files = (
 				BB197B25271ECE77002397DD /* MediaViewModel.swift in Sources */,
 				BB197B2A271EE63A002397DD /* DataManager.swift in Sources */,
+				BB197B2E271EE6E3002397DD /* MyMediaCell.swift in Sources */,
 				BB197B10271E8CF5002397DD /* SearchViewController.swift in Sources */,
 				BB197B0D271E8C20002397DD /* UIView.swift in Sources */,
 				BB197B18271E901F002397DD /* MediaCell.swift in Sources */,
