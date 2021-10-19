@@ -23,6 +23,8 @@
 		BB197B1C271EB3C0002397DD /* ActorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB197B1B271EB3C0002397DD /* ActorCell.swift */; };
 		BB197B1E271EBAA9002397DD /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB197B1D271EBAA9002397DD /* UIColor.swift */; };
 		BB197B21271ECB0D002397DD /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BB197B20271ECB0D002397DD /* Kingfisher */; };
+		BB197B23271ECE3D002397DD /* TvShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB197B22271ECE3D002397DD /* TvShow.swift */; };
+		BB197B25271ECE77002397DD /* MediaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB197B24271ECE77002397DD /* MediaViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		BB197B19271EB3B5002397DD /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		BB197B1B271EB3C0002397DD /* ActorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorCell.swift; sourceTree = "<group>"; };
 		BB197B1D271EBAA9002397DD /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		BB197B22271ECE3D002397DD /* TvShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvShow.swift; sourceTree = "<group>"; };
+		BB197B24271ECE77002397DD /* MediaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +127,7 @@
 		BB197B13271E8D79002397DD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BB197B22271ECE3D002397DD /* TvShow.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -130,6 +135,7 @@
 		BB197B14271E8D83002397DD /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				BB197B24271ECE77002397DD /* MediaViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -214,12 +220,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB197B25271ECE77002397DD /* MediaViewModel.swift in Sources */,
 				BB197B10271E8CF5002397DD /* SearchViewController.swift in Sources */,
 				BB197B0D271E8C20002397DD /* UIView.swift in Sources */,
 				BB197B18271E901F002397DD /* MediaCell.swift in Sources */,
 				BB197B1C271EB3C0002397DD /* ActorCell.swift in Sources */,
 				BB197AF4271E71C0002397DD /* MediaViewController.swift in Sources */,
 				BB197B1A271EB3B5002397DD /* SearchCell.swift in Sources */,
+				BB197B23271ECE3D002397DD /* TvShow.swift in Sources */,
 				BB197B0A271E7463002397DD /* NavigationController.swift in Sources */,
 				BB197B1E271EBAA9002397DD /* UIColor.swift in Sources */,
 				BB197B16271E8F06002397DD /* ActorViewController.swift in Sources */,
