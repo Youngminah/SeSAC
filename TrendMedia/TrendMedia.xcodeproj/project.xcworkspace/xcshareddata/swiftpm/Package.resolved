@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "SnapKit",
+        "repositoryURL": "https://github.com/SnapKit/SnapKit.git",
+        "state": {
+          "branch": null,
+          "revision": "d458564516e5676af9c70b4f4b2a9178294f1bc6",
+          "version": "5.0.1"
+        }
+      },
+      {
+        "package": "YMLogoAlert",
+        "repositoryURL": "https://github.com/Youngminah/YMLogoAlert",
+        "state": {
+          "branch": null,
+          "revision": "6cc86f73af98aef57458a6b3837864458bab3544",
+          "version": "1.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
