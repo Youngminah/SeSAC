@@ -130,7 +130,7 @@ extension ActorViewController: UITableViewDataSource, UITableViewDelegate {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: SummaryCell.identifier, for: indexPath) as? SummaryCell else {
                 return UITableViewCell()
             }
-            cell.detailToggleButton.tag = indexPath.section
+            //print(indexPath)//[0,0] 으로 잘 출력됨
             cell.detailToggleButton.addTarget(self, action: #selector(detailSummaryButtonTap(_ :)), for: .touchUpInside)
             return cell
         case .actors:
@@ -142,11 +142,11 @@ extension ActorViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     @objc private func detailSummaryButtonTap(_ sender: UIButton){
-        sender.isSelected ? (tableViewRowHeight = 100) : (tableViewRowHeight = UITableView.automaticDimension) 
+        sender.isSelected ? (tableViewRowHeight = 100) : (tableViewRowHeight = UITableView.automaticDimension)
         sender.isSelected = !sender.isSelected
-        self.tableView.beginUpdates()
-        tableView.reloadRows(at: [IndexPath(row: 1, section: 0)], with: .none)
-        self.tableView.endUpdates()
+        tableView.beginUpdates()
+        tableView.reloadRows(at: [IndexPath(row: 1, section: 0)], with: .none) //이슈사항 IndexPath(row: 1, section: 0)넣으면 잘됨
+        tableView.endUpdates()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

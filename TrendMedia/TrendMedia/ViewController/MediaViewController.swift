@@ -74,6 +74,11 @@ class MediaViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    @objc private func mapBarButtonTap() {
+        let vc = MapViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     @objc private func searchBarButtonTap() {
         let vc = SearchViewController()
         vc.modalPresentationStyle = .fullScreen
@@ -90,14 +95,19 @@ class MediaViewController: UIViewController {
     
     private func setNavigationBar() {
         self.title = "TREND MEDIA"
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.dash"),
+        let menuButton = UIBarButtonItem(image: UIImage(systemName: "list.dash"),
                                                                 style: .plain,
                                                                 target: self,
                                                                 action: #selector(menuBarButtonTap))
+        let mapButton = UIBarButtonItem(image: UIImage(systemName: "map"),
+                                                                style: .plain,
+                                                                target: self,
+                                                                action: #selector(mapBarButtonTap))
+        self.navigationItem.leftBarButtonItems = [menuButton, mapButton]
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search,
                                                                  target: self,
                                                                  action: #selector(searchBarButtonTap))
-        self.navigationItem.leftBarButtonItem?.tintColor = .black
+        self.navigationItem.leftBarButtonItems?.forEach({ $0.tintColor = .black })
         self.navigationItem.rightBarButtonItem?.tintColor = .black
     }
     

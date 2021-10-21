@@ -29,6 +29,7 @@
 		BB197B2A271EE63A002397DD /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB197B29271EE63A002397DD /* DataManager.swift */; };
 		BB197B2E271EE6E3002397DD /* MyMediaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB197B2D271EE6E3002397DD /* MyMediaCell.swift */; };
 		BB197B30271F0E40002397DD /* SummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB197B2F271F0E40002397DD /* SummaryCell.swift */; };
+		BBD0951827214945003B8470 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD0951727214945003B8470 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		BB197B29271EE63A002397DD /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		BB197B2D271EE6E3002397DD /* MyMediaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMediaCell.swift; sourceTree = "<group>"; };
 		BB197B2F271F0E40002397DD /* SummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryCell.swift; sourceTree = "<group>"; };
+		BBD0951727214945003B8470 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				BB197B0F271E8CF5002397DD /* SearchViewController.swift */,
 				BB197B15271E8F06002397DD /* ActorViewController.swift */,
 				BB197B26271EE46C002397DD /* MyMediaViewController.swift */,
+				BBD0951727214945003B8470 /* MapViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				BB197B27271EE46C002397DD /* MyMediaViewController.swift in Sources */,
 				BB197B23271ECE3D002397DD /* TvShow.swift in Sources */,
 				BB197B0A271E7463002397DD /* NavigationController.swift in Sources */,
+				BBD0951827214945003B8470 /* MapViewController.swift in Sources */,
 				BB197B1E271EBAA9002397DD /* UIColor.swift in Sources */,
 				BB197B16271E8F06002397DD /* ActorViewController.swift in Sources */,
 				BB197AF0271E71C0002397DD /* AppDelegate.swift in Sources */,
