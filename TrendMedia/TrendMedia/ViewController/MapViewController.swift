@@ -17,6 +17,7 @@ class MapViewController: UIViewController {
     
     private let mapView = MKMapView()
     private var currentLocation = CLLocationCoordinate2D()
+    let viewModel = TheaterLocationViewModel()
     
     lazy var locationManager: CLLocationManager = {
             let manager = CLLocationManager()
@@ -29,10 +30,24 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        mapView.delegate = self
+        setNavigationBar()
         addView()
         setConstraints()
         checkUserLocationServicesAuthorization()
-        //title = "MapView"
+    }
+    
+    @objc private func didTapFilterButton(){
+        showActionSheet()
+    }
+    
+    private func setNavigationBar() {
+        self.navigationController?.navigationBar.tintColor = .label
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filter",
+                                                                 style: .plain,
+                                                                 target: self,
+                                                                 action: #selector(didTapFilterButton))
+        self.navigationItem.rightBarButtonItem?.tintColor = .black
     }
     
     private func addView() {
@@ -47,6 +62,46 @@ class MapViewController: UIViewController {
             make.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
+}
+
+extension MapViewController {
+    
+    private func showActionSheet() {
+        let actionSheet = UIAlertController(title: .none, message: .none, preferredStyle: .actionSheet)
+        
+        Theater.allCases.forEach { theater in
+            let action = UIAlertAction(title: theater.description, style: .default) { [weak self] _ in
+                guard let strongself = self else { return }
+                strongself.updateFilterAnnotations(type: theater.description)
+            }
+            actionSheet.addAction(action)
+        }
+        
+        actionSheet.addAction(UIAlertAction(title: "취소", style: .cancel))
+        
+        self.present(actionSheet, animated: true)
+    }
+    
+    private func updateFilterAnnotations(type: String) {
+        mapView.removeAnnotations(mapView.annotations)
+        var theaters = [TheaterLocation]()
+        type == "전체보기" ? (theaters = viewModel.allTheaterList) : (theaters = viewModel.getBrandTheaters(brand: type))
+        theaters.forEach { theater in
+            addAnnotation(title: theater.location, latitude: theater.latitude, longitude: theater.longitude)
+        }
+    }
+    
+    private func addAnnotation(title: String, latitude: Double, longitude: Double) {
+        let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        let annotation = MKPointAnnotation()
+        annotation.title = title
+        annotation.coordinate = location
+        mapView.addAnnotation(annotation)
+    }
+}
+
+extension MapViewController: MKMapViewDelegate {
+    
 }
 
 extension MapViewController: CLLocationManagerDelegate {

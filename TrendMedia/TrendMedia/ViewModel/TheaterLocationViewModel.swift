@@ -9,19 +9,23 @@ import Foundation
 
 final class TheaterLocationViewModel {
     
-    private let mapAnnotationsList: [TheaterLocation] = DataManager.shared.mapAnnotations
+    private let mapTheaterList: [TheaterLocation] = DataManager.shared.mapAnnotations
     
-    func getAnnotation(at index: Int) -> TheaterLocation {
-        return mapAnnotationsList[index]
+    var allTheaterList: [TheaterLocation] {
+        return mapTheaterList
+    }
+    
+    func getTheater(at index: Int) -> TheaterLocation {
+        return mapTheaterList[index]
     }
     
     func annotationListCount() -> Int {
-        return mapAnnotationsList.count
+        return mapTheaterList.count
     }
     
-    func getBrandAnnotations(brand type: String) -> [TheaterLocation] {
+    func getBrandTheaters(brand type: String) -> [TheaterLocation] {
         var annotationList = [TheaterLocation]()
-        mapAnnotationsList.forEach {
+        mapTheaterList.forEach {
             if $0.type == type {
                 annotationList.append($0)
             }
