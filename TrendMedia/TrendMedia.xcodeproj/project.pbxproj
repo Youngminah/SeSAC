@@ -30,6 +30,8 @@
 		BB197B2E271EE6E3002397DD /* MyMediaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB197B2D271EE6E3002397DD /* MyMediaCell.swift */; };
 		BB197B30271F0E40002397DD /* SummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB197B2F271F0E40002397DD /* SummaryCell.swift */; };
 		BBD0951827214945003B8470 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD0951727214945003B8470 /* MapViewController.swift */; };
+		BBD0951A27216DE0003B8470 /* TheaterLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD0951927216DE0003B8470 /* TheaterLocation.swift */; };
+		BBD0951D27216ECB003B8470 /* TheaterLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD0951C27216ECB003B8470 /* TheaterLocationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,8 @@
 		BB197B2D271EE6E3002397DD /* MyMediaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMediaCell.swift; sourceTree = "<group>"; };
 		BB197B2F271F0E40002397DD /* SummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryCell.swift; sourceTree = "<group>"; };
 		BBD0951727214945003B8470 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		BBD0951927216DE0003B8470 /* TheaterLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterLocation.swift; sourceTree = "<group>"; };
+		BBD0951C27216ECB003B8470 /* TheaterLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterLocationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				BB197B22271ECE3D002397DD /* TvShow.swift */,
+				BBD0951927216DE0003B8470 /* TheaterLocation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -148,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				BB197B24271ECE77002397DD /* MediaViewModel.swift */,
+				BBD0951C27216ECB003B8470 /* TheaterLocationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -269,6 +275,7 @@
 				BB197B1C271EB3C0002397DD /* ActorCell.swift in Sources */,
 				BB197AF4271E71C0002397DD /* MediaViewController.swift in Sources */,
 				BB197B1A271EB3B5002397DD /* SearchCell.swift in Sources */,
+				BBD0951A27216DE0003B8470 /* TheaterLocation.swift in Sources */,
 				BB197B27271EE46C002397DD /* MyMediaViewController.swift in Sources */,
 				BB197B23271ECE3D002397DD /* TvShow.swift in Sources */,
 				BB197B0A271E7463002397DD /* NavigationController.swift in Sources */,
@@ -277,6 +284,7 @@
 				BB197B16271E8F06002397DD /* ActorViewController.swift in Sources */,
 				BB197AF0271E71C0002397DD /* AppDelegate.swift in Sources */,
 				BB197AF2271E71C0002397DD /* SceneDelegate.swift in Sources */,
+				BBD0951D27216ECB003B8470 /* TheaterLocationViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

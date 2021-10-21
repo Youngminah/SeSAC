@@ -8,7 +8,9 @@
 
 final class DataManager {
     
-    static let tvShow: [TvShow] = [
+    static let shared = DataManager()
+    
+    let tvShow: [TvShow] = [
         TvShow(title: "Squid Game", releaseDate: "09/17/2021",genre: "Mystery",region: "South Korea", overview: "Hundreds of cash-strapped players accept a strange invitation to compete in children's games. Inside, a tempting prize awaits — with deadly high stakes.", rate: 8.3, starring: "Lee Jung-jae, Park Hae-soo, Wi Ha-jun, Heo Sung-tae, Kim Joo-ryoung, Jung Ho-yeon, Lee You-mi",backdropImage:"https://www.themoviedb.org/t/p/original/oaGvjB0DvdhXhOAuADfHb261ZHa.jpg"),
         TvShow(title: "Maid", releaseDate: "10/01/2021",genre: "Drama",region:"United States", overview: "After fleeing an abusive relationship, a young mother finds a job cleaning houses and fights to provide a better future for her child.", rate: 8.6, starring:"Margaret Qualley, Nick Robinson, Anika Noni Rose, Andie MacDowell, Tracy Vilar, Billy Burke, Rylea Nevaeh Whittet",backdropImage:"https://www.themoviedb.org/t/p/original/u4ydZotyPdOxSGAVUBiQnKLVwmz.jpg"),
         TvShow(title: "The Five Juanas", releaseDate: "10/06/2021",genre: "Drama",region:"Mexico", overview: "Five women with the same birthmark set out to unravel the truth about their pasts and discover a tragic web of lies spun by a powerful politician.", rate: 7.0, starring:"Sofia Engberg, White Vega, Renata Notni, Juanita Arias, Oka Giner",backdropImage:"https://www.themoviedb.org/t/p/original/jB27sNxsgITNhr6HavrHywojy8V.jpg"),
@@ -24,5 +26,15 @@ final class DataManager {
         TvShow(title: "The King's Affection", releaseDate: "10/11/2021",genre: "Drama",region:"South Korea", overview: "When the crown prince is killed, his twin sister assumes the throne while trying to keep her identity and affection for her first love a royal secret.", rate: 0.0, starring: "Park Eun-bin, Rowoon, Nam Yoon-su, Bae Yoon-kyung, Choi Byung-chan, Lee Pil-mo, Han Chae-ah",backdropImage:"https://www.themoviedb.org/t/p/original/4r7scgI5aUrShN0YzriAatWd15e.jpg"),
         TvShow(title: "Nevertheless", releaseDate: "06/19/2021",genre: "Drama",region:"South Korea", overview: "The intoxicating charm of a flirtatious art school classmate pulls a reluctant love cynic into a friends-with-benefits relationship.", rate: 0.0, starring: "Han So-hee, Song Kang, Chae Jong-hyeop, Lee Yeol-eum, Yang Hye-ji, Yoon Seo-A, Jeong Jae-kwang",backdropImage:"https://www.themoviedb.org/t/p/original/7tBqUyojEaOTTzRZBRaOgp2tWQG.jpg"),
         TvShow(title: "The Billion Dollar Code", releaseDate: "10/07/2021",genre: "Drama",region:"Germany", overview: "How stupid is the idea of ??messing with a global corporation? Two German computer nerds tried it out for you. Trillion dollar code, based on a true story, on Netflix October 7th.", rate: 8.0, starring: "Marius Ahrendt, Misel Maticevic, Seumas F. Sargent",backdropImage:"https://www.themoviedb.org/t/p/original/ddFwgyFvaiN5VvUhX0CJBOhlADQ.jpg"),
+    ]
+    
+    
+    let mapAnnotations: [TheaterLocation] = [
+        TheaterLocation(type: "롯데시네마", location: "롯데시네마 서울대입구", latitude: 37.4824761978647, longitude: 126.9521680487202),
+        TheaterLocation(type: "롯데시네마", location: "롯데시네마 가산디지털", latitude: 37.47947929602294, longitude: 126.88891083192269),
+        TheaterLocation(type: "메가박스", location: "메가박스 이수", latitude: 37.48581351541419, longitude:  126.98092132899579),
+        TheaterLocation(type: "메가박스", location: "메가박스 강남", latitude: 37.49948523972615, longitude: 127.02570417165666),
+        TheaterLocation(type: "CGV", location: "CGV 영등포", latitude: 37.52666023337906, longitude: 126.9258351013706),
+        TheaterLocation(type: "CGV", location: "CGV 용산 아이파크몰", latitude: 37.53149302830903, longitude: 126.9654030486416)
     ]
 }
