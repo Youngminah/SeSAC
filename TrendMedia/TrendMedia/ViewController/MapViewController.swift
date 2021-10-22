@@ -9,6 +9,7 @@ import UIKit
 import MapKit
 import CoreLocation
 import CoreLocationUI
+import YMLogoAlert
 
 // 1. 설정 유도
 // 2. 위경도 -> 주소 변환
@@ -30,10 +31,11 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        mapView.delegate = self
+        mapView.showsUserLocation = true
         setNavigationBar()
         addView()
         setConstraints()
+        updateFilterAnnotations(type: "전체보기")
         checkUserLocationServicesAuthorization()
     }
     
@@ -64,6 +66,7 @@ class MapViewController: UIViewController {
     }
 }
 
+//MARK: - Filter Bar Button Item
 extension MapViewController {
     
     private func showActionSheet() {
@@ -100,11 +103,7 @@ extension MapViewController {
     }
 }
 
-extension MapViewController: MKMapViewDelegate {
-    
-}
-
-extension MapViewController: CLLocationManagerDelegate {
+extension MapViewController {
     
     //iOS 버전에 따른 분기 처리와 iOS 위치 서비스 여부 확인
     func checkUserLocationServicesAuthorization() {
@@ -134,9 +133,10 @@ extension MapViewController: CLLocationManagerDelegate {
             locationManager.requestAlwaysAuthorization() // 앱을 사용하는 동안에 대한 위치 권한 요청
             locationManager.startUpdatingLocation() // 위치 접근 시작!! didUpdateLocations실행
         case .restricted, .denied:
-            print("위치 거부됨: 설정으로 유도 !!")
+            print("거부됨")
         case .authorizedAlways:
             print("authorizedAlways")
+            locationManager.startUpdatingLocation()
         case .authorizedWhenInUse:
             locationManager.startUpdatingLocation() // 위치 접근 시작!! didUpdateLocations실행
         @unknown default:
@@ -154,9 +154,11 @@ extension MapViewController: CLLocationManagerDelegate {
             @unknown default:
                 print("default:")
             }
-            
         }
     }
+}
+
+extension MapViewController: CLLocationManagerDelegate {
 
     //iOS4 미만: 앱이 위치 관리자를 생성하고, 승인 상태가 변경이 될 때 대리자에게 승인 상태를 알려줌
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -177,31 +179,19 @@ extension MapViewController: CLLocationManagerDelegate {
             print("Location Cannot Find")
             return
         }
-        LocationService.shared.longitude = coordinate.longitude
-        LocationService.shared.latitude = coordinate.latitude
-        let annotation = MKPointAnnotation()
-        annotation.title = "현재 위치"
-        annotation.coordinate = coordinate
-        mapView.addAnnotation(annotation)
         
         let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
         let region = MKCoordinateRegion(center: coordinate, span: span)
         mapView.setRegion(region, animated: true)
-        
-        //중요함.
         locationManager.stopUpdatingLocation()
     }
     
     //위치 접근이 실패한 경우
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(#function)
+        let coordinate = CLLocationCoordinate2D(latitude: 37.4847275, longitude: 126.9553)
+        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+        let region = MKCoordinateRegion(center: coordinate, span: span)
+        mapView.setRegion(region, animated: true)
     }
-    
 }
 
-final class LocationService {
-    
-    static var shared = LocationService()
-    var longitude:Double!
-    var latitude:Double!
-}
