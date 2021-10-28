@@ -96,13 +96,13 @@ class MediaCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func updateUI( media: TvShow) {
-        setImageView(urlString: media.backdropImage)
+    func updateUI( media: Movie) {
+        setImageView(urlString: Endpoint.imageURL + media.poster_path)
         enTitleLabel.text =  media.title
         krTitleLabel.text =  media.title
-        genreLabel.text = media.genre
-        dateLabel.text = media.releaseDate
-        rateLabel.text = "\(media.rate)"
+        genreLabel.text = media.media_type
+        dateLabel.text = media.release_date
+        rateLabel.text = "\(media.vote_average)"
     }
     
     private func setImageView(urlString: String){

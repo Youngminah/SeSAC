@@ -32,6 +32,9 @@
 		BBD0951827214945003B8470 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD0951727214945003B8470 /* MapViewController.swift */; };
 		BBD0951A27216DE0003B8470 /* TheaterLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD0951927216DE0003B8470 /* TheaterLocation.swift */; };
 		BBD0951D27216ECB003B8470 /* TheaterLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD0951C27216ECB003B8470 /* TheaterLocationViewModel.swift */; };
+		BBD0954827279D3B003B8470 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = BBD0954727279D3B003B8470 /* SwiftyJSON */; };
+		BBD0954B27279D71003B8470 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = BBD0954A27279D71003B8470 /* Alamofire */; };
+		BBD0955A272ABC5C003B8470 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD09559272ABC5C003B8470 /* Secret.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +62,7 @@
 		BBD0951727214945003B8470 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		BBD0951927216DE0003B8470 /* TheaterLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterLocation.swift; sourceTree = "<group>"; };
 		BBD0951C27216ECB003B8470 /* TheaterLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterLocationViewModel.swift; sourceTree = "<group>"; };
+		BBD09559272ABC5C003B8470 /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +70,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBD0954B27279D71003B8470 /* Alamofire in Frameworks */,
 				BB197B21271ECB0D002397DD /* Kingfisher in Frameworks */,
 				BB197B05271E7299002397DD /* YMLogoAlert in Frameworks */,
+				BBD0954827279D3B003B8470 /* SwiftyJSON in Frameworks */,
 				BB197B08271E72CC002397DD /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,6 +100,7 @@
 		BB197AEE271E71C0002397DD /* TrendMedia */ = {
 			isa = PBXGroup;
 			children = (
+				BBD0955B272AFDB1003B8470 /* Secret */,
 				BB197B28271EE617002397DD /* Manager */,
 				BB197B0E271E8C25002397DD /* Extension */,
 				BB197B11271E8D4E002397DD /* View */,
@@ -185,6 +192,14 @@
 			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
+		BBD0955B272AFDB1003B8470 /* Secret */ = {
+			isa = PBXGroup;
+			children = (
+				BBD09559272ABC5C003B8470 /* Secret.swift */,
+			);
+			path = Secret;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -205,6 +220,8 @@
 				BB197B04271E7299002397DD /* YMLogoAlert */,
 				BB197B07271E72CC002397DD /* SnapKit */,
 				BB197B20271ECB0D002397DD /* Kingfisher */,
+				BBD0954727279D3B003B8470 /* SwiftyJSON */,
+				BBD0954A27279D71003B8470 /* Alamofire */,
 			);
 			productName = TrendMedia;
 			productReference = BB197AEC271E71C0002397DD /* TrendMedia.app */;
@@ -238,6 +255,8 @@
 				BB197B03271E7299002397DD /* XCRemoteSwiftPackageReference "YMLogoAlert" */,
 				BB197B06271E72CC002397DD /* XCRemoteSwiftPackageReference "SnapKit" */,
 				BB197B1F271ECB0D002397DD /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				BBD0954627279D3B003B8470 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				BBD0954927279D71003B8470 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = BB197AED271E71C0002397DD /* Products */;
 			projectDirPath = "";
@@ -276,6 +295,7 @@
 				BB197AF4271E71C0002397DD /* MediaViewController.swift in Sources */,
 				BB197B1A271EB3B5002397DD /* SearchCell.swift in Sources */,
 				BBD0951A27216DE0003B8470 /* TheaterLocation.swift in Sources */,
+				BBD0955A272ABC5C003B8470 /* Secret.swift in Sources */,
 				BB197B27271EE46C002397DD /* MyMediaViewController.swift in Sources */,
 				BB197B23271ECE3D002397DD /* TvShow.swift in Sources */,
 				BB197B0A271E7463002397DD /* NavigationController.swift in Sources */,
@@ -522,6 +542,22 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		BBD0954627279D3B003B8470 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		BBD0954927279D71003B8470 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -539,6 +575,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BB197B1F271ECB0D002397DD /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		BBD0954727279D3B003B8470 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBD0954627279D3B003B8470 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		BBD0954A27279D71003B8470 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBD0954927279D71003B8470 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

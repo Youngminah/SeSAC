@@ -6,14 +6,15 @@
 //
 
 
-struct TvShow {
-    
-  var title: String
-  var releaseDate: String
-  var genre: String
-  var region: String
-  var overview: String
-  var rate: Float
-  var starring: String
-  var backdropImage: String
+struct TvShow: Codable {
+    var results: [Movie]
+}
+
+struct Movie: Codable {
+    var overview: String
+    var poster_path: String
+    var release_date: String
+    var title: String
+    var media_type: String
+    var vote_average: Float
 }

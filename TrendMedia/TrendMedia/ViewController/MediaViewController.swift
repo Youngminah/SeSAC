@@ -11,7 +11,7 @@ import SnapKit
 class MediaViewController: UIViewController {
     
     
-    private let viewModel = MediaViewModel()
+    private let viewModel = MediaViewModel(dataManager: DataManager())
     private let headerView = UIView()
     
     private let videoButton: UIButton = {
@@ -66,6 +66,7 @@ class MediaViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
+        attemptFetchMovie()
     }
     
     @objc private func menuBarButtonTap() {
@@ -155,7 +156,9 @@ extension MediaViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MediaCell.identifier, for: indexPath) as? MediaCell else {
             return UITableViewCell()
         }
-        cell.updateUI(media: viewModel.getTvShow(at: indexPath.row))
+        if let value = viewModel.getTvShow(at: indexPath.row) {
+            cell.updateUI(media: value)
+        }
         return cell
     }
     
@@ -171,3 +174,24 @@ extension MediaViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+extension MediaViewController {
+    private func attemptFetchMovie() {
+        
+        //에러
+        self.viewModel.codeAlertClosure = { [weak self] () in
+            guard let strongSelf = self else { return }
+            DispatchQueue.main.async {
+                print("에러")
+            }
+        }
+    
+        self.viewModel.didFinishFetch = {
+            DispatchQueue.main.async { [weak self] in
+                guard let strongSelf = self else { return }
+                strongSelf.tableView.reloadData()
+            }
+        }
+        
+        self.viewModel.requestFetchMovieData()
+    }
+}
