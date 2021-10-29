@@ -14,7 +14,7 @@ enum TableSection: CaseIterable {
 
 class ActorViewController: UIViewController {
     
-    var mediaInfo: TvShow?
+    var mediaInfo: Movie?
     private var tableViewRowHeight: CGFloat = 100
     
     private let tableView: UITableView = {
@@ -54,7 +54,7 @@ class ActorViewController: UIViewController {
     func updateUI(){
         guard let media = mediaInfo else { return }
         titleLabel.text = media.title
-        setImageView(urlString: media.backdropImage)
+        setImageView(urlString: Endpoint.imageURL + media.poster_path)
     }
     
     private func setImageView(urlString: String){

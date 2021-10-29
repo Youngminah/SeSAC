@@ -81,6 +81,195 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BB16F1D5272BF7D7001F0053 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				BB16F1EA272C070C001F0053 /* MediaScenes */,
+				BB16F1E9272C06B6001F0053 /* Utils */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		BB16F1D6272BF7F3001F0053 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				BB197B13271E8D79002397DD /* Model */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		BB16F1D7272BF994001F0053 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				BB197AEF271E71C0002397DD /* AppDelegate.swift */,
+				BB197AF1271E71C0002397DD /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		BB16F1D8272BF9C9001F0053 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BB197AFA271E71C2002397DD /* LaunchScreen.storyboard */,
+				BB197AFD271E71C2002397DD /* Info.plist */,
+				BB197AF8271E71C2002397DD /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BB16F1D9272BFB7D001F0053 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		BB16F1DA272C0386001F0053 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				BB16F1E5272C0642001F0053 /* View */,
+				BB16F1E7272C0675001F0053 /* ViewModel */,
+			);
+			path = Media;
+			sourceTree = "<group>";
+		};
+		BB16F1DB272C03B3001F0053 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				BB16F1E4272C0636001F0053 /* View */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		BB16F1DC272C03BF001F0053 /* Actor */ = {
+			isa = PBXGroup;
+			children = (
+				BB16F1E3272C062A001F0053 /* View */,
+			);
+			path = Actor;
+			sourceTree = "<group>";
+		};
+		BB16F1DD272C03DE001F0053 /* MyMedia */ = {
+			isa = PBXGroup;
+			children = (
+				BB16F1E1272C05F1001F0053 /* View */,
+			);
+			path = MyMedia;
+			sourceTree = "<group>";
+		};
+		BB16F1DE272C043F001F0053 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				BB197B17271E901F002397DD /* MediaCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		BB16F1DF272C0454001F0053 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				BB197B1B271EB3C0002397DD /* ActorCell.swift */,
+				BB197B2F271F0E40002397DD /* SummaryCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		BB16F1E0272C047E001F0053 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				BB197B19271EB3B5002397DD /* SearchCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		BB16F1E1272C05F1001F0053 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BB197B2C271EE6CD002397DD /* CollectionViewCell */,
+				BB197B26271EE46C002397DD /* MyMediaViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BB16F1E3272C062A001F0053 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BB16F1DF272C0454001F0053 /* TableViewCell */,
+				BB197B15271E8F06002397DD /* ActorViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BB16F1E4272C0636001F0053 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BB16F1E0272C047E001F0053 /* TableViewCell */,
+				BB197B0F271E8CF5002397DD /* SearchViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BB16F1E5272C0642001F0053 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BB16F1DE272C043F001F0053 /* TableViewCell */,
+				BB197B09271E7463002397DD /* NavigationController.swift */,
+				BB197AF3271E71C0002397DD /* MediaViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BB16F1E6272C0661001F0053 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BBD0951727214945003B8470 /* MapViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BB16F1E7272C0675001F0053 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BB197B24271ECE77002397DD /* MediaViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BB16F1E8272C069A001F0053 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BBD0951C27216ECB003B8470 /* TheaterLocationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BB16F1E9272C06B6001F0053 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BB197B0E271E8C25002397DD /* Extensions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		BB16F1EA272C070C001F0053 /* MediaScenes */ = {
+			isa = PBXGroup;
+			children = (
+				BB197B12271E8D6C002397DD /* Map */,
+				BB16F1DB272C03B3001F0053 /* Search */,
+				BB16F1DA272C0386001F0053 /* Media */,
+				BB16F1DC272C03BF001F0053 /* Actor */,
+				BB16F1DD272C03DE001F0053 /* MyMedia */,
+			);
+			path = MediaScenes;
+			sourceTree = "<group>";
+		};
+		BB16F1EB272C0C80001F0053 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		BB197AE3271E71C0002397DD = {
 			isa = PBXGroup;
 			children = (
@@ -100,51 +289,33 @@
 		BB197AEE271E71C0002397DD /* TrendMedia */ = {
 			isa = PBXGroup;
 			children = (
-				BBD0955B272AFDB1003B8470 /* Secret */,
-				BB197B28271EE617002397DD /* Manager */,
-				BB197B0E271E8C25002397DD /* Extension */,
-				BB197B11271E8D4E002397DD /* View */,
-				BB197B12271E8D6C002397DD /* ViewController */,
-				BB197B13271E8D79002397DD /* Model */,
-				BB197B14271E8D83002397DD /* ViewModel */,
-				BB197AEF271E71C0002397DD /* AppDelegate.swift */,
-				BB197AF1271E71C0002397DD /* SceneDelegate.swift */,
-				BB197AF8271E71C2002397DD /* Assets.xcassets */,
-				BB197AFA271E71C2002397DD /* LaunchScreen.storyboard */,
-				BB197AFD271E71C2002397DD /* Info.plist */,
+				BB16F1D7272BF994001F0053 /* Application */,
+				BB16F1D5272BF7D7001F0053 /* Presentation */,
+				BB16F1D9272BFB7D001F0053 /* Domain */,
+				BB16F1D6272BF7F3001F0053 /* Data */,
+				BB197B28271EE617002397DD /* Infrastructure */,
+				BB16F1EB272C0C80001F0053 /* Common */,
+				BB16F1D8272BF9C9001F0053 /* Resources */,
 			);
 			path = TrendMedia;
 			sourceTree = "<group>";
 		};
-		BB197B0E271E8C25002397DD /* Extension */ = {
+		BB197B0E271E8C25002397DD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				BB197B0C271E8C20002397DD /* UIView.swift */,
 				BB197B1D271EBAA9002397DD /* UIColor.swift */,
 			);
-			path = Extension;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
-		BB197B11271E8D4E002397DD /* View */ = {
+		BB197B12271E8D6C002397DD /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				BB197B2C271EE6CD002397DD /* CollectionViewCell */,
-				BB197B2B271EE6BE002397DD /* TableViewCell */,
+				BB16F1E6272C0661001F0053 /* View */,
+				BB16F1E8272C069A001F0053 /* ViewModel */,
 			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		BB197B12271E8D6C002397DD /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				BB197B09271E7463002397DD /* NavigationController.swift */,
-				BB197AF3271E71C0002397DD /* MediaViewController.swift */,
-				BB197B0F271E8CF5002397DD /* SearchViewController.swift */,
-				BB197B15271E8F06002397DD /* ActorViewController.swift */,
-				BB197B26271EE46C002397DD /* MyMediaViewController.swift */,
-				BBD0951727214945003B8470 /* MapViewController.swift */,
-			);
-			path = ViewController;
+			path = Map;
 			sourceTree = "<group>";
 		};
 		BB197B13271E8D79002397DD /* Model */ = {
@@ -156,32 +327,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		BB197B14271E8D83002397DD /* ViewModel */ = {
+		BB197B28271EE617002397DD /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
-				BB197B24271ECE77002397DD /* MediaViewModel.swift */,
-				BBD0951C27216ECB003B8470 /* TheaterLocationViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		BB197B28271EE617002397DD /* Manager */ = {
-			isa = PBXGroup;
-			children = (
+				BBD0955B272AFDB1003B8470 /* Secret */,
 				BB197B29271EE63A002397DD /* DataManager.swift */,
 			);
-			path = Manager;
-			sourceTree = "<group>";
-		};
-		BB197B2B271EE6BE002397DD /* TableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				BB197B1B271EB3C0002397DD /* ActorCell.swift */,
-				BB197B19271EB3B5002397DD /* SearchCell.swift */,
-				BB197B17271E901F002397DD /* MediaCell.swift */,
-				BB197B2F271F0E40002397DD /* SummaryCell.swift */,
-			);
-			path = TableViewCell;
+			path = Infrastructure;
 			sourceTree = "<group>";
 		};
 		BB197B2C271EE6CD002397DD /* CollectionViewCell */ = {
