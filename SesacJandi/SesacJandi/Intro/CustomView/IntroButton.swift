@@ -6,9 +6,8 @@
 //
 
 import UIKit.UIButton
-import SnapKit
 
-class IntroButton: UIButton {
+final class IntroButton: UIButton {
     
     override var isEnabled : Bool {
         didSet { backgroundColor = isEnabled ? .systemGreen : .lightGray }

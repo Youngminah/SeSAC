@@ -59,7 +59,8 @@ final class RegisterViewController: UIViewController {
         registerButton.addTarget(self, action: #selector(registerButtonTap), for: .touchUpInside)
     }
     
-    @objc func registerButtonTap() {
+    @objc
+    private func registerButtonTap() {
         
     }
 }

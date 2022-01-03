@@ -71,7 +71,7 @@ final class IntroViewController: UIViewController {
         introTitleLabel.text = "당신 근처의 새싹농장"
         introTitleLabel.font = .systemFont(ofSize: 17, weight: .bold)
         
-        introContentLabel.text = "iOS 지식부터 바람의 나라까지\n지금 SeSAC에서 함께헤보세요!"
+        introContentLabel.text = "iOS 지식부터 바람의 나라까지\n지금 SeSAC에서 함께해보세요!"
         introContentLabel.numberOfLines = 0
         introContentLabel.font = .systemFont(ofSize: 13)
         
@@ -94,13 +94,15 @@ final class IntroViewController: UIViewController {
         }
     }
     
-    @objc func startButtonTap() {
+    @objc
+    private func startButtonTap() {
         let vc = RegisterViewController()
         vc.title = "새싹농장 가입하기"
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    @objc func loginButtonTap() {
+    @objc
+    private func loginButtonTap() {
         let vc = LoginViewController()
         vc.title = "새싹농장 로그인하기"
         self.navigationController?.pushViewController(vc, animated: true)

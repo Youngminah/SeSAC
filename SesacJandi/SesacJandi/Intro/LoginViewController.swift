@@ -51,11 +51,14 @@ final class LoginViewController: UIViewController {
         stackView.distribution = .fillEqually
         stackView.spacing = 10
         
-        loginButton.isEnabled = false
+        loginButton.isEnabled = true
         loginButton.addTarget(self, action: #selector(loginButtonTap), for: .touchUpInside)
     }
     
-    @objc func loginButtonTap() {
-        
+    @objc
+    private func loginButtonTap() {
+        let vc = HomeViewController()
+        let nav = HomeNavigationController(rootViewController: vc)
+        changeRootViewController(nav)
     }
 }

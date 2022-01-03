@@ -18,6 +18,16 @@
 		BB2C339D2782D5AF00F48F26 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C339C2782D5AF00F48F26 /* LoginViewController.swift */; };
 		BB2C33A02782D73600F48F26 /* IntroTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C339F2782D73600F48F26 /* IntroTextField.swift */; };
 		BB2C33A42782EA0400F48F26 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33A32782EA0400F48F26 /* HomeViewController.swift */; };
+		BB2C33A72782EC9500F48F26 /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33A62782EC9500F48F26 /* HomeNavigationController.swift */; };
+		BB2C33A92782ED5600F48F26 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33A82782ED5600F48F26 /* UIViewController.swift */; };
+		BB2C33AE2782F16B00F48F26 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33AD2782F16B00F48F26 /* PostCell.swift */; };
+		BB2C33B02782FA1C00F48F26 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33AF2782FA1C00F48F26 /* ComposeViewController.swift */; };
+		BB2C33B32783035F00F48F26 /* PostContentTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33B22783035F00F48F26 /* PostContentTextView.swift */; };
+		BB2C33B62783037E00F48F26 /* DateLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33B52783037E00F48F26 /* DateLabel.swift */; };
+		BB2C33B8278303A100F48F26 /* CommentInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33B7278303A100F48F26 /* CommentInfoView.swift */; };
+		BB2C33BA27830C6300F48F26 /* NicknameLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33B927830C6300F48F26 /* NicknameLabel.swift */; };
+		BB2C33BC27830DCB00F48F26 /* SeparatorLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33BB27830DCB00F48F26 /* SeparatorLineView.swift */; };
+		BB2C33BE27830EEB00F48F26 /* CommentInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33BD27830EEB00F48F26 /* CommentInputView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +43,16 @@
 		BB2C339C2782D5AF00F48F26 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BB2C339F2782D73600F48F26 /* IntroTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroTextField.swift; sourceTree = "<group>"; };
 		BB2C33A32782EA0400F48F26 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		BB2C33A62782EC9500F48F26 /* HomeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
+		BB2C33A82782ED5600F48F26 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		BB2C33AD2782F16B00F48F26 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		BB2C33AF2782FA1C00F48F26 /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
+		BB2C33B22783035F00F48F26 /* PostContentTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostContentTextView.swift; sourceTree = "<group>"; };
+		BB2C33B52783037E00F48F26 /* DateLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateLabel.swift; sourceTree = "<group>"; };
+		BB2C33B7278303A100F48F26 /* CommentInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInfoView.swift; sourceTree = "<group>"; };
+		BB2C33B927830C6300F48F26 /* NicknameLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameLabel.swift; sourceTree = "<group>"; };
+		BB2C33BB27830DCB00F48F26 /* SeparatorLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorLineView.swift; sourceTree = "<group>"; };
+		BB2C33BD27830EEB00F48F26 /* CommentInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInputView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +90,7 @@
 				BB2C33822782BDB200F48F26 /* SceneDelegate.swift */,
 				BB2C33942782BF7900F48F26 /* Intro */,
 				BB2C33A52782EA0E00F48F26 /* Home */,
+				BB2C33AA2782ED6500F48F26 /* Extension */,
 				BB2C33892782BDB300F48F26 /* Assets.xcassets */,
 				BB2C338B2782BDB300F48F26 /* LaunchScreen.storyboard */,
 				BB2C338E2782BDB300F48F26 /* Info.plist */,
@@ -100,9 +121,42 @@
 		BB2C33A52782EA0E00F48F26 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				BB2C33A62782EC9500F48F26 /* HomeNavigationController.swift */,
 				BB2C33A32782EA0400F48F26 /* HomeViewController.swift */,
+				BB2C33AD2782F16B00F48F26 /* PostCell.swift */,
+				BB2C33B12782FA2500F48F26 /* Compose */,
+				BB2C33B42783036200F48F26 /* CustomView */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		BB2C33AA2782ED6500F48F26 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				BB2C33A82782ED5600F48F26 /* UIViewController.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		BB2C33B12782FA2500F48F26 /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				BB2C33AF2782FA1C00F48F26 /* ComposeViewController.swift */,
+			);
+			path = Compose;
+			sourceTree = "<group>";
+		};
+		BB2C33B42783036200F48F26 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				BB2C33B22783035F00F48F26 /* PostContentTextView.swift */,
+				BB2C33B927830C6300F48F26 /* NicknameLabel.swift */,
+				BB2C33B52783037E00F48F26 /* DateLabel.swift */,
+				BB2C33B7278303A100F48F26 /* CommentInfoView.swift */,
+				BB2C33BB27830DCB00F48F26 /* SeparatorLineView.swift */,
+				BB2C33BD27830EEB00F48F26 /* CommentInputView.swift */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,14 +235,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB2C33B62783037E00F48F26 /* DateLabel.swift in Sources */,
 				BB2C339D2782D5AF00F48F26 /* LoginViewController.swift in Sources */,
 				BB2C33992782CFFD00F48F26 /* IntroButton.swift in Sources */,
 				BB2C339B2782D5A400F48F26 /* RegisterViewController.swift in Sources */,
+				BB2C33BA27830C6300F48F26 /* NicknameLabel.swift in Sources */,
+				BB2C33B02782FA1C00F48F26 /* ComposeViewController.swift in Sources */,
 				BB2C33A42782EA0400F48F26 /* HomeViewController.swift in Sources */,
+				BB2C33BE27830EEB00F48F26 /* CommentInputView.swift in Sources */,
+				BB2C33A72782EC9500F48F26 /* HomeNavigationController.swift in Sources */,
+				BB2C33B32783035F00F48F26 /* PostContentTextView.swift in Sources */,
 				BB2C33A02782D73600F48F26 /* IntroTextField.swift in Sources */,
 				BB2C33852782BDB200F48F26 /* IntroViewController.swift in Sources */,
+				BB2C33BC27830DCB00F48F26 /* SeparatorLineView.swift in Sources */,
 				BB2C33812782BDB200F48F26 /* AppDelegate.swift in Sources */,
+				BB2C33AE2782F16B00F48F26 /* PostCell.swift in Sources */,
+				BB2C33A92782ED5600F48F26 /* UIViewController.swift in Sources */,
 				BB2C33832782BDB200F48F26 /* SceneDelegate.swift in Sources */,
+				BB2C33B8278303A100F48F26 /* CommentInfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,7 +321,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -312,7 +376,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -334,8 +398,10 @@
 				INFOPLIST_FILE = SesacJandi/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -345,7 +411,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -361,8 +427,10 @@
 				INFOPLIST_FILE = SesacJandi/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -372,7 +440,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
