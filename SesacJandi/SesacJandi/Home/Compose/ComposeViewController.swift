@@ -33,8 +33,6 @@ class ComposeViewController: UIViewController {
     
     private func setConfiguration() {
         view.backgroundColor = .systemBackground
-        navigationController?.navigationBar.tintColor = .black
-        
     }
     
     @objc

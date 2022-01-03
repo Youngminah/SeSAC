@@ -20,7 +20,7 @@ final class PostContentTextView: UITextView {
     
     private func setConfiguration(){
         font = .systemFont(ofSize: 13)
-        textContainerInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+        textContainer.lineFragmentPadding = CGFloat(0.0) //기본 패딩 제거
         textAlignment = .justified
     }
 }

@@ -29,6 +29,8 @@ final class CommentInfoView: UIStackView {
     
     private func setConfiguration(){
         axis = .horizontal
+        spacing = 5
+        imageView.tintColor = .label
         label.font = .systemFont(ofSize: 14)
         label.text = "댓글쓰기"
     }

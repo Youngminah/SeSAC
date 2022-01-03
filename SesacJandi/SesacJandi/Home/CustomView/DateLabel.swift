@@ -25,5 +25,6 @@ final class DateLabel: UILabel {
     
     private func setConfiguration(){
         font = .systemFont(ofSize: 13)
+        textColor = .label
     }
 }

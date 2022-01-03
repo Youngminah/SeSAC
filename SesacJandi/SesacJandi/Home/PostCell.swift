@@ -12,50 +12,74 @@ class PostCell: UITableViewCell {
     
     static let identifier = "PostCell"
     
-    private let textView = UITextView()
-    private let dateLabel = UILabel()
+    private let textView = PostContentTextView()
+    private let dateLabel = DateLabel()
     private let separatorLineView = SeparatorLineView()
     private let commentInfoView = CommentInfoView()
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    let commentButton = UIButton()
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         setView()
         setConstraints()
         setConfiguration()
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     private func setView() {
-        addSubview(textView)
-        addSubview(dateLabel)
-        addSubview(separatorLineView)
-        addSubview(commentInfoView)
+        contentView.addSubview(commentInfoView)
+        contentView.addSubview(separatorLineView)
+        contentView.addSubview(dateLabel)
+        contentView.addSubview(textView)
+        contentView.addSubview(commentButton)
     }
 
     private func setConstraints() {
         commentInfoView.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(16)
+            make.height.equalTo(16)
             make.bottom.equalToSuperview().offset(-16)
         }
         separatorLineView.snp.makeConstraints { make in
-            make.bottom.equalTo(commentInfoView.snp.top).offset(16)
+            make.bottom.equalTo(commentInfoView.snp.top).offset(-16)
             make.height.equalTo(1)
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().offset(-16)
         }
         dateLabel.snp.makeConstraints { make in
-            make.bottom.equalTo(separatorLineView.snp.top).offset(16)
-            
+            make.bottom.equalTo(separatorLineView.snp.top).offset(-16)
+            make.leading.equalToSuperview().offset(16)
+            make.trailing.equalToSuperview().offset(-16)
         }
         textView.snp.makeConstraints { make in
-            
+            make.bottom.equalTo(dateLabel.snp.top).priority(999)
+            make.leading.equalToSuperview().offset(16)
+            make.trailing.equalToSuperview().offset(-16)
+            make.top.equalToSuperview().offset(16)
+        }
+        commentButton.snp.makeConstraints { make in
+            make.top.equalTo(separatorLineView.snp.bottom)
+            make.leading.equalToSuperview().offset(16)
+            make.trailing.equalToSuperview().offset(-16)
+            make.bottom.equalToSuperview()
         }
     }
     
     private func setConfiguration() {
-
+        dateLabel.text = "12월 8일"
+        dateLabel.textAlignment = .right
+        textView.isScrollEnabled = false
+        textView.isEditable = false
+        textView.font = .systemFont(ofSize: 15)
+        
+        selectionStyle = .none
+    }
+    
+    func updateUI(contentText: String) {
+        textView.text = contentText
+        textView.sizeToFit()
     }
 }

@@ -19,6 +19,6 @@ final class SeparatorLineView: UIView {
     }
     
     private func setConfiguration(){
-        backgroundColor = .systemGray6
+        backgroundColor = .systemGray5
     }
 }

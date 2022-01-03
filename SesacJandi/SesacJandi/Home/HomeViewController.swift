@@ -6,17 +6,40 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class HomeViewController: UIViewController {
     
-    private let tableView = UITableView()
+    private var tableView = UITableView()
     private let composePostButton = UIButton()
+    let disposeBag = DisposeBag()
+    
+    let date = Observable.just([
+        "안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕",
+        "안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕",
+        "안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕"
+    ])
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
         setConstraints()
         setConfiguration()
+        bind()
+    }
+    
+    private func bind() {
+        date
+            .bind(to: tableView.rx.items) { (tableView, row, element) in
+                let cell = tableView.dequeueReusableCell(withIdentifier: PostCell.identifier) as! PostCell
+                cell.updateUI(contentText: element)
+                cell.commentButton.addTarget(self,
+                                             action: #selector(self.commentButtonTap),
+                                             for: .touchUpInside)
+                return cell
+            }
+            .disposed(by: disposeBag)
     }
     
     private func setView() {
@@ -40,12 +63,12 @@ class HomeViewController: UIViewController {
         view.backgroundColor = .systemBackground
         title = "새싹농장"
         navigationItem.backButtonTitle = ""
-        navigationController?.navigationBar.tintColor = .black
         
         tableView.backgroundColor = .systemGray6
         tableView.register(PostCell.self, forCellReuseIdentifier: PostCell.identifier)
-        tableView.rowHeight = 100
-        tableView.sectionHeaderHeight = 15
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 100
+        tableView.separatorInset.left = 0
         
         composePostButton.setImage(UIImage(systemName: "plus"), for: .normal)
         composePostButton.setPreferredSymbolConfiguration(.init(pointSize: 25,
@@ -66,5 +89,11 @@ class HomeViewController: UIViewController {
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .fullScreen
         self.present(nav, animated: true)
+    }
+    
+    @objc
+    private func commentButtonTap() {
+        let vc = CommentViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

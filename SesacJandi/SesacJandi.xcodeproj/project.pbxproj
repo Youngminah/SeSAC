@@ -28,6 +28,11 @@
 		BB2C33BA27830C6300F48F26 /* NicknameLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33B927830C6300F48F26 /* NicknameLabel.swift */; };
 		BB2C33BC27830DCB00F48F26 /* SeparatorLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33BB27830DCB00F48F26 /* SeparatorLineView.swift */; };
 		BB2C33BE27830EEB00F48F26 /* CommentInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33BD27830EEB00F48F26 /* CommentInputView.swift */; };
+		BB2C33C1278363D000F48F26 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = BB2C33C0278363D000F48F26 /* RxCocoa */; };
+		BB2C33C3278363D000F48F26 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = BB2C33C2278363D000F48F26 /* RxRelay */; };
+		BB2C33C5278363D000F48F26 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BB2C33C4278363D000F48F26 /* RxSwift */; };
+		BB2C33C727836DE500F48F26 /* SesacAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33C627836DE500F48F26 /* SesacAppearance.swift */; };
+		BB2C33C92783719500F48F26 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33C82783719500F48F26 /* CommentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +58,8 @@
 		BB2C33B927830C6300F48F26 /* NicknameLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameLabel.swift; sourceTree = "<group>"; };
 		BB2C33BB27830DCB00F48F26 /* SeparatorLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorLineView.swift; sourceTree = "<group>"; };
 		BB2C33BD27830EEB00F48F26 /* CommentInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInputView.swift; sourceTree = "<group>"; };
+		BB2C33C627836DE500F48F26 /* SesacAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SesacAppearance.swift; sourceTree = "<group>"; };
+		BB2C33C82783719500F48F26 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +67,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB2C33C3278363D000F48F26 /* RxRelay in Frameworks */,
+				BB2C33C1278363D000F48F26 /* RxCocoa in Frameworks */,
+				BB2C33C5278363D000F48F26 /* RxSwift in Frameworks */,
 				BB2C33972782C08400F48F26 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,6 +98,7 @@
 			children = (
 				BB2C33802782BDB200F48F26 /* AppDelegate.swift */,
 				BB2C33822782BDB200F48F26 /* SceneDelegate.swift */,
+				BB2C33C627836DE500F48F26 /* SesacAppearance.swift */,
 				BB2C33942782BF7900F48F26 /* Intro */,
 				BB2C33A52782EA0E00F48F26 /* Home */,
 				BB2C33AA2782ED6500F48F26 /* Extension */,
@@ -125,6 +136,7 @@
 				BB2C33A32782EA0400F48F26 /* HomeViewController.swift */,
 				BB2C33AD2782F16B00F48F26 /* PostCell.swift */,
 				BB2C33B12782FA2500F48F26 /* Compose */,
+				BB2C33CA2783719A00F48F26 /* Comment */,
 				BB2C33B42783036200F48F26 /* CustomView */,
 			);
 			path = Home;
@@ -159,6 +171,14 @@
 			path = CustomView;
 			sourceTree = "<group>";
 		};
+		BB2C33CA2783719A00F48F26 /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				BB2C33C82783719500F48F26 /* CommentViewController.swift */,
+			);
+			path = Comment;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -177,6 +197,9 @@
 			name = SesacJandi;
 			packageProductDependencies = (
 				BB2C33962782C08400F48F26 /* SnapKit */,
+				BB2C33C0278363D000F48F26 /* RxCocoa */,
+				BB2C33C2278363D000F48F26 /* RxRelay */,
+				BB2C33C4278363D000F48F26 /* RxSwift */,
 			);
 			productName = SesacJandi;
 			productReference = BB2C337D2782BDB200F48F26 /* SesacJandi.app */;
@@ -208,6 +231,7 @@
 			mainGroup = BB2C33742782BDB200F48F26;
 			packageReferences = (
 				BB2C33952782C08400F48F26 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				BB2C33BF278363D000F48F26 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = BB2C337E2782BDB200F48F26 /* Products */;
 			projectDirPath = "";
@@ -235,9 +259,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB2C33C92783719500F48F26 /* CommentViewController.swift in Sources */,
 				BB2C33B62783037E00F48F26 /* DateLabel.swift in Sources */,
 				BB2C339D2782D5AF00F48F26 /* LoginViewController.swift in Sources */,
 				BB2C33992782CFFD00F48F26 /* IntroButton.swift in Sources */,
+				BB2C33C727836DE500F48F26 /* SesacAppearance.swift in Sources */,
 				BB2C339B2782D5A400F48F26 /* RegisterViewController.swift in Sources */,
 				BB2C33BA27830C6300F48F26 /* NicknameLabel.swift in Sources */,
 				BB2C33B02782FA1C00F48F26 /* ComposeViewController.swift in Sources */,
@@ -476,6 +502,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		BB2C33BF278363D000F48F26 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -483,6 +517,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BB2C33952782C08400F48F26 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		BB2C33C0278363D000F48F26 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB2C33BF278363D000F48F26 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		BB2C33C2278363D000F48F26 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB2C33BF278363D000F48F26 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		BB2C33C4278363D000F48F26 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB2C33BF278363D000F48F26 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
