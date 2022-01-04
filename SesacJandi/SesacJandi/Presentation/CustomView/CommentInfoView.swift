@@ -30,12 +30,13 @@ final class CommentInfoView: UIStackView {
     private func setConfiguration(){
         axis = .horizontal
         spacing = 5
-        imageView.tintColor = .label
-        label.font = .systemFont(ofSize: 14)
-        label.text = "댓글쓰기"
+        imageView.tintColor = .darkGray
+        label.textColor = .darkGray
+        label.font = .systemFont(ofSize: 15, weight: .semibold)
+        label.text = "댓글 쓰기"
     }
     
     func setCommentCount(count: Int) {
-        label.text = "댓글 \(count)"
+        label.text = "댓글 \(count)개"
     }
 }

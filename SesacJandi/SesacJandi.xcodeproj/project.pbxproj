@@ -106,51 +106,50 @@
 		BB2C337F2782BDB200F48F26 /* SesacJandi */ = {
 			isa = PBXGroup;
 			children = (
+				BB2C33DE27847D5700F48F26 /* Application */,
+				BB2C33E7278485E800F48F26 /* Domain */,
+				BB2C33E0278481B000F48F26 /* Presentation */,
+				BB2C33E6278485D700F48F26 /* Data */,
+				BB2C338E2782BDB300F48F26 /* Info.plist */,
+				BB2C338B2782BDB300F48F26 /* LaunchScreen.storyboard */,
+				BB2C33892782BDB300F48F26 /* Assets.xcassets */,
 				BB2C33802782BDB200F48F26 /* AppDelegate.swift */,
 				BB2C33822782BDB200F48F26 /* SceneDelegate.swift */,
-				BB2C33C627836DE500F48F26 /* SesacAppearance.swift */,
-				BB2C33DC278476F000F48F26 /* BaseTableViewCell.swift */,
-				BB2C33942782BF7900F48F26 /* Intro */,
-				BB2C33A52782EA0E00F48F26 /* Home */,
-				BB2C33AA2782ED6500F48F26 /* Extension */,
-				BB2C33892782BDB300F48F26 /* Assets.xcassets */,
-				BB2C338B2782BDB300F48F26 /* LaunchScreen.storyboard */,
-				BB2C338E2782BDB300F48F26 /* Info.plist */,
 			);
 			path = SesacJandi;
 			sourceTree = "<group>";
 		};
-		BB2C33942782BF7900F48F26 /* Intro */ = {
+		BB2C33942782BF7900F48F26 /* IntroScene */ = {
 			isa = PBXGroup;
 			children = (
 				BB2C33842782BDB200F48F26 /* IntroViewController.swift */,
-				BB2C339A2782D5A400F48F26 /* RegisterViewController.swift */,
-				BB2C339C2782D5AF00F48F26 /* LoginViewController.swift */,
-				BB2C339E2782D70F00F48F26 /* CustomView */,
 			);
-			path = Intro;
+			path = IntroScene;
 			sourceTree = "<group>";
 		};
 		BB2C339E2782D70F00F48F26 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
-				BB2C33982782CFFD00F48F26 /* IntroButton.swift */,
-				BB2C339F2782D73600F48F26 /* IntroTextField.swift */,
+				BB2C33E12784825600F48F26 /* Button */,
+				BB2C33D42784492800F48F26 /* TextView */,
+				BB2C33D52784493F00F48F26 /* Label */,
+				BB2C33E22784826D00F48F26 /* TextField */,
+				BB2C33E32784827500F48F26 /* ImageView */,
+				BB2C33BD27830EEB00F48F26 /* CommentInputView.swift */,
+				BB2C33B7278303A100F48F26 /* CommentInfoView.swift */,
+				BB2C33BB27830DCB00F48F26 /* SeparatorLineView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
 		};
-		BB2C33A52782EA0E00F48F26 /* Home */ = {
+		BB2C33A52782EA0E00F48F26 /* HomeScene */ = {
 			isa = PBXGroup;
 			children = (
 				BB2C33A62782EC9500F48F26 /* HomeNavigationController.swift */,
 				BB2C33A32782EA0400F48F26 /* HomeViewController.swift */,
 				BB2C33AD2782F16B00F48F26 /* PostCell.swift */,
-				BB2C33B12782FA2500F48F26 /* Compose */,
-				BB2C33CA2783719A00F48F26 /* Post */,
-				BB2C33B42783036200F48F26 /* CustomView */,
 			);
-			path = Home;
+			path = HomeScene;
 			sourceTree = "<group>";
 		};
 		BB2C33AA2782ED6500F48F26 /* Extension */ = {
@@ -161,35 +160,22 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		BB2C33B12782FA2500F48F26 /* Compose */ = {
+		BB2C33B12782FA2500F48F26 /* ComposeScene */ = {
 			isa = PBXGroup;
 			children = (
 				BB2C33AF2782FA1C00F48F26 /* ComposeViewController.swift */,
 			);
-			path = Compose;
+			path = ComposeScene;
 			sourceTree = "<group>";
 		};
-		BB2C33B42783036200F48F26 /* CustomView */ = {
-			isa = PBXGroup;
-			children = (
-				BB2C33D42784492800F48F26 /* TextView */,
-				BB2C33D52784493F00F48F26 /* Label */,
-				BB2C33BD27830EEB00F48F26 /* CommentInputView.swift */,
-				BB2C33B7278303A100F48F26 /* CommentInfoView.swift */,
-				BB2C33BB27830DCB00F48F26 /* SeparatorLineView.swift */,
-				BB2C33DA2784619300F48F26 /* ProfileImageView.swift */,
-			);
-			path = CustomView;
-			sourceTree = "<group>";
-		};
-		BB2C33CA2783719A00F48F26 /* Post */ = {
+		BB2C33CA2783719A00F48F26 /* PostScene */ = {
 			isa = PBXGroup;
 			children = (
 				BB2C33C82783719500F48F26 /* PostViewController.swift */,
 				BB2C33D827845DC500F48F26 /* PostHeaderView.swift */,
 				BB2C33D62784550F00F48F26 /* CommentCell.swift */,
 			);
-			path = Post;
+			path = PostScene;
 			sourceTree = "<group>";
 		};
 		BB2C33D42784492800F48F26 /* TextView */ = {
@@ -208,6 +194,116 @@
 				BB2C33B52783037E00F48F26 /* DateLabel.swift */,
 			);
 			path = Label;
+			sourceTree = "<group>";
+		};
+		BB2C33DE27847D5700F48F26 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				BB2C33DC278476F000F48F26 /* BaseTableViewCell.swift */,
+				BB2C33C627836DE500F48F26 /* SesacAppearance.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		BB2C33DF27847DAB00F48F26 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BB2C33E0278481B000F48F26 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				BB2C33E92784864E00F48F26 /* Intro */,
+				BB2C33EA278486D900F48F26 /* Home */,
+				BB2C339E2782D70F00F48F26 /* CustomView */,
+				BB2C33AA2782ED6500F48F26 /* Extension */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		BB2C33E12784825600F48F26 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				BB2C33982782CFFD00F48F26 /* IntroButton.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		BB2C33E22784826D00F48F26 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				BB2C339F2782D73600F48F26 /* IntroTextField.swift */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
+		BB2C33E32784827500F48F26 /* ImageView */ = {
+			isa = PBXGroup;
+			children = (
+				BB2C33DA2784619300F48F26 /* ProfileImageView.swift */,
+			);
+			path = ImageView;
+			sourceTree = "<group>";
+		};
+		BB2C33E4278483D900F48F26 /* RegisterScene */ = {
+			isa = PBXGroup;
+			children = (
+				BB2C339A2782D5A400F48F26 /* RegisterViewController.swift */,
+			);
+			path = RegisterScene;
+			sourceTree = "<group>";
+		};
+		BB2C33E5278483F100F48F26 /* LoginScene */ = {
+			isa = PBXGroup;
+			children = (
+				BB2C339C2782D5AF00F48F26 /* LoginViewController.swift */,
+			);
+			path = LoginScene;
+			sourceTree = "<group>";
+		};
+		BB2C33E6278485D700F48F26 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				BB2C33EB278486F200F48F26 /* Network */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		BB2C33E7278485E800F48F26 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				BB2C33DF27847DAB00F48F26 /* Model */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		BB2C33E92784864E00F48F26 /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				BB2C33942782BF7900F48F26 /* IntroScene */,
+				BB2C33E5278483F100F48F26 /* LoginScene */,
+				BB2C33E4278483D900F48F26 /* RegisterScene */,
+			);
+			path = Intro;
+			sourceTree = "<group>";
+		};
+		BB2C33EA278486D900F48F26 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BB2C33A52782EA0E00F48F26 /* HomeScene */,
+				BB2C33CA2783719A00F48F26 /* PostScene */,
+				BB2C33B12782FA2500F48F26 /* ComposeScene */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		BB2C33EB278486F200F48F26 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

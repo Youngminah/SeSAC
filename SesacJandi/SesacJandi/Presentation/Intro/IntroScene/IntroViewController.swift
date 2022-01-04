@@ -25,6 +25,16 @@ final class IntroViewController: UIViewController {
         setConfiguration()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.isHidden = false
+    }
+    
     private func setView() {
         view.addSubview(logoImageView)
         view.addSubview(introTitleLabel)
@@ -65,7 +75,6 @@ final class IntroViewController: UIViewController {
     
     private func setConfiguration() {
         navigationItem.backButtonTitle = ""
-        navigationController?.navigationBar.tintColor = .black
         view.backgroundColor = .systemBackground
         
         introTitleLabel.text = "당신 근처의 새싹농장"
