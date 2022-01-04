@@ -12,7 +12,6 @@ import RxCocoa
 final class PostViewController: UIViewController {
     
     private let tableView = UITableView()
-    //private let tableHeaderView = PostHeaderView()
     private let commentInputView = CommentInputView()
     private lazy var detailMenuBarButton = UIBarButtonItem(image: UIImage(systemName: "ellipsis.circle"),
                                                        style: .plain,

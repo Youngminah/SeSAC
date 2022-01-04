@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class SesacAppearance {
+final class AppAppearance {
     
     static func setupAppearance() {
         let appearance = UINavigationBarAppearance()

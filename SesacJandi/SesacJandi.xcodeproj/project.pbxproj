@@ -31,13 +31,24 @@
 		BB2C33C1278363D000F48F26 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = BB2C33C0278363D000F48F26 /* RxCocoa */; };
 		BB2C33C3278363D000F48F26 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = BB2C33C2278363D000F48F26 /* RxRelay */; };
 		BB2C33C5278363D000F48F26 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BB2C33C4278363D000F48F26 /* RxSwift */; };
-		BB2C33C727836DE500F48F26 /* SesacAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33C627836DE500F48F26 /* SesacAppearance.swift */; };
+		BB2C33C727836DE500F48F26 /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33C627836DE500F48F26 /* AppAppearance.swift */; };
 		BB2C33C92783719500F48F26 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33C82783719500F48F26 /* PostViewController.swift */; };
 		BB2C33D32784450300F48F26 /* CommentInputTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33D22784450300F48F26 /* CommentInputTextView.swift */; };
 		BB2C33D72784550F00F48F26 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33D62784550F00F48F26 /* CommentCell.swift */; };
 		BB2C33D927845DC500F48F26 /* PostHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33D827845DC500F48F26 /* PostHeaderView.swift */; };
 		BB2C33DB2784619300F48F26 /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33DA2784619300F48F26 /* ProfileImageView.swift */; };
 		BB2C33DD278476F000F48F26 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33DC278476F000F48F26 /* BaseTableViewCell.swift */; };
+		BB2C33ED2784879800F48F26 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33EC2784879800F48F26 /* LoginViewModel.swift */; };
+		BB2C33EF278487A600F48F26 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33EE278487A600F48F26 /* RegisterViewModel.swift */; };
+		BB2C33F127848ADD00F48F26 /* RegisterInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33F027848ADD00F48F26 /* RegisterInfo.swift */; };
+		BB2C33F327848FBD00F48F26 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33F227848FBD00F48F26 /* AppConfiguration.swift */; };
+		BB2C33F62784914900F48F26 /* LoginInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33F52784914900F48F26 /* LoginInfo.swift */; };
+		BB2C33F82784916100F48F26 /* PasswordChangeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33F72784916100F48F26 /* PasswordChangeInfo.swift */; };
+		BB2C33FA278491C400F48F26 /* PostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33F9278491C400F48F26 /* PostList.swift */; };
+		BB2C33FD2784A07800F48F26 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = BB2C33FC2784A07800F48F26 /* RxMoya */; };
+		BB2C33FF2784A9ED00F48F26 /* SesacTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33FE2784A9ED00F48F26 /* SesacTarget.swift */; };
+		BB2C34012784B0B400F48F26 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C34002784B0B400F48F26 /* NetworkManager.swift */; };
+		BBD9FBC52784BCD300D755D5 /* TokenUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FBC42784BCD300D755D5 /* TokenUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,13 +74,23 @@
 		BB2C33B927830C6300F48F26 /* NickNameLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameLabel.swift; sourceTree = "<group>"; };
 		BB2C33BB27830DCB00F48F26 /* SeparatorLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorLineView.swift; sourceTree = "<group>"; };
 		BB2C33BD27830EEB00F48F26 /* CommentInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInputView.swift; sourceTree = "<group>"; };
-		BB2C33C627836DE500F48F26 /* SesacAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SesacAppearance.swift; sourceTree = "<group>"; };
+		BB2C33C627836DE500F48F26 /* AppAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
 		BB2C33C82783719500F48F26 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		BB2C33D22784450300F48F26 /* CommentInputTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInputTextView.swift; sourceTree = "<group>"; };
 		BB2C33D62784550F00F48F26 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		BB2C33D827845DC500F48F26 /* PostHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostHeaderView.swift; sourceTree = "<group>"; };
 		BB2C33DA2784619300F48F26 /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
 		BB2C33DC278476F000F48F26 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		BB2C33EC2784879800F48F26 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		BB2C33EE278487A600F48F26 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		BB2C33F027848ADD00F48F26 /* RegisterInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInfo.swift; sourceTree = "<group>"; };
+		BB2C33F227848FBD00F48F26 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		BB2C33F52784914900F48F26 /* LoginInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInfo.swift; sourceTree = "<group>"; };
+		BB2C33F72784916100F48F26 /* PasswordChangeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeInfo.swift; sourceTree = "<group>"; };
+		BB2C33F9278491C400F48F26 /* PostList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostList.swift; sourceTree = "<group>"; };
+		BB2C33FE2784A9ED00F48F26 /* SesacTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SesacTarget.swift; sourceTree = "<group>"; };
+		BB2C34002784B0B400F48F26 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		BBD9FBC42784BCD300D755D5 /* TokenUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB2C33FD2784A07800F48F26 /* RxMoya in Frameworks */,
 				BB2C33C3278363D000F48F26 /* RxRelay in Frameworks */,
 				BB2C33C1278363D000F48F26 /* RxCocoa in Frameworks */,
 				BB2C33C5278363D000F48F26 /* RxSwift in Frameworks */,
@@ -130,6 +152,7 @@
 		BB2C339E2782D70F00F48F26 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				BB2C33DC278476F000F48F26 /* BaseTableViewCell.swift */,
 				BB2C33E12784825600F48F26 /* Button */,
 				BB2C33D42784492800F48F26 /* TextView */,
 				BB2C33D52784493F00F48F26 /* Label */,
@@ -199,8 +222,9 @@
 		BB2C33DE27847D5700F48F26 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				BB2C33DC278476F000F48F26 /* BaseTableViewCell.swift */,
-				BB2C33C627836DE500F48F26 /* SesacAppearance.swift */,
+				BB2C33C627836DE500F48F26 /* AppAppearance.swift */,
+				BB2C33F227848FBD00F48F26 /* AppConfiguration.swift */,
+				BBD9FBC42784BCD300D755D5 /* TokenUtils.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -208,6 +232,10 @@
 		BB2C33DF27847DAB00F48F26 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BB2C33F027848ADD00F48F26 /* RegisterInfo.swift */,
+				BB2C33F52784914900F48F26 /* LoginInfo.swift */,
+				BB2C33F72784916100F48F26 /* PasswordChangeInfo.swift */,
+				BB2C33F9278491C400F48F26 /* PostList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -251,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				BB2C339A2782D5A400F48F26 /* RegisterViewController.swift */,
+				BB2C33EE278487A600F48F26 /* RegisterViewModel.swift */,
 			);
 			path = RegisterScene;
 			sourceTree = "<group>";
@@ -259,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				BB2C339C2782D5AF00F48F26 /* LoginViewController.swift */,
+				BB2C33EC2784879800F48F26 /* LoginViewModel.swift */,
 			);
 			path = LoginScene;
 			sourceTree = "<group>";
@@ -302,6 +332,8 @@
 		BB2C33EB278486F200F48F26 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				BB2C33FE2784A9ED00F48F26 /* SesacTarget.swift */,
+				BB2C34002784B0B400F48F26 /* NetworkManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -327,6 +359,7 @@
 				BB2C33C0278363D000F48F26 /* RxCocoa */,
 				BB2C33C2278363D000F48F26 /* RxRelay */,
 				BB2C33C4278363D000F48F26 /* RxSwift */,
+				BB2C33FC2784A07800F48F26 /* RxMoya */,
 			);
 			productName = SesacJandi;
 			productReference = BB2C337D2782BDB200F48F26 /* SesacJandi.app */;
@@ -359,6 +392,7 @@
 			packageReferences = (
 				BB2C33952782C08400F48F26 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				BB2C33BF278363D000F48F26 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				BB2C33FB2784A07800F48F26 /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = BB2C337E2782BDB200F48F26 /* Products */;
 			projectDirPath = "";
@@ -390,10 +424,14 @@
 				BB2C33C92783719500F48F26 /* PostViewController.swift in Sources */,
 				BB2C33B62783037E00F48F26 /* DateLabel.swift in Sources */,
 				BB2C33DD278476F000F48F26 /* BaseTableViewCell.swift in Sources */,
+				BB2C33FF2784A9ED00F48F26 /* SesacTarget.swift in Sources */,
 				BB2C339D2782D5AF00F48F26 /* LoginViewController.swift in Sources */,
 				BB2C33D72784550F00F48F26 /* CommentCell.swift in Sources */,
 				BB2C33992782CFFD00F48F26 /* IntroButton.swift in Sources */,
-				BB2C33C727836DE500F48F26 /* SesacAppearance.swift in Sources */,
+				BB2C33C727836DE500F48F26 /* AppAppearance.swift in Sources */,
+				BB2C33ED2784879800F48F26 /* LoginViewModel.swift in Sources */,
+				BB2C34012784B0B400F48F26 /* NetworkManager.swift in Sources */,
+				BB2C33F62784914900F48F26 /* LoginInfo.swift in Sources */,
 				BB2C339B2782D5A400F48F26 /* RegisterViewController.swift in Sources */,
 				BB2C33BA27830C6300F48F26 /* NickNameLabel.swift in Sources */,
 				BB2C33B02782FA1C00F48F26 /* ComposeViewController.swift in Sources */,
@@ -401,15 +439,21 @@
 				BB2C33D927845DC500F48F26 /* PostHeaderView.swift in Sources */,
 				BB2C33BE27830EEB00F48F26 /* CommentInputView.swift in Sources */,
 				BB2C33A72782EC9500F48F26 /* HomeNavigationController.swift in Sources */,
+				BB2C33EF278487A600F48F26 /* RegisterViewModel.swift in Sources */,
 				BB2C33B32783035F00F48F26 /* ContentTextView.swift in Sources */,
 				BB2C33A02782D73600F48F26 /* IntroTextField.swift in Sources */,
 				BB2C33852782BDB200F48F26 /* IntroViewController.swift in Sources */,
 				BB2C33BC27830DCB00F48F26 /* SeparatorLineView.swift in Sources */,
+				BB2C33F82784916100F48F26 /* PasswordChangeInfo.swift in Sources */,
 				BB2C33812782BDB200F48F26 /* AppDelegate.swift in Sources */,
+				BB2C33F327848FBD00F48F26 /* AppConfiguration.swift in Sources */,
 				BB2C33AE2782F16B00F48F26 /* PostCell.swift in Sources */,
 				BB2C33D32784450300F48F26 /* CommentInputTextView.swift in Sources */,
+				BB2C33FA278491C400F48F26 /* PostList.swift in Sources */,
 				BB2C33A92782ED5600F48F26 /* UIViewController.swift in Sources */,
 				BB2C33832782BDB200F48F26 /* SceneDelegate.swift in Sources */,
+				BBD9FBC52784BCD300D755D5 /* TokenUtils.swift in Sources */,
+				BB2C33F127848ADD00F48F26 /* RegisterInfo.swift in Sources */,
 				BB2C33B8278303A100F48F26 /* CommentInfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -642,6 +686,14 @@
 				minimumVersion = 6.0.0;
 			};
 		};
+		BB2C33FB2784A07800F48F26 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -664,6 +716,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BB2C33BF278363D000F48F26 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		BB2C33FC2784A07800F48F26 /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB2C33FB2784A07800F48F26 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
