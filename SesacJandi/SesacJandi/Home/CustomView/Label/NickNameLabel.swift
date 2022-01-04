@@ -7,7 +7,7 @@
 
 import UIKit.UILabel
 
-final class NicknameLabel: UILabel {
+final class NickNameLabel: UILabel {
     
     override init(frame: CGRect) { // 코드로 뷰가 생성될 때 생성자
         super.init(frame: frame)

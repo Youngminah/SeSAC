@@ -15,7 +15,7 @@ class HomeViewController: UIViewController {
     private let composePostButton = UIButton()
     let disposeBag = DisposeBag()
     
-    let date = Observable.just([
+    let data = Observable.just([
         "안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕",
         "안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕",
         "안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕"
@@ -30,7 +30,7 @@ class HomeViewController: UIViewController {
     }
     
     private func bind() {
-        date
+        data
             .bind(to: tableView.rx.items) { (tableView, row, element) in
                 let cell = tableView.dequeueReusableCell(withIdentifier: PostCell.identifier) as! PostCell
                 cell.updateUI(contentText: element)
@@ -93,7 +93,7 @@ class HomeViewController: UIViewController {
     
     @objc
     private func commentButtonTap() {
-        let vc = CommentViewController()
+        let vc = PostViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

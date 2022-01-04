@@ -7,7 +7,7 @@
 
 import UIKit.UITextView
 
-final class PostContentTextView: UITextView {
+class ContentTextView: UITextView {
     
     override init(frame: CGRect, textContainer: NSTextContainer?) {
         super.init(frame: frame, textContainer: textContainer)
@@ -18,9 +18,10 @@ final class PostContentTextView: UITextView {
         fatalError()
     }
     
-    private func setConfiguration(){
-        font = .systemFont(ofSize: 13)
+    func setConfiguration() {
+        font = .systemFont(ofSize: 15)
         textContainer.lineFragmentPadding = CGFloat(0.0) //기본 패딩 제거
         textAlignment = .justified
+        textContainerInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16);
     }
 }

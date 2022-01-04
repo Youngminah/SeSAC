@@ -9,6 +9,8 @@ import UIKit
 
 class ComposeViewController: UIViewController {
     
+    private let contentTextView = ContentTextView()
+    
     private lazy var dismissBarButton = UIBarButtonItem(barButtonSystemItem: .close,
                                                    target: self,
                                                    action: #selector(dismissBarButtonTap))
@@ -26,13 +28,18 @@ class ComposeViewController: UIViewController {
     private func setView() {
         navigationItem.leftBarButtonItem = dismissBarButton
         navigationItem.rightBarButtonItem = completedBarButton
+        view.addSubview(contentTextView)
     }
     
     private func setConstraints() {
+        contentTextView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
     
     private func setConfiguration() {
         view.backgroundColor = .systemBackground
+        contentTextView.becomeFirstResponder()
     }
     
     @objc

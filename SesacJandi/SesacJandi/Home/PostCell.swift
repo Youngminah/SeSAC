@@ -8,28 +8,19 @@
 import UIKit
 import SnapKit
 
-class PostCell: UITableViewCell {
+final class PostCell: BaseTableViewCell {
     
     static let identifier = "PostCell"
     
-    private let textView = PostContentTextView()
+    private let textView = ContentTextView()
     private let dateLabel = DateLabel()
     private let separatorLineView = SeparatorLineView()
     private let commentInfoView = CommentInfoView()
+    
     let commentButton = UIButton()
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setView()
-        setConstraints()
-        setConfiguration()
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func setView() {
+    override func setView() {
+        super.setView()
         contentView.addSubview(commentInfoView)
         contentView.addSubview(separatorLineView)
         contentView.addSubview(dateLabel)
@@ -37,7 +28,8 @@ class PostCell: UITableViewCell {
         contentView.addSubview(commentButton)
     }
 
-    private func setConstraints() {
+    override func setConstraints() {
+        super.setConstraints()
         commentInfoView.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(16)
             make.height.equalTo(16)
@@ -56,9 +48,7 @@ class PostCell: UITableViewCell {
         }
         textView.snp.makeConstraints { make in
             make.bottom.equalTo(dateLabel.snp.top).priority(999)
-            make.leading.equalToSuperview().offset(16)
-            make.trailing.equalToSuperview().offset(-16)
-            make.top.equalToSuperview().offset(16)
+            make.leading.top.trailing.equalToSuperview()
         }
         commentButton.snp.makeConstraints { make in
             make.top.equalTo(separatorLineView.snp.bottom)
@@ -68,12 +58,12 @@ class PostCell: UITableViewCell {
         }
     }
     
-    private func setConfiguration() {
+    override func setConfiguration() {
+        super.setConfiguration()
         dateLabel.text = "12월 8일"
         dateLabel.textAlignment = .right
         textView.isScrollEnabled = false
         textView.isEditable = false
-        textView.font = .systemFont(ofSize: 15)
         
         selectionStyle = .none
     }
