@@ -14,12 +14,6 @@ class HomeViewController: UIViewController {
     private var tableView = UITableView()
     private let composePostButton = UIButton()
     
-    let data = Observable.just([
-        "안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕",
-        "안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕",
-        "안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕"
-    ])
-    
     private lazy var input = HomeViewModel.Input(
         viewDidLoadEvent: viewDidLoadEvent.asSignal()
     )
@@ -93,7 +87,7 @@ class HomeViewController: UIViewController {
     
     @objc
     private func composePostButtonTap() {
-        let vc = ComposeViewController()
+        let vc = ComposePostViewController()
         vc.title = "새싹농장 글쓰기"
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .fullScreen

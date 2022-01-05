@@ -9,17 +9,11 @@ import Foundation
 import Moya
 
 class CommonViewModel {
-    
-    let tokenClosure: (TargetType) -> String = { _ in
-        print()
-        return TokenUtils.read(AppConfiguration.service, account: "accessToken") ?? ""
-    }
-    
+
     let provider: MoyaProvider<SesacTarget>
 
     init() {
-        let authPlugin = AccessTokenPlugin(tokenClosure: tokenClosure)
-        provider = MoyaProvider<SesacTarget>(plugins: [authPlugin])
+        provider = MoyaProvider<SesacTarget>()
     }
 }
 
@@ -38,7 +32,7 @@ extension CommonViewModel {
                 let errorResponse = try! response.map(InputErrorResponse.self)
                 completion (.failure(SessacErrorEnum(messageId: errorResponse.message[0].messages[0].id)))
             } else if response.statusCode >= 401 {
-                let errorResponse = try! response.map(TokenErrorResponse.self)
+                let errorResponse = try! response.map(AccessErrorResponse.self)
                 completion (.failure(SessacErrorEnum(messageId: errorResponse.error)))
             } else {
                 let data = try! JSONDecoder().decode(type, from: response.data)

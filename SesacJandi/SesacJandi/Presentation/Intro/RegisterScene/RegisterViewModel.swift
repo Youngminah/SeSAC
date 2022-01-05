@@ -44,7 +44,7 @@ final class RegisterViewModel: CommonViewModel {
                 self.requestRegister(info: info) { [weak self] response in
                     guard let self = self else { return }
                     switch response {
-                    case .success(let success):
+                    case .success( _):
                         self.isLoading.accept(true)
                         self.registerSuccessAlertAction.accept("회원가입이 정상적으로 완료되었습니다.")
                     case .failure(let error):

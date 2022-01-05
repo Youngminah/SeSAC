@@ -45,7 +45,7 @@ final class HomeViewModel: CommonViewModel {
                     case .success(let success):
                         self.isLoading.accept(true)
                         self.didLoadallPosts.accept(success)
-                    case .failure(let error): break
+                    case .failure(let error): 
                         self.isLoading.accept(true)
                         let error = error as! SessacErrorEnum
                         self.loadFailAlertAction.accept(error.errorDescription)

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TokenErrorResponse: Codable {
+struct AccessErrorResponse: Codable {
     let statusCode: Int
     let error: String
     let message: String

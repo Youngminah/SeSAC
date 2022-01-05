@@ -47,7 +47,7 @@ extension SesacTarget: TargetType {
             return "auth/local"
         case .changePassword:
             return "custom/change-password"
-        case .allPost(pageIndex: let index):
+        case .allPost:
             return "posts"
         case .composePost:
             return "posts"
@@ -91,11 +91,13 @@ extension SesacTarget: TargetType {
     
     var task: Task {
         switch self {
-        case .allPost,
-             .allComment,
+        case .allComment,
              .deletePost ,
              .deleteComment:
             return .requestPlain
+        case .allPost(pageIndex: let index):
+            let parameters = ["_sort": "created_at:desc", "_start": "\(index)", "_limit": "20"]
+            return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
         case .register(let parameters),
              .login(let parameters),
              .changePassword(let parameters),

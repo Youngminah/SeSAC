@@ -17,12 +17,18 @@ final class PostViewController: UIViewController {
                                                        style: .plain,
                                                        target: self,
                                                        action: #selector(detailMenuBarButtonTap))
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
         setConstraints()
         setConfiguration()
+        bind()
+    }
+    
+    private func bind() {
+
     }
     
     private func setView() {
@@ -58,7 +64,7 @@ final class PostViewController: UIViewController {
     
     @objc
     private func detailMenuBarButtonTap() {
-        
+    
     }
 }
 

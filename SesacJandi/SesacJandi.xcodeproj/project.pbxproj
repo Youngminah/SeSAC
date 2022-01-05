@@ -21,7 +21,7 @@
 		BB2C33A72782EC9500F48F26 /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33A62782EC9500F48F26 /* HomeNavigationController.swift */; };
 		BB2C33A92782ED5600F48F26 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33A82782ED5600F48F26 /* UIViewController.swift */; };
 		BB2C33AE2782F16B00F48F26 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33AD2782F16B00F48F26 /* PostCell.swift */; };
-		BB2C33B02782FA1C00F48F26 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33AF2782FA1C00F48F26 /* ComposeViewController.swift */; };
+		BB2C33B02782FA1C00F48F26 /* ComposePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33AF2782FA1C00F48F26 /* ComposePostViewController.swift */; };
 		BB2C33B32783035F00F48F26 /* ContentTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33B22783035F00F48F26 /* ContentTextView.swift */; };
 		BB2C33B62783037E00F48F26 /* DateLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33B52783037E00F48F26 /* DateLabel.swift */; };
 		BB2C33B8278303A100F48F26 /* CommentInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33B7278303A100F48F26 /* CommentInfoView.swift */; };
@@ -50,8 +50,6 @@
 		BB2C34012784B0B400F48F26 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C34002784B0B400F48F26 /* NetworkManager.swift */; };
 		BBD9FBC52784BCD300D755D5 /* TokenUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FBC42784BCD300D755D5 /* TokenUtils.swift */; };
 		BBD9FBCB2785443000D755D5 /* CommonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FBCA2785443000D755D5 /* CommonViewModel.swift */; };
-		BBD9FBCD278550BA00D755D5 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FBCC278550BA00D755D5 /* NetworkService.swift */; };
-		BBD9FBCF278551A700D755D5 /* NetworkService+Generic.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FBCE278551A700D755D5 /* NetworkService+Generic.swift */; };
 		BBD9FBD227858D7300D755D5 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = BBD9FBD127858D7300D755D5 /* Toast */; };
 		BBD9FBD42785BCDB00D755D5 /* SesacErrorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FBD32785BCDB00D755D5 /* SesacErrorEnum.swift */; };
 		BBD9FBD62785D11E00D755D5 /* PrimitiveSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FBD52785D11E00D755D5 /* PrimitiveSequence.swift */; };
@@ -62,7 +60,8 @@
 		BBD9FBE2278606B700D755D5 /* CommentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FBE1278606B700D755D5 /* CommentResponse.swift */; };
 		BBD9FBE42786071D00D755D5 /* PostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FBE32786071D00D755D5 /* PostResponse.swift */; };
 		BBD9FBE627860C4400D755D5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FBE527860C4400D755D5 /* User.swift */; };
-		BBD9FBE82786127900D755D5 /* TokenErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FBE72786127900D755D5 /* TokenErrorResponse.swift */; };
+		BBD9FBE82786127900D755D5 /* AccessErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FBE72786127900D755D5 /* AccessErrorResponse.swift */; };
+		BBD9FBEB27862D3500D755D5 /* ComposePostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FBEA27862D3500D755D5 /* ComposePostViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,7 +80,7 @@
 		BB2C33A62782EC9500F48F26 /* HomeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
 		BB2C33A82782ED5600F48F26 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		BB2C33AD2782F16B00F48F26 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
-		BB2C33AF2782FA1C00F48F26 /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
+		BB2C33AF2782FA1C00F48F26 /* ComposePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposePostViewController.swift; sourceTree = "<group>"; };
 		BB2C33B22783035F00F48F26 /* ContentTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTextView.swift; sourceTree = "<group>"; };
 		BB2C33B52783037E00F48F26 /* DateLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateLabel.swift; sourceTree = "<group>"; };
 		BB2C33B7278303A100F48F26 /* CommentInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInfoView.swift; sourceTree = "<group>"; };
@@ -106,8 +105,6 @@
 		BB2C34002784B0B400F48F26 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		BBD9FBC42784BCD300D755D5 /* TokenUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenUtils.swift; sourceTree = "<group>"; };
 		BBD9FBCA2785443000D755D5 /* CommonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewModel.swift; sourceTree = "<group>"; };
-		BBD9FBCC278550BA00D755D5 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		BBD9FBCE278551A700D755D5 /* NetworkService+Generic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkService+Generic.swift"; sourceTree = "<group>"; };
 		BBD9FBD32785BCDB00D755D5 /* SesacErrorEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SesacErrorEnum.swift; sourceTree = "<group>"; };
 		BBD9FBD52785D11E00D755D5 /* PrimitiveSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimitiveSequence.swift; sourceTree = "<group>"; };
 		BBD9FBD92785F9E200D755D5 /* InputErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputErrorResponse.swift; sourceTree = "<group>"; };
@@ -117,7 +114,8 @@
 		BBD9FBE1278606B700D755D5 /* CommentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentResponse.swift; sourceTree = "<group>"; };
 		BBD9FBE32786071D00D755D5 /* PostResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostResponse.swift; sourceTree = "<group>"; };
 		BBD9FBE527860C4400D755D5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		BBD9FBE72786127900D755D5 /* TokenErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenErrorResponse.swift; sourceTree = "<group>"; };
+		BBD9FBE72786127900D755D5 /* AccessErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessErrorResponse.swift; sourceTree = "<group>"; };
+		BBD9FBEA27862D3500D755D5 /* ComposePostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposePostViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,7 +213,8 @@
 		BB2C33B12782FA2500F48F26 /* ComposeScene */ = {
 			isa = PBXGroup;
 			children = (
-				BB2C33AF2782FA1C00F48F26 /* ComposeViewController.swift */,
+				BB2C33AF2782FA1C00F48F26 /* ComposePostViewController.swift */,
+				BBD9FBEA27862D3500D755D5 /* ComposePostViewModel.swift */,
 			);
 			path = ComposeScene;
 			sourceTree = "<group>";
@@ -371,8 +370,6 @@
 			children = (
 				BB2C33FE2784A9ED00F48F26 /* SesacTarget.swift */,
 				BB2C34002784B0B400F48F26 /* NetworkManager.swift */,
-				BBD9FBCC278550BA00D755D5 /* NetworkService.swift */,
-				BBD9FBCE278551A700D755D5 /* NetworkService+Generic.swift */,
 				BBD9FBD32785BCDB00D755D5 /* SesacErrorEnum.swift */,
 			);
 			path = Network;
@@ -398,7 +395,7 @@
 			isa = PBXGroup;
 			children = (
 				BBD9FBD92785F9E200D755D5 /* InputErrorResponse.swift */,
-				BBD9FBE72786127900D755D5 /* TokenErrorResponse.swift */,
+				BBD9FBE72786127900D755D5 /* AccessErrorResponse.swift */,
 			);
 			path = ErrorResponse;
 			sourceTree = "<group>";
@@ -505,12 +502,11 @@
 				BB2C33F62784914900F48F26 /* LoginInfo.swift in Sources */,
 				BBD9FBD42785BCDB00D755D5 /* SesacErrorEnum.swift in Sources */,
 				BB2C339B2782D5A400F48F26 /* RegisterViewController.swift in Sources */,
-				BBD9FBCD278550BA00D755D5 /* NetworkService.swift in Sources */,
 				BB2C33BA27830C6300F48F26 /* NickNameLabel.swift in Sources */,
-				BB2C33B02782FA1C00F48F26 /* ComposeViewController.swift in Sources */,
+				BB2C33B02782FA1C00F48F26 /* ComposePostViewController.swift in Sources */,
 				BB2C33A42782EA0400F48F26 /* HomeViewController.swift in Sources */,
+				BBD9FBEB27862D3500D755D5 /* ComposePostViewModel.swift in Sources */,
 				BB2C33D927845DC500F48F26 /* PostHeaderView.swift in Sources */,
-				BBD9FBCF278551A700D755D5 /* NetworkService+Generic.swift in Sources */,
 				BB2C33BE27830EEB00F48F26 /* CommentInputView.swift in Sources */,
 				BBD9FBE42786071D00D755D5 /* PostResponse.swift in Sources */,
 				BB2C33A72782EC9500F48F26 /* HomeNavigationController.swift in Sources */,
@@ -522,7 +518,7 @@
 				BB2C33852782BDB200F48F26 /* IntroViewController.swift in Sources */,
 				BB2C33BC27830DCB00F48F26 /* SeparatorLineView.swift in Sources */,
 				BBD9FBD62785D11E00D755D5 /* PrimitiveSequence.swift in Sources */,
-				BBD9FBE82786127900D755D5 /* TokenErrorResponse.swift in Sources */,
+				BBD9FBE82786127900D755D5 /* AccessErrorResponse.swift in Sources */,
 				BB2C33F82784916100F48F26 /* PasswordChangeInfo.swift in Sources */,
 				BB2C33812782BDB200F48F26 /* AppDelegate.swift in Sources */,
 				BB2C33F327848FBD00F48F26 /* AppConfiguration.swift in Sources */,
