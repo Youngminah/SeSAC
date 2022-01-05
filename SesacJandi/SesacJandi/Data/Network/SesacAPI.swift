@@ -14,23 +14,11 @@ class SesacAPI {
         return TokenUtils.read(AppConfiguration.service, account: "accessToken") ?? ""
     }
     
-    lazy var provider: MoyaProvider<SesacTarget> = {
+    let provider: MoyaProvider<SesacTarget>
+
+    init() {
         let authPlugin = AccessTokenPlugin(tokenClosure: tokenClosure)
-        return MoyaProvider<SesacTarget>(plugins: [authPlugin])
-    }()
-
-    init() { }
-
-    func requestRegister(
-        username: String,
-        email: String,
-        password: String,
-        completion: @escaping (Result<RegisterInfo.Response, Error>) -> Void
-    ) {
-        let parameters = [ "username": username, "email": email, "password": password]
-        provider.request(.register(parameters: parameters)) { result in
-            self.process(type: RegisterInfo.Response.self, result: result, completion: completion)
-        }
+        provider = MoyaProvider<SesacTarget>(plugins: [authPlugin])
     }
 }
 
@@ -43,11 +31,13 @@ extension SesacAPI {
     ) {
         switch result {
         case .success(let response):
-            if let data = try? JSONDecoder().decode(type, from: response.data) {
-                completion(.success(data as! E))
-            } else {
-                completion(.failure(DecodeError.decodeError))
+            guard (200...299).contains(response.statusCode) else {
+                let errorResponce = try! response.map(ErrorAPI.self)
+                completion (.failure(SessacError(messageId: errorResponce.message[0].messages[0].id)))
+                return
             }
+            let data = try! JSONDecoder().decode(type, from: response.data) 
+            completion(.success(data as! E))
         case .failure(let error):
             completion(.failure(error))
         }

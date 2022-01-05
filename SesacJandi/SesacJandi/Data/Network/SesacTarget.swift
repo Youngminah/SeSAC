@@ -111,7 +111,7 @@ extension SesacTarget: TargetType {
     }
     
 //    public var validationType: ValidationType {
-//        return .customCodes(<#T##[Int]#>)
+//        return .successCodes
 //    }
     
     var authorizationType: AuthorizationType? {

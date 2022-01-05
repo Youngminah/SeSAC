@@ -15,7 +15,6 @@ enum SessacError: Error {
     case with(messageId: String)
     
     init(messageId: String) {
-        print(messageId)
         switch messageId {
         case "Auth.form.error.email.taken": self = .emailIsAlreadyTaken
         case "Auth.form.error.email.format": self = .inValidateEmailAddress

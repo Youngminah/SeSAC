@@ -57,8 +57,8 @@ final class LoginViewController: UIViewController {
     
     @objc
     private func loginButtonTap() {
-        let vc = HomeViewController()
-        let nav = HomeNavigationController(rootViewController: vc)
-        changeRootViewController(nav)
+//        let vc = HomeViewController()
+//        let nav = HomeNavigationController(rootViewController: vc)
+//        changeRootViewController(nav)
     }
 }

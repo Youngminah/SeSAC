@@ -14,7 +14,7 @@ import RxSwift
 
 typealias RegisterRequestInfo = (username: String, email: String, password: String)
 
-final class RegisterViewModel {
+final class RegisterViewModel: SesacAPI {
     
     struct Input {
         let registerButtonTapEvent: Signal<RegisterRequestInfo>
@@ -33,22 +33,27 @@ final class RegisterViewModel {
     private let toastMessageAction = PublishRelay<String>()
     private let disposeBag = DisposeBag()
     
-    private let tokenClosure: (TargetType) -> String = { _ in
-        return TokenUtils.read(AppConfiguration.service, account: "accessToken") ?? ""
-    }
-
-    var provider: MoyaProvider<SesacTarget>
-    
-    init() {
-        let authPlugin = AccessTokenPlugin(tokenClosure: tokenClosure)
-        provider = MoyaProvider<SesacTarget>(plugins: [authPlugin])
+    override init() {
+        super.init()
     }
     
     func transform(input: Input) -> Output {
         
         input.registerButtonTapEvent
             .emit { [unowned self] info in
-                self.registerErrorHandler(info: info)
+                self.requestRegister(info: info) { [weak self] response in
+                    guard let self = self else { return }
+                    switch response {
+                    case .success(let success):
+                        TokenUtils.create(AppConfiguration.service, account: "accessToken", value: success.jwt)
+                        self.isLoading.accept(true)
+                        self.registerSuccessAlertAction.accept("회원가입이 정상적으로 완료되었습니다.")
+                    case .failure(let error):
+                        self.isLoading.accept(true)
+                        let error = error as! SessacError
+                        self.registerFailAlertAction.accept(error.errorDescription)
+                    }
+                }
             }
             .disposed(by: disposeBag)
         
@@ -63,24 +68,12 @@ final class RegisterViewModel {
 
 extension RegisterViewModel {
     
-    private func registerErrorHandler(info: RegisterRequestInfo) {
+    func requestRegister( info: RegisterRequestInfo,
+        completion: @escaping (Result<RegisterInfo.Response, Error>) -> Void
+    ) {
         let parameters = [ "username": info.username, "email": info.email, "password": info.password]
-        provider.rx.request(.register(parameters: parameters))
-            .catchSessacError(SessacError.self)
-            .map(RegisterInfo.Response.self)
-            .subscribe ({ [weak self] response in
-                guard let self = self else { return }
-                switch response {
-                case .success(let success):
-                    TokenUtils.create(AppConfiguration.service, account: "accessToken", value: success.jwt)
-                    self.isLoading.accept(true)
-                    self.registerSuccessAlertAction.accept("회원가입이 정상적으로 완료되었습니다.")
-                case .failure(let error):
-                    self.isLoading.accept(true)
-                    let error = error as! SessacError
-                    self.registerFailAlertAction.accept(error.errorDescription)
-                }
-            })
-            .disposed(by: disposeBag)
+        provider.request(.register(parameters: parameters)) { result in
+            self.process(type: RegisterInfo.Response.self, result: result, completion: completion)
+        }
     }
 }
