@@ -17,7 +17,7 @@ extension PrimitiveSequence where Trait == SingleTrait, Element == Response {
         return flatMap { response in
             guard (200...299).contains(response.statusCode) else {
                 do {
-                    let errorResponce = try response.map(ErrorAPI.self)
+                    let errorResponce = try response.map(ErrorResponse.self)
                     throw SessacError(messageId: errorResponce.message[0].messages[0].id)
                 } catch {
                     throw error

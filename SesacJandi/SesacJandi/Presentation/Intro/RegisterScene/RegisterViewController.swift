@@ -18,12 +18,12 @@ final class RegisterViewController: UIViewController {
     private let passwordTextField = IntroTextField(placeHolder: "비밀번호")
     private let passwordConfirmTextField = IntroTextField(placeHolder: "비밀번호 확인")
     private let registerButton = IntroButton(title: "가입하기")
-    
-    private let viewModel = RegisterViewModel()
     private lazy var stackView = UIStackView(arrangedSubviews: [emailTextField,
                                                                 nickNameTextField,
                                                                 passwordTextField,
                                                                 passwordConfirmTextField])
+    
+    private let viewModel = RegisterViewModel()
     
     private lazy var input = RegisterViewModel.Input(
         registerButtonTapEvent: registerButtonTapEvent.asSignal()
@@ -42,9 +42,9 @@ final class RegisterViewController: UIViewController {
     }
     
     private func bind() {
-//        output.isLoading
-//            .drive(registerButton.rx.isEnabled)
-//            .disposed(by: disposeBag)
+        output.isLoading
+            .drive(registerButton.rx.isEnabled)
+            .disposed(by: disposeBag)
         
         output.registerSuccessAlertAction
             .drive(onNext: { [unowned self] title in

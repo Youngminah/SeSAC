@@ -1,8 +1,8 @@
 //
-//  RegisterViewModel.swift
+//  HomeViewModel.swift
 //  SesacJandi
 //
-//  Created by meng on 2022/01/04.
+//  Created by meng on 2022/01/06.
 //
 
 import Foundation
@@ -14,7 +14,7 @@ import RxSwift
 
 typealias RegisterRequestInfo = (username: String, email: String, password: String)
 
-final class RegisterViewModel: CommonViewModel {
+final class HomeViewModel: CommonViewModel {
     
     struct Input {
         let registerButtonTapEvent: Signal<RegisterRequestInfo>
@@ -40,8 +40,8 @@ final class RegisterViewModel: CommonViewModel {
     func transform(input: Input) -> Output {
         
         input.registerButtonTapEvent
-            .emit { [unowned self] info in
-                self.requestRegister(info: info) { [weak self] response in
+            .emit { [unowned self]  in
+                self.requestAllPosts() { [weak self] response in
                     guard let self = self else { return }
                     switch response {
                     case .success(let success):
@@ -65,13 +65,10 @@ final class RegisterViewModel: CommonViewModel {
     }
 }
 
-extension RegisterViewModel {
+extension HomeViewModel {
     
-    func requestRegister( info: RegisterRequestInfo,
-        completion: @escaping (Result<RegisterInfo.Response, Error>) -> Void
-    ) {
-        let parameters = [ "username": info.username, "email": info.email, "password": info.password]
-        provider.request(.register(parameters: parameters)) { result in
+    func requestAllPosts(completion: @escaping (Result<RegisterInfo.Response, Error>) -> Void ) {
+        provider.request(.allPost) { result in
             self.process(type: RegisterInfo.Response.self, result: result, completion: completion)
         }
     }

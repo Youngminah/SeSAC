@@ -8,7 +8,7 @@
 import Foundation
 import Moya
 
-class SesacAPI {
+class CommonViewModel {
     
     let tokenClosure: (TargetType) -> String = { _ in
         return TokenUtils.read(AppConfiguration.service, account: "accessToken") ?? ""
@@ -22,7 +22,7 @@ class SesacAPI {
     }
 }
 
-extension SesacAPI {
+extension CommonViewModel {
 
     func process<T: Codable, E>(
         type: T.Type,
@@ -32,7 +32,7 @@ extension SesacAPI {
         switch result {
         case .success(let response):
             guard (200...299).contains(response.statusCode) else {
-                let errorResponce = try! response.map(ErrorAPI.self)
+                let errorResponce = try! response.map(ErrorResponse.self)
                 completion (.failure(SessacError(messageId: errorResponce.message[0].messages[0].id)))
                 return
             }

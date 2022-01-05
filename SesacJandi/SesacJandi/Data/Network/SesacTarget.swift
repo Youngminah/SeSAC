@@ -110,10 +110,6 @@ extension SesacTarget: TargetType {
         return ["Content-type": "application/json"]
     }
     
-//    public var validationType: ValidationType {
-//        return .successCodes
-//    }
-    
     var authorizationType: AuthorizationType? {
         switch self {
         case .register,

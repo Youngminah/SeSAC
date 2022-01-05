@@ -6,7 +6,10 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 import SnapKit
+import Toast
 
 final class LoginViewController: UIViewController {
     
@@ -17,11 +20,36 @@ final class LoginViewController: UIViewController {
     private lazy var stackView = UIStackView(arrangedSubviews: [emailTextField,
                                                                 passwordTextField])
 
+    private lazy var input = LoginViewModel.Input(
+        loginRequestAPI: loginRequestAPI.asSignal()
+    )
+    private lazy var output = viewModel.transform(input: input)
+    
+    private let viewModel = LoginViewModel()
+    private var loginRequestAPI = PublishRelay<LoginRequestInfo>()
+    private let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
         setConstraints()
         setConfiguration()
+        bind()
+    }
+    
+    private func bind() {
+        output.loginSuccessAlertAction
+            .drive(onNext: { [unowned self] title in
+                self.changeRootToHomeView()
+            })
+            .disposed(by: disposeBag)
+        
+        output.loginFailAlertAction
+            .drive(onNext: { [unowned self] title in
+                let alert = self.confirmAlert(title: title)
+                self.present(alert, animated: true)
+            })
+            .disposed(by: disposeBag)
     }
     
     private func setView() {
@@ -57,8 +85,13 @@ final class LoginViewController: UIViewController {
     
     @objc
     private func loginButtonTap() {
-//        let vc = HomeViewController()
-//        let nav = HomeNavigationController(rootViewController: vc)
-//        changeRootViewController(nav)
+        loginRequestAPI.accept((email: "email12@gmail.com",
+                                       password: "email"))
+    }
+    
+    private func changeRootToHomeView() {
+        let vc = HomeViewController()
+        let nav = HomeNavigationController(rootViewController: vc)
+        changeRootViewController(nav)
     }
 }
