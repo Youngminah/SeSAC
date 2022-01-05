@@ -30,7 +30,7 @@ final class RegisterViewController: UIViewController {
     )
     private lazy var output = viewModel.transform(input: input)
     
-    private let registerButtonTapEvent = PublishRelay<RegisterRequestInfo>()
+    private var registerButtonTapEvent = PublishRelay<RegisterRequestInfo>()
     private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -47,6 +47,15 @@ final class RegisterViewController: UIViewController {
 //            .disposed(by: disposeBag)
         
         output.registerSuccessAlertAction
+            .drive(onNext: { [unowned self] title in
+                let alert = self.confirmAlert(title: title, okHandler: { _ in
+                    self.navigationController?.popViewController(animated: true)
+                })
+                self.present(alert, animated: true)
+            })
+            .disposed(by: disposeBag)
+        
+        output.registerFailAlertAction
             .drive(onNext: { [unowned self] title in
                 let alert = self.confirmAlert(title: title)
                 self.present(alert, animated: true)
@@ -95,7 +104,7 @@ final class RegisterViewController: UIViewController {
     @objc
     private func registerButtonTap() {
         registerButtonTapEvent.accept((username: "hello",
-                                       email: "email10@gmail.com",
+                                       email: "email12@gmail.com",
                                        password: "email"))
     }
 }

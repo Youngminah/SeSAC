@@ -23,11 +23,13 @@ final class RegisterViewModel {
     struct Output {
         let isLoading: Driver<Bool>
         let registerSuccessAlertAction: Driver<String>
+        let registerFailAlertAction: Driver<String>
         let toastMessageAction: Driver<String>
     }
     
     private let isLoading = BehaviorRelay<Bool>(value: true)
     private let registerSuccessAlertAction = PublishRelay<String>()
+    private let registerFailAlertAction = PublishRelay<String>()
     private let toastMessageAction = PublishRelay<String>()
     private let disposeBag = DisposeBag()
     
@@ -43,30 +45,17 @@ final class RegisterViewModel {
     }
     
     func transform(input: Input) -> Output {
+        
         input.registerButtonTapEvent
-            .asObservable()
-            .do { [unowned self] _ in
-                self.isLoading.accept(false)
+            .emit { [unowned self] info in
+                self.registerErrorHandler(info: info)
             }
-            .flatMap { [unowned self] (username, email, password) -> Single<RegisterInfo.Response> in
-                return self.requestRegister(username: username, email: email, password: password)
-            }
-            .subscribe (onNext: { [weak self] response in
-                guard let self = self else { return }
-                TokenUtils.create(AppConfiguration.service, account: "accessToken", value: response.jwt)
-                self.isLoading.accept(true)
-                self.registerSuccessAlertAction.accept("회원가입이 정상적으로 완료되었습니다.")
-            }, onError: { [weak self] error in
-                guard let self = self else { return }
-                self.isLoading.accept(true)
-                let error = error as! SessacError
-                self.registerSuccessAlertAction.accept(error.errorDescription)
-            })
             .disposed(by: disposeBag)
         
         return Output(
             isLoading: isLoading.asDriver(),
             registerSuccessAlertAction: registerSuccessAlertAction.asDriver(onErrorJustReturn: ""),
+            registerFailAlertAction: registerFailAlertAction.asDriver(onErrorJustReturn: ""),
             toastMessageAction: toastMessageAction.asDriver(onErrorJustReturn: "")
         )
     }
@@ -74,11 +63,24 @@ final class RegisterViewModel {
 
 extension RegisterViewModel {
     
-    func requestRegister(username: String, email: String, password: String) -> Single<RegisterInfo.Response> {
-        let parameters = [ "username": username, "email": email, "password": password]
-        let result = provider.rx.request(.register(parameters: parameters))
+    private func registerErrorHandler(info: RegisterRequestInfo) {
+        let parameters = [ "username": info.username, "email": info.email, "password": info.password]
+        provider.rx.request(.register(parameters: parameters))
             .catchSessacError(SessacError.self)
             .map(RegisterInfo.Response.self)
-        return result
+            .subscribe ({ [weak self] response in
+                guard let self = self else { return }
+                switch response {
+                case .success(let success):
+                    TokenUtils.create(AppConfiguration.service, account: "accessToken", value: success.jwt)
+                    self.isLoading.accept(true)
+                    self.registerSuccessAlertAction.accept("회원가입이 정상적으로 완료되었습니다.")
+                case .failure(let error):
+                    self.isLoading.accept(true)
+                    let error = error as! SessacError
+                    self.registerFailAlertAction.accept(error.errorDescription)
+                }
+            })
+            .disposed(by: disposeBag)
     }
 }
