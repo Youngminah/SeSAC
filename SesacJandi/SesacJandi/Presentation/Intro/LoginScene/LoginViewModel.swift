@@ -53,7 +53,7 @@ final class LoginViewModel: CommonViewModel {
                         self.loginSuccessAlertAction.accept("로그인 되었습니다.")
                     case .failure(let error):
                         self.isLoading.accept(true)
-                        let error = error as! SessacError
+                        let error = error as! SessacErrorEnum
                         self.loginFailAlertAction.accept(error.errorDescription)
                     }
                 }

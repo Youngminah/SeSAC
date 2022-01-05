@@ -11,6 +11,7 @@ import Moya
 class CommonViewModel {
     
     let tokenClosure: (TargetType) -> String = { _ in
+        print()
         return TokenUtils.read(AppConfiguration.service, account: "accessToken") ?? ""
     }
     
@@ -31,13 +32,18 @@ extension CommonViewModel {
     ) {
         switch result {
         case .success(let response):
-            guard (200...299).contains(response.statusCode) else {
-                let errorResponce = try! response.map(ErrorResponse.self)
-                completion (.failure(SessacError(messageId: errorResponce.message[0].messages[0].id)))
-                return
+            print("ㅋㅋㅋㅋ")
+            print(try! response.mapJSON())
+            if response.statusCode == 400 {
+                let errorResponse = try! response.map(InputErrorResponse.self)
+                completion (.failure(SessacErrorEnum(messageId: errorResponse.message[0].messages[0].id)))
+            } else if response.statusCode >= 401 {
+                let errorResponse = try! response.map(TokenErrorResponse.self)
+                completion (.failure(SessacErrorEnum(messageId: errorResponse.error)))
+            } else {
+                let data = try! JSONDecoder().decode(type, from: response.data)
+                completion(.success(data as! E))
             }
-            let data = try! JSONDecoder().decode(type, from: response.data) 
-            completion(.success(data as! E))
         case .failure(let error):
             completion(.failure(error))
         }

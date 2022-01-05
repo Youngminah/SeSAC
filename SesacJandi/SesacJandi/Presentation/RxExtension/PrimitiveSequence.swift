@@ -13,12 +13,12 @@ import RxCocoa
 
 extension PrimitiveSequence where Trait == SingleTrait, Element == Response {
     
-    func catchSessacError(_ type: SessacError.Type) -> Single<Element> {
+    func catchSessacError(_ type: SessacErrorEnum.Type) -> Single<Element> {
         return flatMap { response in
             guard (200...299).contains(response.statusCode) else {
                 do {
-                    let errorResponce = try response.map(ErrorResponse.self)
-                    throw SessacError(messageId: errorResponce.message[0].messages[0].id)
+                    let errorResponce = try response.map(InputErrorResponse.self)
+                    throw SessacErrorEnum(messageId: errorResponce.message[0].messages[0].id)
                 } catch {
                     throw error
                 }

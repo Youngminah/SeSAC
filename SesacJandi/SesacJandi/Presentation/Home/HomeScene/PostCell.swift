@@ -60,7 +60,6 @@ final class PostCell: BaseTableViewCell {
     
     override func setConfiguration() {
         super.setConfiguration()
-        dateLabel.text = "12월 8일"
         dateLabel.textAlignment = .right
         textView.isScrollEnabled = false
         textView.isEditable = false
@@ -68,8 +67,10 @@ final class PostCell: BaseTableViewCell {
         selectionStyle = .none
     }
     
-    func updateUI(contentText: String) {
-        textView.text = contentText
+    func updateUI(post: PostResponse) {
+        textView.text = post.text
+        dateLabel.text = post.createdAt
+        commentInfoView.setCommentCount(count: post.comments.count)
         textView.sizeToFit()
     }
 }

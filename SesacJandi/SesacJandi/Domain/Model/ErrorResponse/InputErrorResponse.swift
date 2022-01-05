@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ErrorResponse: Codable {
+struct InputErrorResponse: Codable {
     let statusCode: Int
     let message: [ErrorData]
 }

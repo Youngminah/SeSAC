@@ -13,13 +13,21 @@ class HomeViewController: UIViewController {
     
     private var tableView = UITableView()
     private let composePostButton = UIButton()
-    let disposeBag = DisposeBag()
     
     let data = Observable.just([
         "안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕",
         "안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕",
         "안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕"
     ])
+    
+    private lazy var input = HomeViewModel.Input(
+        viewDidLoadEvent: viewDidLoadEvent.asSignal()
+    )
+    private lazy var output = viewModel.transform(input: input)
+    
+    private let viewModel = HomeViewModel()
+    private let viewDidLoadEvent = PublishRelay<Void>()
+    private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,13 +35,14 @@ class HomeViewController: UIViewController {
         setConstraints()
         setConfiguration()
         bind()
+        viewDidLoadEvent.accept(())
     }
     
     private func bind() {
-        data
-            .bind(to: tableView.rx.items) { (tableView, row, element) in
+        output.didLoadallPosts
+            .drive(tableView.rx.items) { (tableView, row, post) in
                 let cell = tableView.dequeueReusableCell(withIdentifier: PostCell.identifier) as! PostCell
-                cell.updateUI(contentText: element)
+                cell.updateUI(post: post)
                 cell.commentButton.addTarget(self,
                                              action: #selector(self.commentButtonTap),
                                              for: .touchUpInside)

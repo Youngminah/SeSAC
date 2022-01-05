@@ -18,7 +18,7 @@ enum SesacTarget {
     case changePassword(parameters: JsonType)
     
     // Post
-    case allPost
+    case allPost(pageIndex: Int)
     case composePost(parameters: JsonType)
     case updatePost(index: Int, parameters: JsonType)
     case deletePost(index: Int)
@@ -47,20 +47,21 @@ extension SesacTarget: TargetType {
             return "auth/local"
         case .changePassword:
             return "custom/change-password"
-        case .allPost,
-             .composePost:
-            return "comments"
+        case .allPost(pageIndex: let index):
+            return "posts"
+        case .composePost:
+            return "posts"
         case .updatePost(index: let index, parameters: _):
-            return "comments/\(index)"
+            return "posts/\(index)"
         case .deletePost(index: let index):
-            return "comments/\(index)"
+            return "posts/\(index)"
         case .allComment,
              .createComment:
-            return "posts"
+            return "comments"
         case .updateComment(index: let index, parameters: _):
-            return "posts/\(index)"
+            return "comments/\(index)"
         case .deleteComment(index: let index):
-            return "posts/\(index)"
+            return "comments/\(index)"
         }
     }
     
@@ -106,8 +107,21 @@ extension SesacTarget: TargetType {
         }
     }
     
+//    public var validationType: ValidationType {
+//        return .successCodes
+//    }
+    
     var headers: [String : String]? {
-        return ["Content-type": "application/json"]
+        switch self {
+        case .register,
+             .login:
+            return ["Content-Type": "application/json"]
+        default:
+            let token = TokenUtils.read(AppConfiguration.service, account: "accessToken")
+            return ["Content-Type": "application/json",
+                    "Authorization": "Bearer \(token!)"]
+        }
+
     }
     
     var authorizationType: AuthorizationType? {

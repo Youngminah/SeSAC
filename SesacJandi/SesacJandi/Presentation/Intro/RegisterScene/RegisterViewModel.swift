@@ -49,7 +49,7 @@ final class RegisterViewModel: CommonViewModel {
                         self.registerSuccessAlertAction.accept("회원가입이 정상적으로 완료되었습니다.")
                     case .failure(let error):
                         self.isLoading.accept(true)
-                        let error = error as! SessacError
+                        let error = error as! SessacErrorEnum
                         self.registerFailAlertAction.accept(error.errorDescription)
                     }
                 }

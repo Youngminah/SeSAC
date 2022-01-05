@@ -12,25 +12,23 @@ import RxCocoa
 import RxMoya
 import RxSwift
 
-typealias RegisterRequestInfo = (username: String, email: String, password: String)
-
 final class HomeViewModel: CommonViewModel {
     
     struct Input {
-        let registerButtonTapEvent: Signal<RegisterRequestInfo>
+        let viewDidLoadEvent: Signal<Void>
     }
     
     struct Output {
         let isLoading: Driver<Bool>
-        let registerSuccessAlertAction: Driver<String>
-        let registerFailAlertAction: Driver<String>
-        let toastMessageAction: Driver<String>
+        let toastMessageAction: Signal<String>
+        let didLoadallPosts: Driver<AllPostResponse>
+        let loadFailAlertAction: Signal<String>
     }
     
     private let isLoading = BehaviorRelay<Bool>(value: true)
-    private let registerSuccessAlertAction = PublishRelay<String>()
-    private let registerFailAlertAction = PublishRelay<String>()
     private let toastMessageAction = PublishRelay<String>()
+    private let didLoadallPosts = BehaviorRelay<AllPostResponse>(value: [])
+    private let loadFailAlertAction = PublishRelay<String>()
     private let disposeBag = DisposeBag()
     
     override init() {
@@ -39,18 +37,18 @@ final class HomeViewModel: CommonViewModel {
     
     func transform(input: Input) -> Output {
         
-        input.registerButtonTapEvent
-            .emit { [unowned self]  in
-                self.requestAllPosts() { [weak self] response in
+        input.viewDidLoadEvent
+            .emit { [unowned self] _ in
+                self.requestAllPosts(pageIndex: 0) { [weak self] response in
                     guard let self = self else { return }
                     switch response {
                     case .success(let success):
                         self.isLoading.accept(true)
-                        self.registerSuccessAlertAction.accept("회원가입이 정상적으로 완료되었습니다.")
-                    case .failure(let error):
+                        self.didLoadallPosts.accept(success)
+                    case .failure(let error): break
                         self.isLoading.accept(true)
-                        let error = error as! SessacError
-                        self.registerFailAlertAction.accept(error.errorDescription)
+                        let error = error as! SessacErrorEnum
+                        self.loadFailAlertAction.accept(error.errorDescription)
                     }
                 }
             }
@@ -58,18 +56,18 @@ final class HomeViewModel: CommonViewModel {
         
         return Output(
             isLoading: isLoading.asDriver(),
-            registerSuccessAlertAction: registerSuccessAlertAction.asDriver(onErrorJustReturn: ""),
-            registerFailAlertAction: registerFailAlertAction.asDriver(onErrorJustReturn: ""),
-            toastMessageAction: toastMessageAction.asDriver(onErrorJustReturn: "")
+            toastMessageAction: toastMessageAction.asSignal(),
+            didLoadallPosts: didLoadallPosts.asDriver(),
+            loadFailAlertAction: loadFailAlertAction.asSignal()
         )
     }
 }
 
 extension HomeViewModel {
     
-    func requestAllPosts(completion: @escaping (Result<RegisterInfo.Response, Error>) -> Void ) {
-        provider.request(.allPost) { result in
-            self.process(type: RegisterInfo.Response.self, result: result, completion: completion)
+    func requestAllPosts(pageIndex: Int, completion: @escaping (Result<[PostResponse], Error>) -> Void ) {
+        provider.request(.allPost(pageIndex: pageIndex)) { result in
+            self.process(type: [PostResponse].self, result: result, completion: completion)
         }
     }
 }

@@ -7,11 +7,12 @@
 
 import Foundation
 
-enum SessacError: Error {
+enum SessacErrorEnum: Error {
     
     case emailIsAlreadyTaken
     case inValidateEmailAddress
     case inValidatePassword
+    case inValidateToken
     case unknown
     case with(messageId: String)
     
@@ -20,12 +21,13 @@ enum SessacError: Error {
         case "Auth.form.error.email.taken": self = .emailIsAlreadyTaken
         case "Auth.form.error.email.format": self = .inValidateEmailAddress
         case "Auth.form.error.invalid": self = .inValidatePassword
+        case "Unauthorized": self = .inValidateToken
         default: self = messageId.isEmpty ? .unknown : .with(messageId: messageId)
         }
     }
 }
 
-extension SessacError {
+extension SessacErrorEnum {
     var errorDescription: String {
         switch self {
         case .emailIsAlreadyTaken:
@@ -34,6 +36,8 @@ extension SessacError {
             return "이메일이 유효하지 않습니다."
         case .inValidatePassword:
             return "아이디 또는 비밀번호를 확인해주세요."
+        case .inValidateToken:
+            return "로그아웃 합니다."
         case .unknown:
             return "올바른 입력 값이 아닙니다."
         case .with(let messageId):

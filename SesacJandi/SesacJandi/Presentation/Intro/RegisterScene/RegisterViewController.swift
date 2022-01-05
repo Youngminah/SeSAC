@@ -23,14 +23,13 @@ final class RegisterViewController: UIViewController {
                                                                 passwordTextField,
                                                                 passwordConfirmTextField])
     
-    private let viewModel = RegisterViewModel()
-    
     private lazy var input = RegisterViewModel.Input(
         registerButtonTapEvent: registerButtonTapEvent.asSignal()
     )
     private lazy var output = viewModel.transform(input: input)
     
-    private var registerButtonTapEvent = PublishRelay<RegisterRequestInfo>()
+    private let viewModel = RegisterViewModel()
+    private let registerButtonTapEvent = PublishRelay<RegisterRequestInfo>()
     private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
