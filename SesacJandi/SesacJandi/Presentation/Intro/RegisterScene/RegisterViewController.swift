@@ -6,7 +6,10 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 import SnapKit
+import Toast
 
 final class RegisterViewController: UIViewController {
 
@@ -16,16 +19,46 @@ final class RegisterViewController: UIViewController {
     private let passwordConfirmTextField = IntroTextField(placeHolder: "비밀번호 확인")
     private let registerButton = IntroButton(title: "가입하기")
     
+    private let viewModel = RegisterViewModel()
     private lazy var stackView = UIStackView(arrangedSubviews: [emailTextField,
                                                                 nickNameTextField,
                                                                 passwordTextField,
                                                                 passwordConfirmTextField])
+    
+    private lazy var input = RegisterViewModel.Input(
+        registerButtonTapEvent: registerButtonTapEvent.asSignal()
+    )
+    private lazy var output = viewModel.transform(input: input)
+    
+    private let registerButtonTapEvent = PublishRelay<RegisterRequestInfo>()
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
         setConstraints()
         setConfiguration()
+        bind()
+    }
+    
+    private func bind() {
+//        output.isLoading
+//            .drive(registerButton.rx.isEnabled)
+//            .disposed(by: disposeBag)
+        
+        output.registerSuccessAlertAction
+            .drive(onNext: { [unowned self] title in
+                let alert = self.confirmAlert(title: title)
+                self.present(alert, animated: true)
+            })
+            .disposed(by: disposeBag)
+        
+        output.toastMessageAction
+            .drive(onNext: { [unowned self] message in
+                self.makeToastStyle()
+                self.view.makeToast(message, position: .top)
+            })
+            .disposed(by: disposeBag)
     }
     
     private func setView() {
@@ -55,12 +88,14 @@ final class RegisterViewController: UIViewController {
         stackView.distribution = .fillEqually
         stackView.spacing = 10
         
-        registerButton.isEnabled = false
+        registerButton.isEnabled = true
         registerButton.addTarget(self, action: #selector(registerButtonTap), for: .touchUpInside)
     }
     
     @objc
     private func registerButtonTap() {
-        
+        registerButtonTapEvent.accept((username: "hello",
+                                       email: "email10@gmail.com",
+                                       password: "email"))
     }
 }
