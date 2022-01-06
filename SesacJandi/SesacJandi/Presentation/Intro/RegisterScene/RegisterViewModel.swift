@@ -14,7 +14,7 @@ import RxSwift
 
 typealias RegisterRequestInfo = (username: String, email: String, password: String)
 
-final class RegisterViewModel: CommonViewModel {
+final class RegisterViewModel: CommonViewModel, ViewModelType {
     
     struct Input {
         let registerButtonTapEvent: Signal<RegisterRequestInfo>
@@ -31,7 +31,8 @@ final class RegisterViewModel: CommonViewModel {
     private let registerSuccessAlertAction = PublishRelay<String>()
     private let registerFailAlertAction = PublishRelay<String>()
     private let toastMessageAction = PublishRelay<String>()
-    private let disposeBag = DisposeBag()
+    
+    var disposeBag = DisposeBag()
     
     override init() {
         super.init()

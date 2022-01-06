@@ -14,7 +14,7 @@ import RxSwift
 
 typealias LoginRequestInfo = (email: String, password: String)
 
-final class LoginViewModel: CommonViewModel {
+final class LoginViewModel: CommonViewModel, ViewModelType {
     
     struct Input {
         let loginRequestAPI: Signal<LoginRequestInfo>
@@ -31,7 +31,8 @@ final class LoginViewModel: CommonViewModel {
     private let loginSuccessAlertAction = PublishRelay<String>()
     private let loginFailAlertAction = PublishRelay<String>()
     private let toastMessageAction = PublishRelay<String>()
-    private let disposeBag = DisposeBag()
+    
+    var disposeBag = DisposeBag()
     
     override init() {
         super.init()

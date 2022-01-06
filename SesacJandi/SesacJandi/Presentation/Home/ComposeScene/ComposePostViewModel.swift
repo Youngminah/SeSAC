@@ -12,24 +12,23 @@ import RxCocoa
 import RxMoya
 import RxSwift
 
-final class ComposePostViewModel: CommonViewModel {
+final class ComposePostViewModel: CommonViewModel, ViewModelType {
     
     struct Input {
         let saveButtonTapEvent: Signal<String>
     }
-    
     struct Output {
         let isLoading: Driver<Bool>
         let toastMessageAction: Signal<String>
         let composeSuccessAlertAction: Signal<String>
         let composeFailAlertAction: Signal<String>
     }
+    var disposeBag = DisposeBag()
     
     private let isLoading = BehaviorRelay<Bool>(value: true)
     private let toastMessageAction = PublishRelay<String>()
     private let composeSuccessAlertAction = PublishRelay<String>()
     private let composeFailAlertAction = PublishRelay<String>()
-    private let disposeBag = DisposeBag()
     
     override init() {
         super.init()

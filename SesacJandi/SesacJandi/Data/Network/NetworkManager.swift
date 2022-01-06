@@ -15,13 +15,5 @@ enum APIEnvironment: String {
 }
 
 struct NetworkManager {
-    
-    let tokenClosure: (TargetType) -> String = { _ in
-        return TokenUtils.read(AppConfiguration.service, account: "accessToken") ?? ""
-    }
-    fileprivate var provider : MoyaProvider<SesacTarget> {
-        let authPlugin = AccessTokenPlugin(tokenClosure: tokenClosure)
-        return MoyaProvider<SesacTarget>(plugins: [authPlugin])
-    }
     static let environment: APIEnvironment = .staging
 }

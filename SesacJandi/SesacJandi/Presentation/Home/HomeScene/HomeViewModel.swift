@@ -12,7 +12,7 @@ import RxCocoa
 import RxMoya
 import RxSwift
 
-final class HomeViewModel: CommonViewModel {
+final class HomeViewModel: CommonViewModel, ViewModelType {
     
     struct Input {
         let requestAllPostsEvent: Signal<Void>
@@ -21,15 +21,15 @@ final class HomeViewModel: CommonViewModel {
     struct Output {
         let isLoading: Driver<Bool>
         let toastMessageAction: Signal<String>
-        let didLoadallPosts: Driver<AllPostResponse>
+        let didLoadallPosts: Driver<[PostResponse]>
         let loadFailAlertAction: Signal<String>
     }
     
     private let isLoading = BehaviorRelay<Bool>(value: true)
     private let toastMessageAction = PublishRelay<String>()
-    private let didLoadallPosts = BehaviorRelay<AllPostResponse>(value: [])
+    private let didLoadallPosts = BehaviorRelay<[PostResponse]>(value: [])
     private let loadFailAlertAction = PublishRelay<String>()
-    private let disposeBag = DisposeBag()
+    var disposeBag = DisposeBag()
     
     override init() {
         super.init()

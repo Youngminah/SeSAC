@@ -9,7 +9,7 @@ import Foundation
 import Moya
 
 class CommonViewModel {
-
+    
     let provider: MoyaProvider<SesacTarget>
 
     init() {

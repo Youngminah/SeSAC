@@ -20,7 +20,7 @@ enum PoetViewSuccessAction: String {
 //    case commentDelete = "댓글이 삭제되었습니다."
 }
 
-final class PostViewModel: CommonViewModel {
+final class PostViewModel: CommonViewModel, ViewModelType {
     
     struct Input {
         let requestAllCommentsEvent: Signal<Void>
@@ -36,6 +36,7 @@ final class PostViewModel: CommonViewModel {
         let commentsCount: Signal<Int>
         let failAlertAction: Signal<String>
     }
+    var disposeBag = DisposeBag()
     
     private let isLoading = BehaviorRelay<Bool>(value: true)
     private let toastMessageAction = PublishRelay<String>()
@@ -44,7 +45,6 @@ final class PostViewModel: CommonViewModel {
     private let commentsCount = PublishRelay<Int>()
     private let failAlertAction = PublishRelay<String>()
     
-    private let disposeBag = DisposeBag()
     private var postID : Int
     
     init(postID: Int) {

@@ -42,9 +42,6 @@
 		BB2C33EF278487A600F48F26 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33EE278487A600F48F26 /* RegisterViewModel.swift */; };
 		BB2C33F127848ADD00F48F26 /* RegisterInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33F027848ADD00F48F26 /* RegisterInfo.swift */; };
 		BB2C33F327848FBD00F48F26 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33F227848FBD00F48F26 /* AppConfiguration.swift */; };
-		BB2C33F62784914900F48F26 /* LoginInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33F52784914900F48F26 /* LoginInfo.swift */; };
-		BB2C33F82784916100F48F26 /* PasswordChangeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33F72784916100F48F26 /* PasswordChangeInfo.swift */; };
-		BB2C33FA278491C400F48F26 /* PostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33F9278491C400F48F26 /* PostList.swift */; };
 		BB2C33FD2784A07800F48F26 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = BB2C33FC2784A07800F48F26 /* RxMoya */; };
 		BB2C33FF2784A9ED00F48F26 /* SesacTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33FE2784A9ED00F48F26 /* SesacTarget.swift */; };
 		BB2C34012784B0B400F48F26 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C34002784B0B400F48F26 /* NetworkManager.swift */; };
@@ -55,14 +52,13 @@
 		BBD9FBD62785D11E00D755D5 /* PrimitiveSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FBD52785D11E00D755D5 /* PrimitiveSequence.swift */; };
 		BBD9FBDA2785F9E200D755D5 /* InputErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FBD92785F9E200D755D5 /* InputErrorResponse.swift */; };
 		BBD9FBDC2786047300D755D5 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FBDB2786047300D755D5 /* HomeViewModel.swift */; };
-		BBD9FBDE2786065200D755D5 /* AllPostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FBDD2786065200D755D5 /* AllPostResponse.swift */; };
-		BBD9FBE0278606A900D755D5 /* AllCommentsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FBDF278606A900D755D5 /* AllCommentsResponse.swift */; };
 		BBD9FBE2278606B700D755D5 /* CommentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FBE1278606B700D755D5 /* CommentResponse.swift */; };
 		BBD9FBE42786071D00D755D5 /* PostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FBE32786071D00D755D5 /* PostResponse.swift */; };
 		BBD9FBE627860C4400D755D5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FBE527860C4400D755D5 /* User.swift */; };
 		BBD9FBE82786127900D755D5 /* AccessErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FBE72786127900D755D5 /* AccessErrorResponse.swift */; };
 		BBD9FBEB27862D3500D755D5 /* ComposePostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FBEA27862D3500D755D5 /* ComposePostViewModel.swift */; };
 		BBD9FBED2786390A00D755D5 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FBEC2786390A00D755D5 /* PostViewModel.swift */; };
+		BBD9FBF12786BA5500D755D5 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FBF02786BA5500D755D5 /* ViewModelType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,9 +95,6 @@
 		BB2C33EE278487A600F48F26 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		BB2C33F027848ADD00F48F26 /* RegisterInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInfo.swift; sourceTree = "<group>"; };
 		BB2C33F227848FBD00F48F26 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
-		BB2C33F52784914900F48F26 /* LoginInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInfo.swift; sourceTree = "<group>"; };
-		BB2C33F72784916100F48F26 /* PasswordChangeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeInfo.swift; sourceTree = "<group>"; };
-		BB2C33F9278491C400F48F26 /* PostList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostList.swift; sourceTree = "<group>"; };
 		BB2C33FE2784A9ED00F48F26 /* SesacTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SesacTarget.swift; sourceTree = "<group>"; };
 		BB2C34002784B0B400F48F26 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		BBD9FBC42784BCD300D755D5 /* TokenUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenUtils.swift; sourceTree = "<group>"; };
@@ -110,14 +103,13 @@
 		BBD9FBD52785D11E00D755D5 /* PrimitiveSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimitiveSequence.swift; sourceTree = "<group>"; };
 		BBD9FBD92785F9E200D755D5 /* InputErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputErrorResponse.swift; sourceTree = "<group>"; };
 		BBD9FBDB2786047300D755D5 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		BBD9FBDD2786065200D755D5 /* AllPostResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPostResponse.swift; sourceTree = "<group>"; };
-		BBD9FBDF278606A900D755D5 /* AllCommentsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCommentsResponse.swift; sourceTree = "<group>"; };
 		BBD9FBE1278606B700D755D5 /* CommentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentResponse.swift; sourceTree = "<group>"; };
 		BBD9FBE32786071D00D755D5 /* PostResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostResponse.swift; sourceTree = "<group>"; };
 		BBD9FBE527860C4400D755D5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BBD9FBE72786127900D755D5 /* AccessErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessErrorResponse.swift; sourceTree = "<group>"; };
 		BBD9FBEA27862D3500D755D5 /* ComposePostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposePostViewModel.swift; sourceTree = "<group>"; };
 		BBD9FBEC2786390A00D755D5 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
+		BBD9FBF02786BA5500D755D5 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,11 +257,6 @@
 			children = (
 				BB2C33F027848ADD00F48F26 /* RegisterInfo.swift */,
 				BBD9FBE527860C4400D755D5 /* User.swift */,
-				BB2C33F52784914900F48F26 /* LoginInfo.swift */,
-				BB2C33F72784916100F48F26 /* PasswordChangeInfo.swift */,
-				BB2C33F9278491C400F48F26 /* PostList.swift */,
-				BBD9FBDD2786065200D755D5 /* AllPostResponse.swift */,
-				BBD9FBDF278606A900D755D5 /* AllCommentsResponse.swift */,
 				BBD9FBE32786071D00D755D5 /* PostResponse.swift */,
 				BBD9FBE1278606B700D755D5 /* CommentResponse.swift */,
 				BBD9FBE9278612A700D755D5 /* ErrorResponse */,
@@ -390,6 +377,7 @@
 			isa = PBXGroup;
 			children = (
 				BBD9FBCA2785443000D755D5 /* CommonViewModel.swift */,
+				BBD9FBF02786BA5500D755D5 /* ViewModelType.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -487,11 +475,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBD9FBF12786BA5500D755D5 /* ViewModelType.swift in Sources */,
 				BBD9FBED2786390A00D755D5 /* PostViewModel.swift in Sources */,
 				BBD9FBDA2785F9E200D755D5 /* InputErrorResponse.swift in Sources */,
 				BB2C33DB2784619300F48F26 /* ProfileImageView.swift in Sources */,
 				BBD9FBE627860C4400D755D5 /* User.swift in Sources */,
-				BBD9FBE0278606A900D755D5 /* AllCommentsResponse.swift in Sources */,
 				BB2C33C92783719500F48F26 /* PostViewController.swift in Sources */,
 				BB2C33B62783037E00F48F26 /* DateLabel.swift in Sources */,
 				BB2C33DD278476F000F48F26 /* BaseTableViewCell.swift in Sources */,
@@ -501,9 +489,7 @@
 				BB2C33992782CFFD00F48F26 /* IntroButton.swift in Sources */,
 				BB2C33C727836DE500F48F26 /* AppAppearance.swift in Sources */,
 				BB2C33ED2784879800F48F26 /* LoginViewModel.swift in Sources */,
-				BBD9FBDE2786065200D755D5 /* AllPostResponse.swift in Sources */,
 				BB2C34012784B0B400F48F26 /* NetworkManager.swift in Sources */,
-				BB2C33F62784914900F48F26 /* LoginInfo.swift in Sources */,
 				BBD9FBD42785BCDB00D755D5 /* SesacErrorEnum.swift in Sources */,
 				BB2C339B2782D5A400F48F26 /* RegisterViewController.swift in Sources */,
 				BB2C33BA27830C6300F48F26 /* NickNameLabel.swift in Sources */,
@@ -523,12 +509,10 @@
 				BB2C33BC27830DCB00F48F26 /* SeparatorLineView.swift in Sources */,
 				BBD9FBD62785D11E00D755D5 /* PrimitiveSequence.swift in Sources */,
 				BBD9FBE82786127900D755D5 /* AccessErrorResponse.swift in Sources */,
-				BB2C33F82784916100F48F26 /* PasswordChangeInfo.swift in Sources */,
 				BB2C33812782BDB200F48F26 /* AppDelegate.swift in Sources */,
 				BB2C33F327848FBD00F48F26 /* AppConfiguration.swift in Sources */,
 				BB2C33AE2782F16B00F48F26 /* PostCell.swift in Sources */,
 				BB2C33D32784450300F48F26 /* CommentInputTextView.swift in Sources */,
-				BB2C33FA278491C400F48F26 /* PostList.swift in Sources */,
 				BB2C33A92782ED5600F48F26 /* UIViewController.swift in Sources */,
 				BBD9FBDC2786047300D755D5 /* HomeViewModel.swift in Sources */,
 				BB2C33832782BDB200F48F26 /* SceneDelegate.swift in Sources */,
