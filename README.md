@@ -7,16 +7,17 @@
 
 | 주제                   | 리팩토링           | 마지막 업데이트                     |  뷰 구현 방식    |  
 | --------------------- | ---------------- | ---------------------------     | ------------- |  
-| 전광판                  |                  |  **2021.10.05**                 |   Code |  
-| 신조어                  |  ✔️               |  **2021.10.07**                 |   Code |     
-| 기념일계산기              |                 |  **2021.10.07**                 |   Code |  
+| 전광판                  |                  |  **2021.10.05**                 |   Code 풀코딩|  
+| 신조어                  |  ✔️               |  **2021.10.07**                 |   Code 풀코딩|     
+| 기념일계산기              |                 |  **2021.10.07**                 |   Code 풀코딩|  
 | 물마시기                |     ✔️            |  **2021.10.10**                  |   StoryBoard |  
-| 트렌드미디어             |                 |  **2021.10.29**                  |   Code + SnapKit |  
+| 트렌드미디어             |                 |  **2021.10.29**                  |   Code + SnapKit 풀코딩 |  
+| 새싹커뮤니티❗️중요❗️            |                 |  **2021.01.06**                  |   Code + SnapKit 풀코딩 |  
 
 </br>
 </br>
 
-## 이전 과제
+## 이전 과제 UI
 
 <details><summary>전광판</summary>
    
@@ -58,10 +59,27 @@ https://user-images.githubusercontent.com/42762236/136702716-5224904e-430a-4e8e-
 </br>
 </details>
 
+
+<details><summary>트랜드미디어</summary>
+
+## 트랜드 미디어 
 </br>
 </br>
 
-## 트랜드 미디어 
+</br>
+</br>
+
+</details>
+
+<details><summary>새싹커뮤니티</summary>
+
+## 새싹커뮤니티
+</br>
+</br>
+
+</br>
+</br>
+</details>
 </br>
 </br>
 
@@ -69,3 +87,12 @@ https://user-images.githubusercontent.com/42762236/136702716-5224904e-430a-4e8e-
 - [NSLayoutConstraint CustomView 관련 이슈](https://github.com/Youngminah/SeSSAC/issues/1)
 - [Alert 코드 개선](https://github.com/Youngminah/SeSSAC/issues/3)
 - [타입어노테이션, {} 띄어쓰기](https://github.com/Youngminah/SeSSAC/issues/4)
+</br>
+</br>
+
+## 기술 및 회고 정리
+- 아래 첨부된 링크는 본 레파지토리의 과제 기술 정리 및 이슈 및 회고를 모두 정리한 위키 링크 입니다.
+- ### [위키 바로가기](https://github.com/Youngminah/SeSAC/wiki)
+
+</br>
+</br>
