@@ -47,6 +47,7 @@
 		BB2C33FD2784A07800F48F26 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = BB2C33FC2784A07800F48F26 /* RxMoya */; };
 		BB2C33FF2784A9ED00F48F26 /* SesacTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33FE2784A9ED00F48F26 /* SesacTarget.swift */; };
 		BB2C34012784B0B400F48F26 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C34002784B0B400F48F26 /* NetworkManager.swift */; };
+		BB8801AF27870214001AEDE4 /* PasswordChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8801AE27870214001AEDE4 /* PasswordChangeViewController.swift */; };
 		BBD9FBC52784BCD300D755D5 /* TokenUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FBC42784BCD300D755D5 /* TokenUtils.swift */; };
 		BBD9FBCB2785443000D755D5 /* CommonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FBCA2785443000D755D5 /* CommonViewModel.swift */; };
 		BBD9FBD227858D7300D755D5 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = BBD9FBD127858D7300D755D5 /* Toast */; };
@@ -102,6 +103,7 @@
 		BB2C33F227848FBD00F48F26 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		BB2C33FE2784A9ED00F48F26 /* SesacTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SesacTarget.swift; sourceTree = "<group>"; };
 		BB2C34002784B0B400F48F26 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		BB8801AE27870214001AEDE4 /* PasswordChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeViewController.swift; sourceTree = "<group>"; };
 		BBD9FBC42784BCD300D755D5 /* TokenUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenUtils.swift; sourceTree = "<group>"; };
 		BBD9FBCA2785443000D755D5 /* CommonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewModel.swift; sourceTree = "<group>"; };
 		BBD9FBD32785BCDB00D755D5 /* SessacErrorCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessacErrorCase.swift; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 				BB2C33842782BDB200F48F26 /* IntroViewController.swift */,
 				BB2C339A2782D5A400F48F26 /* RegisterViewController.swift */,
 				BB2C339C2782D5AF00F48F26 /* LoginViewController.swift */,
+				BB8801AE27870214001AEDE4 /* PasswordChangeViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				BB1F79F22786E14D009FF49A /* EditCommentViewModel.swift in Sources */,
 				BB2C33B62783037E00F48F26 /* DateLabel.swift in Sources */,
 				BB2C33DD278476F000F48F26 /* BaseTableViewCell.swift in Sources */,
+				BB8801AF27870214001AEDE4 /* PasswordChangeViewController.swift in Sources */,
 				BB2C33FF2784A9ED00F48F26 /* SesacTarget.swift in Sources */,
 				BB2C339D2782D5AF00F48F26 /* LoginViewController.swift in Sources */,
 				BB2C33D72784550F00F48F26 /* CommentCell.swift in Sources */,

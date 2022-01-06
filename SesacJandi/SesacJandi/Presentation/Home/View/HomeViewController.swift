@@ -13,7 +13,14 @@ class HomeViewController: UIViewController {
     
     private var tableView = UITableView()
     private let composePostButton = UIButton()
-    private lazy var logoutBarButton = UIBarButtonItem(title: "로그아웃", style: .plain, target: self, action: #selector(logoutBarButtonTap))
+    private lazy var logoutBarButton = UIBarButtonItem(title: "로그아웃",
+                                                       style: .plain,
+                                                       target: self,
+                                                       action: #selector(logoutBarButtonTap))
+    private lazy var changePasswordBarButton = UIBarButtonItem(title: "비번변경",
+                                                       style: .plain,
+                                                       target: self,
+                                                       action: #selector(changePasswordBarButtonTap))
     
     private lazy var input = HomeViewModel.Input(
         requestAllPostsEvent: requestAllPostsEvent.asSignal()
@@ -69,6 +76,7 @@ class HomeViewController: UIViewController {
     
     private func setView() {
         navigationItem.rightBarButtonItem = logoutBarButton
+        navigationItem.leftBarButtonItem = changePasswordBarButton
         view.addSubview(tableView)
         view.addSubview(composePostButton)
     }
@@ -112,6 +120,13 @@ class HomeViewController: UIViewController {
     private func logoutBarButtonTap() {
         TokenUtils.delete(AppConfiguration.service, account: "accessToken")
         self.changeIntroViewController()
+    }
+    
+    @objc
+    private func changePasswordBarButtonTap() {
+        let vc = PasswordChangeViewController()
+        vc.title = "비번변경"
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc
