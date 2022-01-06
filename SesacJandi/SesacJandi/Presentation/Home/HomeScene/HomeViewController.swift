@@ -49,8 +49,7 @@ class HomeViewController: UIViewController {
         Observable.zip( tableView.rx.itemSelected,
                         tableView.rx.modelSelected(PostResponse.self))
             .subscribe(onNext: { [unowned self] indexPath, data in
-                let vc = PostViewController()
-                vc.basicInfo = data
+                let vc = PostViewController(basicInfo: data)
                 self.navigationController?.pushViewController(vc, animated: true)
              })
              .disposed(by: disposeBag)
@@ -105,9 +104,9 @@ class HomeViewController: UIViewController {
         self.present(nav, animated: true)
     }
     
-    @objc
-    private func commentButtonTap() {
-        let vc = PostViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
+//    @objc
+//    private func commentButtonTap() {
+//        let vc = PostViewController(basicInfo: <#PostResponse#>)
+//        self.navigationController?.pushViewController(vc, animated: true)
+//    }
 }

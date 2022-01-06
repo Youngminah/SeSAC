@@ -15,30 +15,34 @@ import RxSwift
 final class PostViewModel: CommonViewModel {
     
     struct Input {
-        let viewDidLoadEvent: Signal<Int>
+        let requestAllCommentsEvent: Signal<Void>
+        let requestCreateCommentEvent: Signal<String>
     }
     
     struct Output {
         let isLoading: Driver<Bool>
         let toastMessageAction: Signal<String>
         let didLoadallComments: Driver<[CommentResponse]>
-        let loadFailAlertAction: Signal<String>
+        let successAlertAction: Signal<String>
+        let failAlertAction: Signal<String>
     }
     
     private let isLoading = BehaviorRelay<Bool>(value: true)
     private let toastMessageAction = PublishRelay<String>()
     private let didLoadallComments = BehaviorRelay<[CommentResponse]>(value: [])
-    private let loadFailAlertAction = PublishRelay<String>()
+    private let successAlertAction = PublishRelay<String>()
+    private let failAlertAction = PublishRelay<String>()
     private let disposeBag = DisposeBag()
+    private var postID : Int
     
-    override init() {
-        super.init()
+    init(postID: Int) {
+        self.postID = postID
     }
     
     func transform(input: Input) -> Output {
-        input.viewDidLoadEvent
-            .emit { [unowned self] postID in
-                self.requestAllComments(postID: postID) { [weak self] response in
+        input.requestAllCommentsEvent
+            .emit { [unowned self] _ in
+                self.requestAllComments() { [weak self] response in
                     guard let self = self else { return }
                     switch response {
                     case .success(let success):
@@ -47,7 +51,24 @@ final class PostViewModel: CommonViewModel {
                     case .failure(let error):
                         self.isLoading.accept(true)
                         let error = error as! SessacErrorEnum
-                        self.loadFailAlertAction.accept(error.errorDescription)
+                        self.failAlertAction.accept(error.errorDescription)
+                    }
+                }
+            }
+            .disposed(by: disposeBag)
+        
+        input.requestCreateCommentEvent
+            .emit { [unowned self] text in
+                self.requestCreateComment(text: text) { [weak self] response in
+                    guard let self = self else { return }
+                    switch response {
+                    case .success(_):
+                        self.isLoading.accept(true)
+                        self.successAlertAction.accept("작성되었습니다.")
+                    case .failure(let error):
+                        self.isLoading.accept(true)
+                        let error = error as! SessacErrorEnum
+                        self.failAlertAction.accept(error.errorDescription)
                     }
                 }
             }
@@ -57,17 +78,26 @@ final class PostViewModel: CommonViewModel {
             isLoading: isLoading.asDriver(),
             toastMessageAction: toastMessageAction.asSignal(),
             didLoadallComments: didLoadallComments.asDriver(),
-            loadFailAlertAction: loadFailAlertAction.asSignal()
+            successAlertAction: successAlertAction.asSignal(),
+            failAlertAction: failAlertAction.asSignal()
         )
     }
 }
 
 extension PostViewModel {
     
-    func requestAllComments(postID: Int, completion: @escaping (Result<[CommentResponse], Error>) -> Void ) {
+    func requestAllComments(completion: @escaping (Result<[CommentResponse], Error>) -> Void ) {
         let parameters = ["post": "\(postID)"]
         provider.request(.allComment(parameters: parameters)) { result in
             self.process(type: [CommentResponse].self, result: result, completion: completion)
+        }
+    }
+    
+    func requestCreateComment(text: String,
+                              completion: @escaping (Result<CommentResponse, Error>) -> Void ) {
+        let parameters = ["comment": text, "post": "\(postID)"]
+        provider.request(.createComment(parameters: parameters)) { result in
+            self.process(type: CommentResponse.self, result: result, completion: completion)
         }
     }
 }

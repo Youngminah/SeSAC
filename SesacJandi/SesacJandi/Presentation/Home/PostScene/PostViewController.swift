@@ -19,23 +19,36 @@ final class PostViewController: UIViewController {
                                                        action: #selector(detailMenuBarButtonTap))
     
     private lazy var input = PostViewModel.Input(
-        viewDidLoadEvent: viewDidLoadEvent.asSignal()
+        requestAllCommentsEvent: requestAllCommentsEvent.asSignal(),
+        requestCreateCommentEvent: requestCreateCommentEvent.asSignal()
     )
     private lazy var output = viewModel.transform(input: input)
     
-    private let viewModel = PostViewModel()
-    private let viewDidLoadEvent = PublishRelay<Int>()
+    private let viewModel : PostViewModel
+    private let requestAllCommentsEvent = PublishRelay<Void>()
+    private let requestCreateCommentEvent = PublishRelay<String>()
     private let disposeBag = DisposeBag()
     
     var basicInfo: PostResponse?
-
+    
+    init(basicInfo: PostResponse) {
+        self.basicInfo = basicInfo
+        self.viewModel = PostViewModel(postID: basicInfo.id)
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
         setConstraints()
         setConfiguration()
+        bindUI()
         bind()
-        viewDidLoadEvent.accept(basicInfo!.id)
+        requestAllCommentsEvent.accept(())
     }
     
     private func bind() {
@@ -47,6 +60,24 @@ final class PostViewController: UIViewController {
             }
             .disposed(by: disposeBag)
         
+        output.successAlertAction
+            .emit(onNext: { [unowned self] title in
+                let alert = self.confirmAlert(title: title, okHandler: { _ in
+                    self.requestAllCommentsEvent.accept(())
+                })
+                self.present(alert, animated: true)
+            })
+            .disposed(by: disposeBag)
+        
+        output.failAlertAction
+            .emit(onNext: { [unowned self] title in
+                let alert = self.confirmAlert(title: title)
+                self.present(alert, animated: true)
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    private func bindUI() {
         tableView.rx.setDelegate(self)
             .disposed(by: disposeBag)
     }
@@ -71,13 +102,19 @@ final class PostViewController: UIViewController {
     private func setConfiguration() {
         view.backgroundColor = .systemBackground
         
-        tableView.register(CommentCell.self, forCellReuseIdentifier: CommentCell.identifier)
+        tableView.register(CommentCell.self,
+                           forCellReuseIdentifier: CommentCell.identifier)
         tableView.separatorInset.right = 16
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedSectionHeaderHeight = 200
-        tableView.register(PostHeaderView.self, forHeaderFooterViewReuseIdentifier: PostHeaderView.identifier)
+        tableView.register(PostHeaderView.self,
+                           forHeaderFooterViewReuseIdentifier: PostHeaderView.identifier)
         tableView.separatorInset.right = 16
 
+        commentInputView.commentPostButton.addTarget(self,
+                                                     action: #selector(createCommentButtonTap),
+                                                     for: .touchUpInside)
+        
         if !isValidateMenuButton(userID: basicInfo!.user.id) {
             navigationItem.rightBarButtonItems = []
         }
@@ -86,6 +123,11 @@ final class PostViewController: UIViewController {
     @objc
     private func detailMenuBarButtonTap() {
     
+    }
+    
+    @objc
+    private func createCommentButtonTap() {
+        self.requestCreateCommentEvent.accept("우오ㅜㅘ와와와와")
     }
     
     private func isValidateMenuButton(userID: Int) -> Bool {
@@ -107,7 +149,6 @@ extension PostViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 0
     }
-
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
