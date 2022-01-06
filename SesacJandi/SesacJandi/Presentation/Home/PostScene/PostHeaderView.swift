@@ -85,11 +85,12 @@ final class PostHeaderView: UITableViewHeaderFooterView {
         contentTextView.isScrollEnabled = false
         contentTextView.isEditable = false
         commentInfoView.setCommentCount(count: 0)
-        
-        //ui테스트
-        nickNameLabel.text = "헬로우헬로우"
-        dateLabel.text = "12월 8일"
-        contentTextView.text = "낄낄낄룰루룰루룰루룰루룰루룰루룰루룰루룰루룰루룰루룰루룰루룰루룰루룰루룰루룰루룰루룰루룰루룰루룰루룰루룰루룰루룰루룰루룰루룰루룰루룰루룰루룰루룰루룰루룰루룰루룰루룰루"
+    }
+    
+    func updateUI(info: PostResponse) {
+        nickNameLabel.text = info.user.username
+        dateLabel.text = info.createdAt
+        contentTextView.text = info.text
         contentTextView.sizeToFit()
     }
 }

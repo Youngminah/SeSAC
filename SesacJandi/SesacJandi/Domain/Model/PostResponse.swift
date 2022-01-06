@@ -12,11 +12,23 @@ struct PostResponse: Codable {
     let text: String
     let user: User
     let createdAt: String
-    let comments: [CommentResponse]
+    let comments: [Comment]
 
     enum CodingKeys: String, CodingKey {
         case id, text, user
         case createdAt = "created_at"
         case comments
+    }
+}
+
+struct Comment: Codable {
+    let id: Int
+    let comment: String
+    let user, post: Int
+    let createdAt: String
+
+    enum CodingKeys: String, CodingKey {
+        case id, comment, user, post
+        case createdAt = "created_at"
     }
 }

@@ -15,12 +15,12 @@ class HomeViewController: UIViewController {
     private let composePostButton = UIButton()
     
     private lazy var input = HomeViewModel.Input(
-        viewDidLoadEvent: viewDidLoadEvent.asSignal()
+        requestAllPostsEvent: requestAllPostsEvent.asSignal()
     )
     private lazy var output = viewModel.transform(input: input)
     
     private let viewModel = HomeViewModel()
-    private let viewDidLoadEvent = PublishRelay<Void>()
+    private let requestAllPostsEvent = PublishRelay<Void>()
     private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
@@ -29,7 +29,12 @@ class HomeViewController: UIViewController {
         setConstraints()
         setConfiguration()
         bind()
-        viewDidLoadEvent.accept(())
+        requestAllPostsEvent.accept(())
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        requestAllPostsEvent.accept(())
     }
     
     private func bind() {
@@ -37,12 +42,18 @@ class HomeViewController: UIViewController {
             .drive(tableView.rx.items) { (tableView, row, post) in
                 let cell = tableView.dequeueReusableCell(withIdentifier: PostCell.identifier) as! PostCell
                 cell.updateUI(post: post)
-                cell.commentButton.addTarget(self,
-                                             action: #selector(self.commentButtonTap),
-                                             for: .touchUpInside)
                 return cell
             }
             .disposed(by: disposeBag)
+        
+        Observable.zip( tableView.rx.itemSelected,
+                        tableView.rx.modelSelected(PostResponse.self))
+            .subscribe(onNext: { [unowned self] indexPath, data in
+                let vc = PostViewController()
+                vc.basicInfo = data
+                self.navigationController?.pushViewController(vc, animated: true)
+             })
+             .disposed(by: disposeBag)
     }
     
     private func setView() {

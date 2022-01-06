@@ -48,7 +48,7 @@ final class LoginViewModel: CommonViewModel {
                     guard let self = self else { return }
                     switch response {
                     case .success(let success):
-                        TokenUtils.create(AppConfiguration.service, account: "accessToken", value: success.jwt)
+                        self.setUserInfo(response: success)
                         self.isLoading.accept(true)
                         self.loginSuccessAlertAction.accept("로그인 되었습니다.")
                     case .failure(let error):
@@ -67,11 +67,16 @@ final class LoginViewModel: CommonViewModel {
             toastMessageAction: toastMessageAction.asDriver(onErrorJustReturn: "")
         )
     }
+    
+    private func setUserInfo(response: RegisterInfo.Response) {
+        TokenUtils.create(AppConfiguration.service, account: "accessToken", value: response.jwt)
+        UserDefaults.standard.setValue(response.user.id, forKey: "id")
+    }
 }
 
 extension LoginViewModel {
     
-    func requestLogin( info: LoginRequestInfo,
+    private func requestLogin( info: LoginRequestInfo,
         completion: @escaping (Result<RegisterInfo.Response, Error>) -> Void
     ) {
         let parameters = ["identifier": info.email, "password": info.password]

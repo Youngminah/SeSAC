@@ -18,13 +18,13 @@ enum SesacTarget {
     case changePassword(parameters: JsonType)
     
     // Post
-    case allPost(pageIndex: Int)
+    case allPost(parameters: JsonType)
     case composePost(parameters: JsonType)
     case updatePost(index: Int, parameters: JsonType)
     case deletePost(index: Int)
     
     // Comment
-    case allComment
+    case allComment(parameters: JsonType)
     case createComment(parameters: JsonType)
     case updateComment(index: Int, parameters: JsonType)
     case deleteComment(index: Int)
@@ -91,12 +91,11 @@ extension SesacTarget: TargetType {
     
     var task: Task {
         switch self {
-        case .allComment,
-             .deletePost ,
+        case .deletePost ,
              .deleteComment:
             return .requestPlain
-        case .allPost(pageIndex: let index):
-            let parameters = ["_sort": "created_at:desc", "_start": "\(index)", "_limit": "20"]
+        case .allPost(parameters: let parameters),
+             .allComment(parameters: let parameters):
             return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
         case .register(let parameters),
              .login(let parameters),

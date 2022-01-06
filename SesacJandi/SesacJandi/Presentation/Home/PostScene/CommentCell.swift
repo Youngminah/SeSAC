@@ -48,14 +48,17 @@ final class CommentCell: BaseTableViewCell {
         commentDetailMenuButton.tintColor = .label
         commentContentView.isScrollEnabled = false
         commentContentView.isEditable = false
-        
-        //UItest
-        nickNameLabel.text = "나는야 멋쟁이"
-        commentContentView.text = "지금부터 글을 시작한돠아아아아아ㅏ지금부터 글을 시작한돠아아아아아ㅏ지금부터 글을 시작한돠아아아아아ㅏ지금부터 글을 시작한돠아아아아아ㅏ지금부터 글을 시작한돠아아아아아ㅏ지금부터 글을 시작한돠아아아아아ㅏ지금부터 글을 시작한돠아아아아아ㅏ지금부터 글을 시작한돠아아아아아ㅏ"
+    }
+    
+    func updateUI(comment: CommentResponse) {
+        commentDetailMenuButton.isHidden = !isValidateMenuButton(userID: comment.user.id)
+        nickNameLabel.text = comment.user.username
+        commentContentView.text = comment.comment
         commentContentView.sizeToFit()
     }
     
-    func updateUI(contentText: String) {
-
+    private func isValidateMenuButton(userID: Int) -> Bool {
+        let myID = UserDefaults.standard.integer(forKey: "id")
+        return myID == userID
     }
 }

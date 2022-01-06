@@ -17,15 +17,12 @@ final class PostCell: BaseTableViewCell {
     private let separatorLineView = SeparatorLineView()
     private let commentInfoView = CommentInfoView()
     
-    let commentButton = UIButton()
-    
     override func setView() {
         super.setView()
         contentView.addSubview(commentInfoView)
         contentView.addSubview(separatorLineView)
         contentView.addSubview(dateLabel)
         contentView.addSubview(textView)
-        contentView.addSubview(commentButton)
     }
 
     override func setConstraints() {
@@ -49,12 +46,6 @@ final class PostCell: BaseTableViewCell {
         textView.snp.makeConstraints { make in
             make.bottom.equalTo(dateLabel.snp.top).priority(999)
             make.leading.top.trailing.equalToSuperview()
-        }
-        commentButton.snp.makeConstraints { make in
-            make.top.equalTo(separatorLineView.snp.bottom)
-            make.leading.equalToSuperview().offset(16)
-            make.trailing.equalToSuperview().offset(-16)
-            make.bottom.equalToSuperview()
         }
     }
     

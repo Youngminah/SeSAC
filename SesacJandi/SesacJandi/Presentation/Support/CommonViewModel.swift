@@ -26,8 +26,6 @@ extension CommonViewModel {
     ) {
         switch result {
         case .success(let response):
-            print("ㅋㅋㅋㅋ")
-            print(try! response.mapJSON())
             if response.statusCode == 400 {
                 let errorResponse = try! response.map(InputErrorResponse.self)
                 completion (.failure(SessacErrorEnum(messageId: errorResponse.message[0].messages[0].id)))
