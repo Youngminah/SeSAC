@@ -19,20 +19,18 @@ final class LoginViewModel: CommonViewModel, ViewModelType {
     struct Input {
         let loginRequestAPI: Signal<LoginRequestInfo>
     }
-    
     struct Output {
         let isLoading: Driver<Bool>
         let loginSuccessAlertAction: Driver<String>
         let loginFailAlertAction: Driver<String>
         let toastMessageAction: Driver<String>
     }
+    var disposeBag = DisposeBag()
     
     private let isLoading = BehaviorRelay<Bool>(value: true)
     private let loginSuccessAlertAction = PublishRelay<String>()
     private let loginFailAlertAction = PublishRelay<String>()
     private let toastMessageAction = PublishRelay<String>()
-    
-    var disposeBag = DisposeBag()
     
     override init() {
         super.init()
@@ -54,7 +52,7 @@ final class LoginViewModel: CommonViewModel, ViewModelType {
                         self.loginSuccessAlertAction.accept("로그인 되었습니다.")
                     case .failure(let error):
                         self.isLoading.accept(true)
-                        let error = error as! SessacErrorEnum
+                        let error = error as! SessacErrorCase
                         self.loginFailAlertAction.accept(error.errorDescription)
                     }
                 }

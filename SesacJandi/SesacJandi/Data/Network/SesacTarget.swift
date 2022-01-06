@@ -16,13 +16,11 @@ enum SesacTarget {
     case register(parameters: JsonType)
     case login(parameters: JsonType)
     case changePassword(parameters: JsonType)
-    
     // Post
     case allPost(parameters: JsonType)
     case composePost(parameters: JsonType)
     case updatePost(index: Int, parameters: JsonType)
     case deletePost(index: Int)
-    
     // Comment
     case allComment(parameters: JsonType)
     case createComment(parameters: JsonType)
@@ -85,7 +83,7 @@ extension SesacTarget: TargetType {
         }
     }
     
-//    public var sampleData: Data {
+//    public var sampleData: Data { //더미데이터로 사용할때 꾸리기
 //        return stubDate(self)
 //    }
     

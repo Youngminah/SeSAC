@@ -6,8 +6,8 @@
 //
 
 import UIKit
-import RxSwift
 import RxCocoa
+import RxSwift
 
 final class PostViewController: UIViewController {
     
@@ -197,8 +197,8 @@ extension PostViewController {
         let deleteAction = UIAlertAction(title: "삭제하기", style: .destructive, handler: { [weak self] _ in
             self?.requestDeletePostEvent.accept(())
         })
-        let editAction = UIAlertAction(title: "수정하기", style: .default, handler: { _ in
-            
+        let editAction = UIAlertAction(title: "수정하기", style: .default, handler: { [weak self] _ in
+            self?.showEditPostViewController()
         })
         let cancelAction = UIAlertAction(title: "취소", style: .default, handler: nil)
         optionMenu.addAction(editAction)
@@ -209,5 +209,13 @@ extension PostViewController {
     
     private func showCommentPostActionSheet() {
         
+    }
+    
+    private func showEditPostViewController() {
+        let vc = ComposePostViewController()
+        vc.title = "수정하기"
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .fullScreen
+        self.present(nav, animated: true)
     }
 }

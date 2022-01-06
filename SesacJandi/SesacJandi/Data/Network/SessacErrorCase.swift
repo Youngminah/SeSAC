@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum SessacErrorEnum: Error {
+enum SessacErrorCase: Error {
     
     case emailIsAlreadyTaken
     case inValidateEmailAddress
@@ -27,7 +27,7 @@ enum SessacErrorEnum: Error {
     }
 }
 
-extension SessacErrorEnum {
+extension SessacErrorCase {
     var errorDescription: String {
         switch self {
         case .emailIsAlreadyTaken:

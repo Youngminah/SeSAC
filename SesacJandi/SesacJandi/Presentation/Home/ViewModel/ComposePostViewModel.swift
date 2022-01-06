@@ -45,7 +45,7 @@ final class ComposePostViewModel: CommonViewModel, ViewModelType {
                         self.composeSuccessAlertAction.accept("저장되었습니다")
                     case .failure(let error): 
                         self.isLoading.accept(true)
-                        let error = error as! SessacErrorEnum
+                        let error = error as! SessacErrorCase
                         self.composeFailAlertAction.accept(error.errorDescription)
                     }
                 }

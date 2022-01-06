@@ -28,10 +28,10 @@ extension CommonViewModel {
         case .success(let response):
             if response.statusCode == 400 {
                 let errorResponse = try! response.map(InputErrorResponse.self)
-                completion (.failure(SessacErrorEnum(messageId: errorResponse.message[0].messages[0].id)))
+                completion (.failure(SessacErrorCase(messageId: errorResponse.message[0].messages[0].id)))
             } else if response.statusCode >= 401 {
                 let errorResponse = try! response.map(AccessErrorResponse.self)
-                completion (.failure(SessacErrorEnum(messageId: errorResponse.error)))
+                completion (.failure(SessacErrorCase(messageId: errorResponse.error)))
             } else {
                 let data = try! JSONDecoder().decode(type, from: response.data)
                 completion(.success(data as! E))

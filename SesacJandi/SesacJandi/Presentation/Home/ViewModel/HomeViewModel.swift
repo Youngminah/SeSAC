@@ -17,19 +17,18 @@ final class HomeViewModel: CommonViewModel, ViewModelType {
     struct Input {
         let requestAllPostsEvent: Signal<Void>
     }
-    
     struct Output {
         let isLoading: Driver<Bool>
         let toastMessageAction: Signal<String>
         let didLoadallPosts: Driver<[PostResponse]>
         let loadFailAlertAction: Signal<String>
     }
+    var disposeBag = DisposeBag()
     
     private let isLoading = BehaviorRelay<Bool>(value: true)
     private let toastMessageAction = PublishRelay<String>()
     private let didLoadallPosts = BehaviorRelay<[PostResponse]>(value: [])
     private let loadFailAlertAction = PublishRelay<String>()
-    var disposeBag = DisposeBag()
     
     override init() {
         super.init()
@@ -47,7 +46,7 @@ final class HomeViewModel: CommonViewModel, ViewModelType {
                         self.didLoadallPosts.accept(success)
                     case .failure(let error): 
                         self.isLoading.accept(true)
-                        let error = error as! SessacErrorEnum
+                        let error = error as! SessacErrorCase
                         self.loadFailAlertAction.accept(error.errorDescription)
                     }
                 }

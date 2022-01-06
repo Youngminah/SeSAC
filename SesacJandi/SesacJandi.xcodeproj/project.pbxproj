@@ -48,7 +48,7 @@
 		BBD9FBC52784BCD300D755D5 /* TokenUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FBC42784BCD300D755D5 /* TokenUtils.swift */; };
 		BBD9FBCB2785443000D755D5 /* CommonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FBCA2785443000D755D5 /* CommonViewModel.swift */; };
 		BBD9FBD227858D7300D755D5 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = BBD9FBD127858D7300D755D5 /* Toast */; };
-		BBD9FBD42785BCDB00D755D5 /* SesacErrorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FBD32785BCDB00D755D5 /* SesacErrorEnum.swift */; };
+		BBD9FBD42785BCDB00D755D5 /* SessacErrorCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FBD32785BCDB00D755D5 /* SessacErrorCase.swift */; };
 		BBD9FBD62785D11E00D755D5 /* PrimitiveSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FBD52785D11E00D755D5 /* PrimitiveSequence.swift */; };
 		BBD9FBDA2785F9E200D755D5 /* InputErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FBD92785F9E200D755D5 /* InputErrorResponse.swift */; };
 		BBD9FBDC2786047300D755D5 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FBDB2786047300D755D5 /* HomeViewModel.swift */; };
@@ -99,7 +99,7 @@
 		BB2C34002784B0B400F48F26 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		BBD9FBC42784BCD300D755D5 /* TokenUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenUtils.swift; sourceTree = "<group>"; };
 		BBD9FBCA2785443000D755D5 /* CommonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewModel.swift; sourceTree = "<group>"; };
-		BBD9FBD32785BCDB00D755D5 /* SesacErrorEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SesacErrorEnum.swift; sourceTree = "<group>"; };
+		BBD9FBD32785BCDB00D755D5 /* SessacErrorCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessacErrorCase.swift; sourceTree = "<group>"; };
 		BBD9FBD52785D11E00D755D5 /* PrimitiveSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimitiveSequence.swift; sourceTree = "<group>"; };
 		BBD9FBD92785F9E200D755D5 /* InputErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputErrorResponse.swift; sourceTree = "<group>"; };
 		BBD9FBDB2786047300D755D5 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -161,14 +161,6 @@
 			path = SesacJandi;
 			sourceTree = "<group>";
 		};
-		BB2C33942782BF7900F48F26 /* IntroScene */ = {
-			isa = PBXGroup;
-			children = (
-				BB2C33842782BDB200F48F26 /* IntroViewController.swift */,
-			);
-			path = IntroScene;
-			sourceTree = "<group>";
-		};
 		BB2C339E2782D70F00F48F26 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,43 +177,12 @@
 			path = CustomView;
 			sourceTree = "<group>";
 		};
-		BB2C33A52782EA0E00F48F26 /* HomeScene */ = {
-			isa = PBXGroup;
-			children = (
-				BB2C33A62782EC9500F48F26 /* HomeNavigationController.swift */,
-				BB2C33A32782EA0400F48F26 /* HomeViewController.swift */,
-				BB2C33AD2782F16B00F48F26 /* PostCell.swift */,
-				BBD9FBDB2786047300D755D5 /* HomeViewModel.swift */,
-			);
-			path = HomeScene;
-			sourceTree = "<group>";
-		};
 		BB2C33AA2782ED6500F48F26 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				BB2C33A82782ED5600F48F26 /* UIViewController.swift */,
 			);
 			path = Extension;
-			sourceTree = "<group>";
-		};
-		BB2C33B12782FA2500F48F26 /* ComposeScene */ = {
-			isa = PBXGroup;
-			children = (
-				BB2C33AF2782FA1C00F48F26 /* ComposePostViewController.swift */,
-				BBD9FBEA27862D3500D755D5 /* ComposePostViewModel.swift */,
-			);
-			path = ComposeScene;
-			sourceTree = "<group>";
-		};
-		BB2C33CA2783719A00F48F26 /* PostScene */ = {
-			isa = PBXGroup;
-			children = (
-				BB2C33C82783719500F48F26 /* PostViewController.swift */,
-				BB2C33D827845DC500F48F26 /* PostHeaderView.swift */,
-				BB2C33D62784550F00F48F26 /* CommentCell.swift */,
-				BBD9FBEC2786390A00D755D5 /* PostViewModel.swift */,
-			);
-			path = PostScene;
 			sourceTree = "<group>";
 		};
 		BB2C33D42784492800F48F26 /* TextView */ = {
@@ -268,11 +229,11 @@
 			isa = PBXGroup;
 			children = (
 				BBD9FBD82785F97600D755D5 /* Support */,
-				BB2C33E92784864E00F48F26 /* Intro */,
-				BB2C33EA278486D900F48F26 /* Home */,
 				BB2C339E2782D70F00F48F26 /* CustomView */,
 				BB2C33AA2782ED6500F48F26 /* Extension */,
 				BBD9FBD72785D12600D755D5 /* RxExtension */,
+				BB2C33E92784864E00F48F26 /* Intro */,
+				BB2C33EA278486D900F48F26 /* Home */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -301,24 +262,6 @@
 			path = ImageView;
 			sourceTree = "<group>";
 		};
-		BB2C33E4278483D900F48F26 /* RegisterScene */ = {
-			isa = PBXGroup;
-			children = (
-				BB2C339A2782D5A400F48F26 /* RegisterViewController.swift */,
-				BB2C33EE278487A600F48F26 /* RegisterViewModel.swift */,
-			);
-			path = RegisterScene;
-			sourceTree = "<group>";
-		};
-		BB2C33E5278483F100F48F26 /* LoginScene */ = {
-			isa = PBXGroup;
-			children = (
-				BB2C339C2782D5AF00F48F26 /* LoginViewController.swift */,
-				BB2C33EC2784879800F48F26 /* LoginViewModel.swift */,
-			);
-			path = LoginScene;
-			sourceTree = "<group>";
-		};
 		BB2C33E6278485D700F48F26 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,9 +281,8 @@
 		BB2C33E92784864E00F48F26 /* Intro */ = {
 			isa = PBXGroup;
 			children = (
-				BB2C33942782BF7900F48F26 /* IntroScene */,
-				BB2C33E5278483F100F48F26 /* LoginScene */,
-				BB2C33E4278483D900F48F26 /* RegisterScene */,
+				BBD9FBF32786BC1D00D755D5 /* View */,
+				BBD9FBF22786BC1000D755D5 /* ViewModel */,
 			);
 			path = Intro;
 			sourceTree = "<group>";
@@ -348,9 +290,8 @@
 		BB2C33EA278486D900F48F26 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				BB2C33A52782EA0E00F48F26 /* HomeScene */,
-				BB2C33CA2783719A00F48F26 /* PostScene */,
-				BB2C33B12782FA2500F48F26 /* ComposeScene */,
+				BBD9FBF52786BC3C00D755D5 /* View */,
+				BBD9FBF42786BC3600D755D5 /* ViewModel */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -360,7 +301,7 @@
 			children = (
 				BB2C33FE2784A9ED00F48F26 /* SesacTarget.swift */,
 				BB2C34002784B0B400F48F26 /* NetworkManager.swift */,
-				BBD9FBD32785BCDB00D755D5 /* SesacErrorEnum.swift */,
+				BBD9FBD32785BCDB00D755D5 /* SessacErrorCase.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -389,6 +330,57 @@
 				BBD9FBE72786127900D755D5 /* AccessErrorResponse.swift */,
 			);
 			path = ErrorResponse;
+			sourceTree = "<group>";
+		};
+		BBD9FBF22786BC1000D755D5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BB2C33EE278487A600F48F26 /* RegisterViewModel.swift */,
+				BB2C33EC2784879800F48F26 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BBD9FBF32786BC1D00D755D5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BB2C33842782BDB200F48F26 /* IntroViewController.swift */,
+				BB2C339A2782D5A400F48F26 /* RegisterViewController.swift */,
+				BB2C339C2782D5AF00F48F26 /* LoginViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BBD9FBF42786BC3600D755D5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BBD9FBDB2786047300D755D5 /* HomeViewModel.swift */,
+				BBD9FBEA27862D3500D755D5 /* ComposePostViewModel.swift */,
+				BBD9FBEC2786390A00D755D5 /* PostViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BBD9FBF52786BC3C00D755D5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BBD9FBF62786BC5300D755D5 /* Cell */,
+				BB2C33A62782EC9500F48F26 /* HomeNavigationController.swift */,
+				BB2C33A32782EA0400F48F26 /* HomeViewController.swift */,
+				BB2C33AF2782FA1C00F48F26 /* ComposePostViewController.swift */,
+				BB2C33C82783719500F48F26 /* PostViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BBD9FBF62786BC5300D755D5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BB2C33AD2782F16B00F48F26 /* PostCell.swift */,
+				BB2C33D62784550F00F48F26 /* CommentCell.swift */,
+				BB2C33D827845DC500F48F26 /* PostHeaderView.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -490,7 +482,7 @@
 				BB2C33C727836DE500F48F26 /* AppAppearance.swift in Sources */,
 				BB2C33ED2784879800F48F26 /* LoginViewModel.swift in Sources */,
 				BB2C34012784B0B400F48F26 /* NetworkManager.swift in Sources */,
-				BBD9FBD42785BCDB00D755D5 /* SesacErrorEnum.swift in Sources */,
+				BBD9FBD42785BCDB00D755D5 /* SessacErrorCase.swift in Sources */,
 				BB2C339B2782D5A400F48F26 /* RegisterViewController.swift in Sources */,
 				BB2C33BA27830C6300F48F26 /* NickNameLabel.swift in Sources */,
 				BB2C33B02782FA1C00F48F26 /* ComposePostViewController.swift in Sources */,

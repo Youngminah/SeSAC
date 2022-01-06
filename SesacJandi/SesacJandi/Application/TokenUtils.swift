@@ -8,9 +8,9 @@
 import Foundation
 import Security
 
+// MARK: - KeyChain으로 토큰 저장
 class TokenUtils {
     
-    //MARK: - Create
     // service 파라미터는 url주소를 의미
     static func create(_ service: String, account: String, value: String) {
         // 1. query작성
@@ -29,7 +29,6 @@ class TokenUtils {
         assert(status == noErr, "failed to saving Token")
     }
     
-    //MARK: - Read
     static func read(_ service: String, account: String) -> String? {
         let KeyChainQuery: NSDictionary = [
             kSecClass: kSecClassGenericPassword,
@@ -38,12 +37,12 @@ class TokenUtils {
             kSecReturnData: kCFBooleanTrue, // CFData타입으로 불러오라는 의미
             kSecMatchLimit: kSecMatchLimitOne // 중복되는 경우 하나의 값만 가져오라는 의미
         ]
-        // CFData 타입 -> AnyObject로 받고, Data로 타입변환해서 사용하면됨
+        // CFData 타입 -> AnyObject로 받고, Data로 타입변환해서 사용하면 됨
         // Read
         var dataTypeRef: AnyObject?
         let status = SecItemCopyMatching(KeyChainQuery, &dataTypeRef)
-        // Read 성공 및 실패한 경우
-        if(status == errSecSuccess) {
+        
+        if(status == errSecSuccess) { // Read 성공 및 실패한 경우
             let retrievedData = dataTypeRef as! Data
             let value = String(data: retrievedData, encoding: String.Encoding.utf8)
             return value
@@ -53,7 +52,6 @@ class TokenUtils {
         }
     }
     
-    //MARK: - Delete
     static func delete(_ service: String, account: String) {
         let keyChainQuery: NSDictionary = [
             kSecClass: kSecClassGenericPassword,

@@ -6,8 +6,8 @@
 //
 
 import UIKit
-import RxSwift
 import RxCocoa
+import RxSwift
 
 class ComposePostViewController: UIViewController {
     
@@ -19,14 +19,24 @@ class ComposePostViewController: UIViewController {
     private lazy var completedBarButton = UIBarButtonItem(barButtonSystemItem: .done,
                                                      target: self,
                                                      action: #selector(completedBarButtonTap))
+    
     private lazy var input = ComposePostViewModel.Input(
         saveButtonTapEvent: saveButtonTapEvent.asSignal()
     )
     private lazy var output = viewModel.transform(input: input)
     
     private let viewModel = ComposePostViewModel()
-    private let saveButtonTapEvent = PublishRelay<String>()
     private let disposeBag = DisposeBag()
+    
+    private let saveButtonTapEvent = PublishRelay<String>()
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

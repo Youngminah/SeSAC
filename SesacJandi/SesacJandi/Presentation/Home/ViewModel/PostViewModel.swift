@@ -27,7 +27,6 @@ final class PostViewModel: CommonViewModel, ViewModelType {
         let requestCreateCommentEvent: Signal<String>
         let requestDeletePostEvent: Signal<Void>
     }
-    
     struct Output {
         let isLoading: Driver<Bool>
         let toastMessageAction: Signal<String>
@@ -63,7 +62,7 @@ final class PostViewModel: CommonViewModel, ViewModelType {
                         self.didLoadallComments.accept(success)
                     case .failure(let error):
                         self.isLoading.accept(true)
-                        let error = error as! SessacErrorEnum
+                        let error = error as! SessacErrorCase
                         self.failAlertAction.accept(error.errorDescription)
                     }
                 }
@@ -80,7 +79,7 @@ final class PostViewModel: CommonViewModel, ViewModelType {
                         self.successAlertAction.accept(.commentCreate)
                     case .failure(let error):
                         self.isLoading.accept(true)
-                        let error = error as! SessacErrorEnum
+                        let error = error as! SessacErrorCase
                         self.failAlertAction.accept(error.errorDescription)
                     }
                 }
@@ -97,7 +96,7 @@ final class PostViewModel: CommonViewModel, ViewModelType {
                         self.successAlertAction.accept(.postDelete)
                     case .failure(let error):
                         self.isLoading.accept(true)
-                        let error = error as! SessacErrorEnum
+                        let error = error as! SessacErrorCase
                         self.failAlertAction.accept(error.errorDescription)
                     }
                 }

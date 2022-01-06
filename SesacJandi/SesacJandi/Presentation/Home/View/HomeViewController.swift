@@ -6,8 +6,8 @@
 //
 
 import UIKit
-import RxSwift
 import RxCocoa
+import RxSwift
 
 class HomeViewController: UIViewController {
     
@@ -103,10 +103,4 @@ class HomeViewController: UIViewController {
         nav.modalPresentationStyle = .fullScreen
         self.present(nav, animated: true)
     }
-    
-//    @objc
-//    private func commentButtonTap() {
-//        let vc = PostViewController(basicInfo: <#PostResponse#>)
-//        self.navigationController?.pushViewController(vc, animated: true)
-//    }
 }
