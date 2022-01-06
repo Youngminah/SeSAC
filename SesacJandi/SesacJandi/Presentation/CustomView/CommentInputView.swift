@@ -11,7 +11,7 @@ import SnapKit
 final class CommentInputView: UIView {
     
     private let separatorLineView = SeparatorLineView()
-    private let commentTextView = CommentInputTextView()
+    let commentTextView = CommentInputTextView()
     let commentPostButton = UIButton()
     
     override init(frame: CGRect) { // 코드로 뷰가 생성될 때 생성자
@@ -62,12 +62,12 @@ final class CommentInputView: UIView {
         commentPostButton.titleLabel?.font = .systemFont(ofSize: 15, weight: .semibold)
     }
     
-    private func setPlaceHolder() {
+    func setPlaceHolder() {
         commentTextView.text = "댓글을 입력해주세요"
         commentTextView.textColor = .gray
     }
     
-    private func removePlaceHolder() {
+    func removePlaceHolder() {
         commentTextView.text = ""
         commentTextView.textColor = .label
     }

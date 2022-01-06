@@ -97,8 +97,7 @@ class HomeViewController: UIViewController {
     
     @objc
     private func composePostButtonTap() {
-        let vc = ComposePostViewController()
-        vc.title = "새싹농장 글쓰기"
+        let vc = ComposePostViewController(mode: .create, postInfo: nil)
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .fullScreen
         self.present(nav, animated: true)

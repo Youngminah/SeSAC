@@ -9,7 +9,7 @@ import Foundation
 
 struct PostResponse: Codable {
     let id: Int
-    let text: String
+    var text: String
     let user: User
     let createdAt: String
     let comments: [Comment]

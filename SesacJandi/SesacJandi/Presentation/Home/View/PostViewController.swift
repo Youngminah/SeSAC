@@ -85,6 +85,7 @@ final class PostViewController: UIViewController {
                     print("수정이벤트 방출")
                 case .commentCreate, .commentDelete:
                     self.showCommentAlert(title: action.rawValue)
+                    self.commentInputView.setPlaceHolder()
                 }
             })
             .disposed(by: disposeBag)
@@ -105,6 +106,13 @@ final class PostViewController: UIViewController {
     
     private func bindUI() {
         tableView.rx.setDelegate(self)
+            .disposed(by: disposeBag)
+        
+        commentInputView.commentTextView.rx.didBeginEditing
+            .asSignal()
+            .emit(onNext: { [unowned self] _ in
+                self.commentInputView.removePlaceHolder()
+            })
             .disposed(by: disposeBag)
     }
     
@@ -159,7 +167,7 @@ final class PostViewController: UIViewController {
     
     @objc
     private func createCommentButtonTap() {
-        self.requestCreateCommentEvent.accept("우오ㅜㅘ와와와와")
+        self.requestCreateCommentEvent.accept(commentInputView.commentTextView.text!)
     }
     
     private func isValidateMenuButton(userID: Int) -> Bool {
@@ -229,8 +237,11 @@ extension PostViewController {
     }
     
     private func showEditPostViewController() {
-        let vc = ComposePostViewController()
-        vc.title = "수정하기"
+        let vc = ComposePostViewController(mode: .edit, postInfo: basicInfo)
+        vc.closure = { [unowned self] text in
+            self.basicInfo.text = text
+            self.tableView.reloadData()
+        }
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .fullScreen
         self.present(nav, animated: true)

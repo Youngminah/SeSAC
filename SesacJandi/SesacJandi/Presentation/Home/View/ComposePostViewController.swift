@@ -9,6 +9,11 @@ import UIKit
 import RxCocoa
 import RxSwift
 
+enum Mode: String {
+    case create = "새싹농장 글쓰기"
+    case edit = "새싹농장 글 수정하기"
+}
+
 class ComposePostViewController: UIViewController {
     
     private let contentTextView = ContentTextView()
@@ -21,16 +26,25 @@ class ComposePostViewController: UIViewController {
                                                      action: #selector(completedBarButtonTap))
     
     private lazy var input = ComposePostViewModel.Input(
-        saveButtonTapEvent: saveButtonTapEvent.asSignal()
+        requestPostEvent: requestPostEvent.asSignal(),
+        requestEditPostEvent: requestEditPostEvent.asSignal()
     )
     private lazy var output = viewModel.transform(input: input)
     
-    private let viewModel = ComposePostViewModel()
+    private var viewModel: ComposePostViewModel
     private let disposeBag = DisposeBag()
     
-    private let saveButtonTapEvent = PublishRelay<String>()
+    private let requestPostEvent = PublishRelay<String>()
+    private let requestEditPostEvent = PublishRelay<String>()
     
-    init() {
+    private let mode: Mode
+    private let postInfo: PostResponse?
+    var closure: ((_ text: String) -> ())?
+    
+    init(mode: Mode, postInfo: PostResponse?) {
+        self.mode = mode
+        self.postInfo = postInfo
+        self.viewModel = ComposePostViewModel(mode: mode, postInfo: postInfo)
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -50,6 +64,7 @@ class ComposePostViewController: UIViewController {
         output.composeSuccessAlertAction
             .emit(onNext: { [unowned self] title in
                 let alert = self.confirmAlert(title: title, okHandler: { _ in
+                    self.closure?(self.contentTextView.text!)
                     self.dismiss(animated: true)
                 })
                 self.present(alert, animated: true)
@@ -84,8 +99,12 @@ class ComposePostViewController: UIViewController {
     }
     
     private func setConfiguration() {
+        title = mode.rawValue
         view.backgroundColor = .systemBackground
         contentTextView.becomeFirstResponder()
+        if mode == .edit {
+            contentTextView.text = postInfo!.text
+        }
     }
     
     @objc
@@ -95,6 +114,11 @@ class ComposePostViewController: UIViewController {
     
     @objc
     private func completedBarButtonTap() {
-        saveButtonTapEvent.accept(self.contentTextView.text!)
+        switch mode {
+        case .create:
+            requestPostEvent.accept(self.contentTextView.text!)
+        case .edit:
+            requestEditPostEvent.accept(self.contentTextView.text!)
+        }
     }
 }
