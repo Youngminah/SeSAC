@@ -90,8 +90,7 @@ https://user-images.githubusercontent.com/42762236/148384188-5edae9b9-d640-4f27-
 </br>
 
 ## 기술 및 회고 정리
-- 아래 첨부된 링크는 본 레파지토리의 과제 기술 정리 및 이슈 및 회고를 모두 정리한 위키 링크 입니다.
-- ### [위키 바로가기](https://github.com/Youngminah/SeSAC/wiki)
+- [새싹 커뮤니티 앱: Rxswift + MVVM 기술 포스팅](https://cau-meng2.tistory.com/131)
 
 </br>
 </br>
