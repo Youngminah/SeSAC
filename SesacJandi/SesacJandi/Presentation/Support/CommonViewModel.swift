@@ -30,6 +30,7 @@ extension CommonViewModel {
                 let errorResponse = try! response.map(InputErrorResponse.self)
                 completion (.failure(SessacErrorCase(messageId: errorResponse.message[0].messages[0].id)))
             } else if response.statusCode >= 401 {
+                TokenUtils.delete(AppConfiguration.service, account: "accessToken")
                 let errorResponse = try! response.map(AccessErrorResponse.self)
                 completion (.failure(SessacErrorCase(messageId: errorResponse.error)))
             } else {

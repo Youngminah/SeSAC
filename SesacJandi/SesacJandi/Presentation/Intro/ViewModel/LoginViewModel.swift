@@ -39,8 +39,8 @@ final class LoginViewModel: CommonViewModel, ViewModelType {
     func transform(input: Input) -> Output {
         
         input.loginRequestAPI
-            .do { [unowned self] _ in
-                self.isLoading.accept(false)
+            .filter { [unowned self] info in
+                return isValidate(info: info)
             }
             .emit { [unowned self] info in
                 self.requestLogin(info: info) { [weak self] response in
@@ -70,6 +70,14 @@ final class LoginViewModel: CommonViewModel, ViewModelType {
     private func setUserInfo(response: RegisterInfo.Response) {
         TokenUtils.create(AppConfiguration.service, account: "accessToken", value: response.jwt)
         UserDefaults.standard.setValue(response.user.id, forKey: "id")
+    }
+    
+    private func isValidate(info : LoginRequestInfo) -> Bool {
+        if (info.email == "" || info.password == "") {
+            self.toastMessageAction.accept("빈칸 없이 입력해주세요.")
+            return false
+        }
+        return true
     }
 }
 

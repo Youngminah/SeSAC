@@ -13,6 +13,7 @@ class HomeViewController: UIViewController {
     
     private var tableView = UITableView()
     private let composePostButton = UIButton()
+    private lazy var logoutBarButton = UIBarButtonItem(title: "로그아웃", style: .plain, target: self, action: #selector(logoutBarButtonTap))
     
     private lazy var input = HomeViewModel.Input(
         requestAllPostsEvent: requestAllPostsEvent.asSignal()
@@ -53,9 +54,21 @@ class HomeViewController: UIViewController {
                 self.navigationController?.pushViewController(vc, animated: true)
              })
              .disposed(by: disposeBag)
+        
+        output.loadFailAlertAction
+            .emit(onNext: { [unowned self] title in
+                let alert = self.confirmAlert(title: title) { [weak self] _ in
+                    if title == "로그아웃 합니다." {
+                        self?.changeIntroViewController()
+                    }
+                }
+                self.present(alert, animated: true)
+            })
+            .disposed(by: disposeBag)
     }
     
     private func setView() {
+        navigationItem.rightBarButtonItem = logoutBarButton
         view.addSubview(tableView)
         view.addSubview(composePostButton)
     }
@@ -93,6 +106,12 @@ class HomeViewController: UIViewController {
         composePostButton.layer.cornerRadius = 25
         composePostButton.backgroundColor = .systemGreen
         composePostButton.addTarget(self, action: #selector(composePostButtonTap), for: .touchUpInside)
+    }
+    
+    @objc
+    private func logoutBarButtonTap() {
+        TokenUtils.delete(AppConfiguration.service, account: "accessToken")
+        self.changeIntroViewController()
     }
     
     @objc

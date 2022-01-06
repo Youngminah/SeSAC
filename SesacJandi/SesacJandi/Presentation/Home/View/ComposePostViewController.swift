@@ -73,7 +73,11 @@ class ComposePostViewController: UIViewController {
         
         output.composeFailAlertAction
             .emit(onNext: { [unowned self] title in
-                let alert = self.confirmAlert(title: title)
+                let alert = self.confirmAlert(title: title) { [weak self] _ in
+                    if title == "로그아웃 합니다." {
+                        self?.changeIntroViewController()
+                    }
+                }
                 self.present(alert, animated: true)
             })
             .disposed(by: disposeBag)

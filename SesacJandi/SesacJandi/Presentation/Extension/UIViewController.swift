@@ -53,4 +53,16 @@ extension UIViewController {
             self.present(viewControllerToPresent, animated: true, completion: nil)
         }
     }
+    
+    func changeHomeViewController() {
+        let vc = HomeViewController()
+        let navigationVC = HomeNavigationController(rootViewController: vc)
+        changeRootViewController(navigationVC)
+    }
+    
+    func changeIntroViewController() {
+        let vc = IntroViewController()
+        let navigationVC = UINavigationController(rootViewController: vc)
+        changeRootViewController(navigationVC)
+    }
 }

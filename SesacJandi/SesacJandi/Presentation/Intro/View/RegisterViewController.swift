@@ -64,7 +64,7 @@ final class RegisterViewController: UIViewController {
         output.toastMessageAction
             .drive(onNext: { [unowned self] message in
                 self.makeToastStyle()
-                self.view.makeToast(message, position: .top)
+                self.view.makeToast(message, position: .center)
             })
             .disposed(by: disposeBag)
     }
@@ -98,12 +98,22 @@ final class RegisterViewController: UIViewController {
         
         registerButton.isEnabled = true
         registerButton.addTarget(self, action: #selector(registerButtonTap), for: .touchUpInside)
+        
+        passwordTextField.isSecureTextEntry = true
+        passwordConfirmTextField.isSecureTextEntry = true
     }
     
     @objc
     private func registerButtonTap() {
-        registerButtonTapEvent.accept((username: "hello",
-                                       email: "email12@gmail.com",
-                                       password: "email"))
+        let password = passwordTextField.text!
+        let passwordConfirm = passwordConfirmTextField.text!
+        if password != passwordConfirm {
+            self.makeToastStyle()
+            self.view.makeToast("비번이 같지 않습니다.", position: .center)
+            return
+        }
+        registerButtonTapEvent.accept((username: nickNameTextField.text!,
+                                       email: emailTextField.text!,
+                                       password: passwordTextField.text!))
     }
 }

@@ -50,6 +50,13 @@ final class LoginViewController: UIViewController {
                 self.present(alert, animated: true)
             })
             .disposed(by: disposeBag)
+        
+        output.toastMessageAction
+            .drive(onNext: { [unowned self] message in
+                self.makeToastStyle()
+                self.view.makeToast(message, position: .center)
+            })
+            .disposed(by: disposeBag)
     }
     
     private func setView() {
@@ -81,12 +88,14 @@ final class LoginViewController: UIViewController {
         
         loginButton.isEnabled = true
         loginButton.addTarget(self, action: #selector(loginButtonTap), for: .touchUpInside)
+        
+        passwordTextField.isSecureTextEntry = true
     }
     
     @objc
     private func loginButtonTap() {
-        loginRequestAPI.accept((email: "email12@gmail.com",
-                                       password: "email"))
+        loginRequestAPI.accept((email: emailTextField.text!,
+                                password: passwordTextField.text!))
     }
     
     private func changeRootToHomeView() {

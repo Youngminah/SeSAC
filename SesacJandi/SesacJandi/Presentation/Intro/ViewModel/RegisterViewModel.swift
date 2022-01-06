@@ -41,6 +41,12 @@ final class RegisterViewModel: CommonViewModel, ViewModelType {
     func transform(input: Input) -> Output {
         
         input.registerButtonTapEvent
+            .do { (username, email, password) in
+                if username == "" || email == "" || password == "" {
+                    self.registerFailAlertAction.accept("빈칸없이 입력해주세요")
+                    return
+                }
+            }
             .emit { [unowned self] info in
                 self.requestRegister(info: info) { [weak self] response in
                     guard let self = self else { return }
