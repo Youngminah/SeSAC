@@ -20,19 +20,23 @@ final class PostViewController: UIViewController {
     
     private lazy var input = PostViewModel.Input(
         requestAllCommentsEvent: requestAllCommentsEvent.asSignal(),
-        requestCreateCommentEvent: requestCreateCommentEvent.asSignal()
+        requestCreateCommentEvent: requestCreateCommentEvent.asSignal(),
+        requestDeletePostEvent: requestDeletePostEvent.asSignal()
     )
     private lazy var output = viewModel.transform(input: input)
     
     private let viewModel : PostViewModel
     private let requestAllCommentsEvent = PublishRelay<Void>()
     private let requestCreateCommentEvent = PublishRelay<String>()
+    private let requestDeletePostEvent = PublishRelay<Void>()
     private let disposeBag = DisposeBag()
     
-    var basicInfo: PostResponse?
+    var basicInfo: PostResponse
+    var commentCount: Int
     
     init(basicInfo: PostResponse) {
         self.basicInfo = basicInfo
+        self.commentCount = basicInfo.comments.count
         self.viewModel = PostViewModel(postID: basicInfo.id)
         super.init(nibName: nil, bundle: nil)
     }
@@ -61,11 +65,15 @@ final class PostViewController: UIViewController {
             .disposed(by: disposeBag)
         
         output.successAlertAction
-            .emit(onNext: { [unowned self] title in
-                let alert = self.confirmAlert(title: title, okHandler: { _ in
-                    self.requestAllCommentsEvent.accept(())
-                })
-                self.present(alert, animated: true)
+            .emit(onNext: { [unowned self] action in
+                switch action {
+                case .postDelete:
+                    self.showPostDeleteAlert(title: action.rawValue)
+                case .postEdit:
+                    print("수정이벤트 방출")
+                case .commentCreate:
+                    self.showCommentCreateAlert(title: action.rawValue)
+                }
             })
             .disposed(by: disposeBag)
         
@@ -73,6 +81,12 @@ final class PostViewController: UIViewController {
             .emit(onNext: { [unowned self] title in
                 let alert = self.confirmAlert(title: title)
                 self.present(alert, animated: true)
+            })
+            .disposed(by: disposeBag)
+        
+        output.commentsCount
+            .emit(onNext: { [unowned self] count in
+                self.commentCount = count
             })
             .disposed(by: disposeBag)
     }
@@ -115,14 +129,14 @@ final class PostViewController: UIViewController {
                                                      action: #selector(createCommentButtonTap),
                                                      for: .touchUpInside)
         
-        if !isValidateMenuButton(userID: basicInfo!.user.id) {
+        if !isValidateMenuButton(userID: basicInfo.user.id) {
             navigationItem.rightBarButtonItems = []
         }
     }
     
     @objc
     private func detailMenuBarButtonTap() {
-    
+        self.showEditPostActionSheet()
     }
     
     @objc
@@ -140,9 +154,8 @@ extension PostViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: PostHeaderView.identifier) as! PostHeaderView
-        if let info = basicInfo {
-            headerView.updateUI(info : info)
-        }
+        headerView.updateUI(info : basicInfo)
+        headerView.commentInfoView.setCommentCount(count: commentCount)
         return headerView
     }
 
@@ -160,5 +173,41 @@ extension PostViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return UITableView.automaticDimension
+    }
+}
+
+extension PostViewController {
+    
+    private func showCommentCreateAlert(title: String) {
+        let alert = self.confirmAlert(title: title, okHandler: { _ in
+            self.requestAllCommentsEvent.accept(())
+        })
+        self.present(alert, animated: true)
+    }
+    
+    private func showPostDeleteAlert(title: String) {
+        let alert = self.confirmAlert(title: title, okHandler: { _ in
+            self.navigationController?.popViewController(animated: true)
+        })
+        self.present(alert, animated: true)
+    }
+    
+    private func showEditPostActionSheet() {
+        let optionMenu  = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let deleteAction = UIAlertAction(title: "삭제하기", style: .destructive, handler: { [weak self] _ in
+            self?.requestDeletePostEvent.accept(())
+        })
+        let editAction = UIAlertAction(title: "수정하기", style: .default, handler: { _ in
+            
+        })
+        let cancelAction = UIAlertAction(title: "취소", style: .default, handler: nil)
+        optionMenu.addAction(editAction)
+        optionMenu.addAction(deleteAction)
+        optionMenu.addAction(cancelAction)
+        self.present(optionMenu, animated: true)
+    }
+    
+    private func showCommentPostActionSheet() {
+        
     }
 }

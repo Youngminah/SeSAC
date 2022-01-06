@@ -18,7 +18,7 @@ final class PostHeaderView: UITableViewHeaderFooterView {
     private let profileSeparatorLineView = SeparatorLineView()
     private let contentTextView = ContentTextView()
     private let commentSeparatorLineView = SeparatorLineView()
-    private let commentInfoView = CommentInfoView()
+    let commentInfoView = CommentInfoView()
     
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)

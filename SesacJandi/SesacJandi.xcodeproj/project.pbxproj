@@ -63,7 +63,6 @@
 		BBD9FBE82786127900D755D5 /* AccessErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FBE72786127900D755D5 /* AccessErrorResponse.swift */; };
 		BBD9FBEB27862D3500D755D5 /* ComposePostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FBEA27862D3500D755D5 /* ComposePostViewModel.swift */; };
 		BBD9FBED2786390A00D755D5 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FBEC2786390A00D755D5 /* PostViewModel.swift */; };
-		BBD9FBEF2786443E00D755D5 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FBEE2786443E00D755D5 /* Comment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,7 +118,6 @@
 		BBD9FBE72786127900D755D5 /* AccessErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessErrorResponse.swift; sourceTree = "<group>"; };
 		BBD9FBEA27862D3500D755D5 /* ComposePostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposePostViewModel.swift; sourceTree = "<group>"; };
 		BBD9FBEC2786390A00D755D5 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
-		BBD9FBEE2786443E00D755D5 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,7 +272,6 @@
 				BBD9FBDF278606A900D755D5 /* AllCommentsResponse.swift */,
 				BBD9FBE32786071D00D755D5 /* PostResponse.swift */,
 				BBD9FBE1278606B700D755D5 /* CommentResponse.swift */,
-				BBD9FBEE2786443E00D755D5 /* Comment.swift */,
 				BBD9FBE9278612A700D755D5 /* ErrorResponse */,
 			);
 			path = Model;
@@ -514,7 +511,6 @@
 				BB2C33A42782EA0400F48F26 /* HomeViewController.swift in Sources */,
 				BBD9FBEB27862D3500D755D5 /* ComposePostViewModel.swift in Sources */,
 				BB2C33D927845DC500F48F26 /* PostHeaderView.swift in Sources */,
-				BBD9FBEF2786443E00D755D5 /* Comment.swift in Sources */,
 				BB2C33BE27830EEB00F48F26 /* CommentInputView.swift in Sources */,
 				BBD9FBE42786071D00D755D5 /* PostResponse.swift in Sources */,
 				BB2C33A72782EC9500F48F26 /* HomeNavigationController.swift in Sources */,
