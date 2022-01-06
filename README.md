@@ -63,8 +63,7 @@ https://user-images.githubusercontent.com/42762236/136702716-5224904e-430a-4e8e-
 <details><summary>트랜드미디어</summary>
 
 ## 트랜드 미디어 
-</br>
-</br>
+
 UI 자료 없음
 </br>
 </br>
@@ -74,8 +73,6 @@ UI 자료 없음
 <details><summary>새싹커뮤니티</summary>
 
 ## 새싹커뮤니티
-</br>
-</br>
 
 https://user-images.githubusercontent.com/42762236/148384188-5edae9b9-d640-4f27-b9ef-a3f4eec26e54.mp4
 
