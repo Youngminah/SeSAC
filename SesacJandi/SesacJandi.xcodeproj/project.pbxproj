@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB1F79EF2786DD0E009FF49A /* EditCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1F79EE2786DD0E009FF49A /* EditCommentViewController.swift */; };
+		BB1F79F22786E14D009FF49A /* EditCommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1F79F12786E14D009FF49A /* EditCommentViewModel.swift */; };
 		BB2C33812782BDB200F48F26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33802782BDB200F48F26 /* AppDelegate.swift */; };
 		BB2C33832782BDB200F48F26 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33822782BDB200F48F26 /* SceneDelegate.swift */; };
 		BB2C33852782BDB200F48F26 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C33842782BDB200F48F26 /* IntroViewController.swift */; };
@@ -59,9 +61,12 @@
 		BBD9FBEB27862D3500D755D5 /* ComposePostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FBEA27862D3500D755D5 /* ComposePostViewModel.swift */; };
 		BBD9FBED2786390A00D755D5 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FBEC2786390A00D755D5 /* PostViewModel.swift */; };
 		BBD9FBF12786BA5500D755D5 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FBF02786BA5500D755D5 /* ViewModelType.swift */; };
+		BBD9FBF82786C6F900D755D5 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FBF72786C6F900D755D5 /* Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB1F79EE2786DD0E009FF49A /* EditCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCommentViewController.swift; sourceTree = "<group>"; };
+		BB1F79F12786E14D009FF49A /* EditCommentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCommentViewModel.swift; sourceTree = "<group>"; };
 		BB2C337D2782BDB200F48F26 /* SesacJandi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SesacJandi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB2C33802782BDB200F48F26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB2C33822782BDB200F48F26 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +115,7 @@
 		BBD9FBEA27862D3500D755D5 /* ComposePostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposePostViewModel.swift; sourceTree = "<group>"; };
 		BBD9FBEC2786390A00D755D5 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		BBD9FBF02786BA5500D755D5 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		BBD9FBF72786C6F900D755D5 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,12 +170,12 @@
 		BB2C339E2782D70F00F48F26 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
-				BB2C33DC278476F000F48F26 /* BaseTableViewCell.swift */,
 				BB2C33E12784825600F48F26 /* Button */,
 				BB2C33D42784492800F48F26 /* TextView */,
 				BB2C33D52784493F00F48F26 /* Label */,
 				BB2C33E22784826D00F48F26 /* TextField */,
 				BB2C33E32784827500F48F26 /* ImageView */,
+				BB2C33DC278476F000F48F26 /* BaseTableViewCell.swift */,
 				BB2C33BD27830EEB00F48F26 /* CommentInputView.swift */,
 				BB2C33B7278303A100F48F26 /* CommentInfoView.swift */,
 				BB2C33BB27830DCB00F48F26 /* SeparatorLineView.swift */,
@@ -181,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				BB2C33A82782ED5600F48F26 /* UIViewController.swift */,
+				BBD9FBF72786C6F900D755D5 /* Date.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -357,6 +364,7 @@
 				BBD9FBDB2786047300D755D5 /* HomeViewModel.swift */,
 				BBD9FBEA27862D3500D755D5 /* ComposePostViewModel.swift */,
 				BBD9FBEC2786390A00D755D5 /* PostViewModel.swift */,
+				BB1F79F12786E14D009FF49A /* EditCommentViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -367,8 +375,9 @@
 				BBD9FBF62786BC5300D755D5 /* Cell */,
 				BB2C33A62782EC9500F48F26 /* HomeNavigationController.swift */,
 				BB2C33A32782EA0400F48F26 /* HomeViewController.swift */,
-				BB2C33AF2782FA1C00F48F26 /* ComposePostViewController.swift */,
 				BB2C33C82783719500F48F26 /* PostViewController.swift */,
+				BB2C33AF2782FA1C00F48F26 /* ComposePostViewController.swift */,
+				BB1F79EE2786DD0E009FF49A /* EditCommentViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -473,6 +482,7 @@
 				BB2C33DB2784619300F48F26 /* ProfileImageView.swift in Sources */,
 				BBD9FBE627860C4400D755D5 /* User.swift in Sources */,
 				BB2C33C92783719500F48F26 /* PostViewController.swift in Sources */,
+				BB1F79F22786E14D009FF49A /* EditCommentViewModel.swift in Sources */,
 				BB2C33B62783037E00F48F26 /* DateLabel.swift in Sources */,
 				BB2C33DD278476F000F48F26 /* BaseTableViewCell.swift in Sources */,
 				BB2C33FF2784A9ED00F48F26 /* SesacTarget.swift in Sources */,
@@ -483,9 +493,11 @@
 				BB2C33ED2784879800F48F26 /* LoginViewModel.swift in Sources */,
 				BB2C34012784B0B400F48F26 /* NetworkManager.swift in Sources */,
 				BBD9FBD42785BCDB00D755D5 /* SessacErrorCase.swift in Sources */,
+				BBD9FBF82786C6F900D755D5 /* Date.swift in Sources */,
 				BB2C339B2782D5A400F48F26 /* RegisterViewController.swift in Sources */,
 				BB2C33BA27830C6300F48F26 /* NickNameLabel.swift in Sources */,
 				BB2C33B02782FA1C00F48F26 /* ComposePostViewController.swift in Sources */,
+				BB1F79EF2786DD0E009FF49A /* EditCommentViewController.swift in Sources */,
 				BB2C33A42782EA0400F48F26 /* HomeViewController.swift in Sources */,
 				BBD9FBEB27862D3500D755D5 /* ComposePostViewModel.swift in Sources */,
 				BB2C33D927845DC500F48F26 /* PostHeaderView.swift in Sources */,

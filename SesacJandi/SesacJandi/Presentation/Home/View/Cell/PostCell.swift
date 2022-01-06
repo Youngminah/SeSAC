@@ -60,7 +60,7 @@ final class PostCell: BaseTableViewCell {
     
     func updateUI(post: PostResponse) {
         textView.text = post.text
-        dateLabel.text = post.createdAt
+        dateLabel.text = post.createdAt.toDate.toRelativeTodayTime
         commentInfoView.setCommentCount(count: post.comments.count)
         textView.sizeToFit()
     }

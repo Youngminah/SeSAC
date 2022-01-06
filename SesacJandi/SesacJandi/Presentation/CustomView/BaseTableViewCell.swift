@@ -25,6 +25,7 @@ class BaseTableViewCell: UITableViewCell {
     func setConstraints() { }
     
     func setConfiguration() {
+        contentView.isUserInteractionEnabled = false
         selectionStyle = .none
     }
 }

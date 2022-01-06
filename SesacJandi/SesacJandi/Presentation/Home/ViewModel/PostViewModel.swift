@@ -17,7 +17,7 @@ enum PoetViewSuccessAction: String {
     case postEdit = "글이 수정되었습니다."
     case commentCreate = "댓글이 작성되었습니다."
 //    case commentEdit = "댓글이 수정되었습니다."
-//    case commentDelete = "댓글이 삭제되었습니다."
+    case commentDelete = "댓글이 삭제되었습니다."
 }
 
 final class PostViewModel: CommonViewModel, ViewModelType {
@@ -26,6 +26,7 @@ final class PostViewModel: CommonViewModel, ViewModelType {
         let requestAllCommentsEvent: Signal<Void>
         let requestCreateCommentEvent: Signal<String>
         let requestDeletePostEvent: Signal<Void>
+        let requestDeleteCommentEvent: Signal<Int>
     }
     struct Output {
         let isLoading: Driver<Bool>
@@ -103,6 +104,24 @@ final class PostViewModel: CommonViewModel, ViewModelType {
             }
             .disposed(by: disposeBag)
         
+        input.requestDeleteCommentEvent
+            .emit { [unowned self] commentID in
+                self.requestDeleteComment(commentID: commentID) { [weak self] response in
+                    guard let self = self else { return }
+                    switch response {
+                    case .success(_):
+                        self.isLoading.accept(true)
+                        self.successAlertAction.accept(.commentDelete)
+                    case .failure(let error):
+                        self.isLoading.accept(true)
+                        let error = error as! SessacErrorCase
+                        self.failAlertAction.accept(error.errorDescription)
+                    }
+                }
+            }
+            .disposed(by: disposeBag)
+        
+        
         return Output(
             isLoading: isLoading.asDriver(),
             toastMessageAction: toastMessageAction.asSignal(),
@@ -116,14 +135,14 @@ final class PostViewModel: CommonViewModel, ViewModelType {
 
 extension PostViewModel {
     
-    func requestAllComments(completion: @escaping (Result<[CommentResponse], Error>) -> Void ) {
+    private func requestAllComments(completion: @escaping (Result<[CommentResponse], Error>) -> Void ) {
         let parameters = ["post": "\(postID)"]
         provider.request(.allComment(parameters: parameters)) { result in
             self.process(type: [CommentResponse].self, result: result, completion: completion)
         }
     }
     
-    func requestCreateComment(text: String,
+    private func requestCreateComment(text: String,
                               completion: @escaping (Result<CommentResponse, Error>) -> Void ) {
         let parameters = ["comment": text, "post": "\(postID)"]
         provider.request(.createComment(parameters: parameters)) { result in
@@ -131,9 +150,15 @@ extension PostViewModel {
         }
     }
     
-    func requestDeletePost(completion: @escaping (Result<PostResponse, Error>) -> Void ) {
+    private func requestDeletePost(completion: @escaping (Result<PostResponse, Error>) -> Void ) {
         provider.request(.deletePost(index: postID)) { result in
             self.process(type: PostResponse.self, result: result, completion: completion)
+        }
+    }
+    
+    private func requestDeleteComment(commentID: Int, completion: @escaping (Result<CommentResponse, Error>) -> Void ) {
+        provider.request(.deleteComment(index: commentID)) { result in
+            self.process(type: CommentResponse.self, result: result, completion: completion)
         }
     }
 }

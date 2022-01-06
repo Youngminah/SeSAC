@@ -89,7 +89,7 @@ final class PostHeaderView: UITableViewHeaderFooterView {
     
     func updateUI(info: PostResponse) {
         nickNameLabel.text = info.user.username
-        dateLabel.text = info.createdAt
+        dateLabel.text = info.createdAt.toDate.toString
         contentTextView.text = info.text
         contentTextView.sizeToFit()
     }

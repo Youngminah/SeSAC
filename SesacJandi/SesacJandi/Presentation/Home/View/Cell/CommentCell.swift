@@ -12,19 +12,20 @@ final class CommentCell: BaseTableViewCell {
     static let identifier = "CommentCell"
     
     private let nickNameLabel = NickNameLabel()
-    private let commentContentView = ContentTextView()
+    let commentContentView = ContentTextView()
     
+    var buttonTappedAction : ((UITableViewCell) -> Void)?
     let commentDetailMenuButton = UIButton()
     
+    let name = "안녕"
+    
     override func setView() {
-        super.setView()
         addSubview(nickNameLabel)
         addSubview(commentContentView)
         addSubview(commentDetailMenuButton)
     }
 
     override func setConstraints() {
-        super.setConstraints()
         commentDetailMenuButton.snp.makeConstraints { make in
             make.right.equalToSuperview().offset(-16)
             make.width.height.equalTo(30)
@@ -48,6 +49,10 @@ final class CommentCell: BaseTableViewCell {
         commentDetailMenuButton.tintColor = .label
         commentContentView.isScrollEnabled = false
         commentContentView.isEditable = false
+        
+        commentDetailMenuButton.addTarget(self,
+                                          action: #selector(self.commmentDetailButtonTap),
+                                          for: .touchUpInside)
     }
     
     func updateUI(comment: CommentResponse) {
@@ -55,6 +60,11 @@ final class CommentCell: BaseTableViewCell {
         nickNameLabel.text = comment.user.username
         commentContentView.text = comment.comment
         commentContentView.sizeToFit()
+    }
+    
+    @objc
+    private func commmentDetailButtonTap() {
+        buttonTappedAction?(self)
     }
     
     private func isValidateMenuButton(userID: Int) -> Bool {

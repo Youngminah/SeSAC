@@ -11,7 +11,6 @@ import Moya
 typealias JsonType = [String: Any]
 
 enum SesacTarget {
-    
     // Auth
     case register(parameters: JsonType)
     case login(parameters: JsonType)

@@ -30,9 +30,7 @@ final class ComposePostViewModel: CommonViewModel, ViewModelType {
     private let composeSuccessAlertAction = PublishRelay<String>()
     private let composeFailAlertAction = PublishRelay<String>()
     
-    override init() {
-        super.init()
-    }
+    override init() {}
     
     func transform(input: Input) -> Output {
         input.saveButtonTapEvent
