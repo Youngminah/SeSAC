@@ -82,9 +82,7 @@ https://user-images.githubusercontent.com/42762236/148384188-5edae9b9-d640-4f27-
 </br>
 
 ## 이슈 정리 
-- [NSLayoutConstraint CustomView 관련 이슈](https://github.com/Youngminah/SeSSAC/issues/1)
-- [Alert 코드 개선](https://github.com/Youngminah/SeSSAC/issues/3)
-- [타입어노테이션, {} 띄어쓰기](https://github.com/Youngminah/SeSSAC/issues/4)
+- [새싹커뮤니티 앱: Moya Access Token Plugin 이슈](https://cau-meng2.tistory.com/133)
 </br>
 </br>
 
